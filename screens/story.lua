@@ -1,57 +1,75 @@
-local buttons   = require('lua2.buttons')
-local textures  = require('lua2.textures')
-local fonts     = require('lua2.fonts')
-local music     = require('lua2.music')
-local sounds    = require('lua2.sounds')
-local sf        = require('lua2.savefile')
+_ENV = {
+	_G = _G,
+	require = require,
+	dofile = dofile,
+	collectgarbage = collectgarbage,
+	pcall = pcall,
+	load = load,
+	load_chunk = load_chunk,
+	quit = quit
+}
+
+buttons   = require('lua2.buttons')
+textures  = require('lua2.textures')
+fonts     = require('lua2.fonts')
+music     = require('lua2.music')
+sounds    = require('lua2.sounds')
+sf        = require('lua2.savefile')
+
+black = { r =   0, g =   0, b =   0 }
+white = { r = 255, g = 255, b = 255 }
+dark  = { r =  30, g =  30, b =  30 }
+light = { r = 120, g = 220, b = 220 }
 
 -- Screen design size is 800 by 450.
 
 -- a1 and a2 are buttons that display dialog.
-local a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
-local a1_x = 50
-local a2_x = 50
-local a1_y = 50
-local a2_y = 80
-local a1   -- created in goto_node
-local a2   -- created in goto_node
+a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+default_a_color = light
+-- a_color  -- created in goto_node
+a1_x = 50
+a2_x = 50
+a1_y = 50
+a2_y = 80
+--a1   -- created in goto_node
+--a2   -- created in goto_node
 
 -- b1 and b2 are buttons that display choices.
-local b_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
-local b1_x = 50
-local b2_x = 50
-local b1_y = 250
-local b2_y = 280
-local b1   -- created in goto_node
-local b2   -- created in goto_node
+b_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+default_b_color = light
+-- b_color  -- created in goto_node
+b1_x = 50
+b2_x = 50
+b1_y = 250
+b2_y = 280
+--b1   -- created in goto_node
+--b2   -- created in goto_node
 
 -- ex is the exit button.
-local ex_x = 50
-local ex_y = 400
-local ex_r = 255
-local ex_g = 255
-local ex_b = 255
-local ex_font = fonts.create("fonts/DroidSansMono.ttf", 22)
-local ex_texture = ex_font:text("Exit", ex_r, ex_g, ex_b)
-local ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
+ex_x = 50
+ex_y = 400
+ex_color = light
+ex_font = fonts.create("fonts/DroidSansMono.ttf", 22)
+ex_texture = ex_font:text("Exit", ex_color)
+ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
 
 -- lg is the large portrait
-local lg_x = 700
-local lg_y = 50
-local lg_w = 160
-local lg_h = 240
+lg_x = 700
+lg_y = 50
+lg_w = 160
+lg_h = 240
 
 -- sm is the small portrait
-local sm_x = 100
-local sm_y = 275
-local sm_w = 100
-local sm_h = 160
+sm_x = 100
+sm_y = 275
+sm_w = 100
+sm_h = 160
 
 if not sf.current_node then
 	sf.current_node = 'start'
 end
 
-function on_update()
+function _G.on_update()
 	if bg then bg:draw() end -- background
 	if lg then lg:draw(lg_x, lg_y, lg_w, lg_h) end -- large portrait
 	if sm then sm:draw(sm_x, sm_y, sm_w, sm_h) end -- small portrait
@@ -62,7 +80,7 @@ function on_update()
 	if ex then ex:draw() end -- exit button
 end
 
-function on_touch(x, y) 
+function _G.on_touch(x, y) 
 	if ex and ex:contains(x, y) then 
 		dofile('screens/title.lua')
 	elseif b1 and b1:contains(x, y) then 
@@ -83,14 +101,14 @@ end
 -- Utility function to create dialog buttons.
 function dialog(text, x, y)
 	if not text then return nil end
-	local t = a_font:text(text, 0, 255, 0)
+	local t = a_font:text(text, a_color)
 	return buttons.create_from_texture(t, x, y)
 end
 
 -- Utility function to create choice buttons.
 function choice(text, x, y)
 	if not text then return nil end
-	local t = b_font:text(text, 0, 255, 255)
+	local t = b_font:text(text, b_color)
 	return buttons.create_from_texture(t, x, y)
 end
 
@@ -104,7 +122,14 @@ function goto_node(node)
 		msgbox(node .. ' not found.') 
 		return 
 	end
-	local env = { sf = sf, music = music, sounds = sounds }
+	local env = { 
+		sf = sf, 
+		music = music, 
+		sounds = sounds, 
+		black = black, 
+		white = white, 
+		dark = dark, 
+		light = light }
 	local n, msg = load(chunk, nil, 't', env)
 	if not n then 
 		msgbox(msg)
@@ -119,6 +144,9 @@ function goto_node(node)
 	bg = env.bg and textures.image(env.bg)
 	lg = env.lg and textures.image(env.lg)
 	sm = env.sm and textures.image(env.sm)
+
+	a_color = env.a_color or env.color or default_a_color
+	b_color = env.b_color or env.color or default_b_color
 
 	a1 = dialog(env.a1, a1_x, a1_y)
 	a2 = dialog(env.a2, a2_x, a2_y)

@@ -1,6 +1,7 @@
 lg = 'lg/002.png'
 sm = 'lg/002.png'
 bg = 'bg/schoolFiller.jpg'
+color = dark
 
 a1 = 'You made me angry, you know.'
 
