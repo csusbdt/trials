@@ -38,10 +38,14 @@ local ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
 -- lg is the large portrait
 local lg_x = 700
 local lg_y = 50
+local lg_w = 160
+local lg_h = 240
 
 -- sm is the small portrait
 local sm_x = 100
 local sm_y = 275
+local sm_w = 100
+local sm_h = 160
 
 if not sf.current_node then
 	sf.current_node = 'start'
@@ -49,8 +53,8 @@ end
 
 function on_update()
 	if bg then bg:draw() end -- background
-	if lg then lg:draw() end -- large portrait
-	if sm then sm:draw() end -- small portrait
+	if lg then lg:draw(lg_x, lg_y, lg_w, lg_h) end -- large portrait
+	if sm then sm:draw(sm_x, sm_y, sm_w, sm_h) end -- small portrait
 	if a1 then a1:draw() end -- dialog
 	if a2 then a2:draw() end
 	if b1 then b1:draw() end -- choices
