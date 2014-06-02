@@ -23,27 +23,39 @@ light = { r = 120, g = 220, b = 220 }
 
 -- Screen design size is 800 by 450.
 
+default_color = black
+
 -- a1 and a2 are buttons that display dialog.
 a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
-default_a_color = light
 -- a_color  -- created in goto_node
-a1_x = 50
-a2_x = 50
-a1_y = 50
-a2_y = 80
+a1_x = 150
+a2_x = 150
+a1_y = 360
+a2_y = 390
 --a1   -- created in goto_node
 --a2   -- created in goto_node
 
 -- b1 and b2 are buttons that display choices.
 b_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
-default_b_color = light
 -- b_color  -- created in goto_node
 b1_x = 50
 b2_x = 50
-b1_y = 250
-b2_y = 280
+b3_x = 50
+b1_y = 120
+b2_y = 150
+b3_y = 180
 --b1   -- created in goto_node
 --b2   -- created in goto_node
+
+--day and time
+day_font  = fonts.create("fonts/DroidSansMono.ttf", 25)
+time_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+day_x = 700
+time_x = 700
+day_y = 10
+time_y = 30
+--day   -- created in goto_node
+--time   -- created in goto_node
 
 -- ex is the exit button.
 ex_x = 50
@@ -54,14 +66,14 @@ ex_texture = ex_font:text("Exit", ex_color)
 ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
 
 -- lg is the large portrait
-lg_x = 700
+lg_x = 500
 lg_y = 50
-lg_w = 160
-lg_h = 240
+lg_w = 290
+lg_h = 380
 
 -- sm is the small portrait
-sm_x = 100
-sm_y = 275
+sm_x = 50
+sm_y = 200
 sm_w = 100
 sm_h = 160
 
@@ -77,7 +89,11 @@ function _G.on_update()
 	if a2 then a2:draw() end
 	if b1 then b1:draw() end -- choices
 	if b2 then b2:draw() end
+	if b3 then b3:draw() end
 	if ex then ex:draw() end -- exit button
+
+	if day then day:draw() end
+	if time then time:draw() end
 end
 
 function _G.on_touch(x, y) 
@@ -89,6 +105,9 @@ function _G.on_touch(x, y)
 	elseif b2 and b2:contains(x, y) then 
 		if f2 then f2() end
 		goto_node(c2) 
+	elseif b3 and b3:contains(x, y) then 
+		if f3 then f3() end
+		goto_node(c3) 
 	end
 end
 
@@ -153,12 +172,15 @@ function goto_node(node)
 
 	b1 = choice(env.b1, b1_x, b1_y)
 	b2 = choice(env.b2, b2_x, b2_y)
+	b3 = choice(env.b3, b3_x, b3_y)
 
 	c1 = b1 and env.c1 
 	c2 = b2 and env.c2 
+	c3 = b3 and env.c3
 
 	f1 = c1 and env.f1
 	f2 = c2 and env.f2
+	f3 = c3 and env.f3
 
 	collectgarbage()  
 
