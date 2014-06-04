@@ -26,7 +26,8 @@ light = { r = 120, g = 220, b = 220 }
 default_color = black
 
 -- a1 and a2 are buttons that display dialog.
-a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+--a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+a_font  = fonts.create("fonts/Delicious-Roman.otf", 22)
 -- a_color  -- created in goto_node
 a1_x = 150
 a2_x = 150
@@ -36,7 +37,7 @@ a2_y = 390
 --a2   -- created in goto_node
 
 -- b1 and b2 are buttons that display choices.
-b_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+b_font  = fonts.create("fonts/Delicious-Roman.otf", 22)
 -- b_color  -- created in goto_node
 b1_x = 50
 b2_x = 50
@@ -48,8 +49,8 @@ b3_y = 180
 --b2   -- created in goto_node
 
 --day and time
-day_font  = fonts.create("fonts/DroidSansMono.ttf", 25)
-time_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
+day_font  = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 25)
+time_font  = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
 day_x = 700
 time_x = 700
 day_y = 10
@@ -61,7 +62,7 @@ time_y = 30
 ex_x = 50
 ex_y = 400
 ex_color = light
-ex_font = fonts.create("fonts/DroidSansMono.ttf", 22)
+ex_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
 ex_texture = ex_font:text("Exit", ex_color)
 ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
 
