@@ -6,7 +6,8 @@ _ENV = {
 	pcall = pcall,
 	load = load,
 	load_chunk = load_chunk,
-	quit = quit
+	quit = quit,
+	msgbox = msgbox
 }
 
 buttons   = require('lua2.buttons')
