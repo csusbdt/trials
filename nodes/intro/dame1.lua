@@ -6,7 +6,7 @@ color = dark
 day = 'Monday'
 time = 'Morning'
 
-a1 = 'Cecilia: It wouldn't have been if you helped out, you know.'
+a1 = "Cecilia: It wouldn't have been if you helped out, you know."
 
 b1 = "..."
 

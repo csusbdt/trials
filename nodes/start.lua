@@ -4,7 +4,7 @@ bg = 'bg/schoolFiller.jpg'
 
 color = dark
 
-day = 'Monday'
+day  = 'Monday'
 time = 'Morning'
 
 sf.dame_anger = 0

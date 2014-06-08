@@ -1,33 +1,11 @@
-_ENV = {
-	_G = _G,
-	require = require,
-	dofile = dofile,
-	collectgarbage = collectgarbage,
-	pcall = pcall,
-	load = load,
-	load_chunk = load_chunk,
-	quit = quit,
-	msgbox = msgbox
-}
-
-buttons   = require('lua2.buttons')
-textures  = require('lua2.textures')
-fonts     = require('lua2.fonts')
-music     = require('lua2.music')
-sounds    = require('lua2.sounds')
-sf        = require('lua2.savefile')
-
-black = { r =   0, g =   0, b =   0 }
-white = { r = 255, g = 255, b = 255 }
-dark  = { r =  30, g =  30, b =  30 }
-light = { r = 120, g = 220, b = 220 }
+local dark  = { r =  30, g =  30, b =  30 }
+local light = { r = 120, g = 220, b = 220 }
 
 -- Screen design size is 800 by 450.
 
-default_color = black
+local default_color = black
 
 -- a1 and a2 are buttons that display dialog.
---a_font  = fonts.create("fonts/DroidSansMono.ttf", 22)
 a_font  = fonts.create("fonts/Delicious-Roman.otf", 22)
 -- a_color  -- created in goto_node
 a1_x = 150
@@ -51,21 +29,21 @@ b3_y = 180
 
 --day and time
 day_font  = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 25)
-time_font  = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
-day_x = 700
-time_x = 700
-day_y = 10
-time_y = 30
+time_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
+day_x     = 700
+time_x    = 700
+day_y     = 10
+time_y    = 30
 --day   -- created in goto_node
 --time   -- created in goto_node
 
 -- ex is the exit button.
-ex_x = 50
-ex_y = 400
-ex_color = light
-ex_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
+ex_x       = 50
+ex_y       = 400
+ex_color   = light
+ex_font    = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 22)
 ex_texture = ex_font:text("Exit", ex_color)
-ex = buttons.create_from_texture(ex_texture, ex_x, ex_y)
+ex         = buttons.create_from_texture(ex_texture, ex_x, ex_y)
 
 -- lg is the large portrait
 lg_x = 500
@@ -83,22 +61,21 @@ if not sf.current_node then
 	sf.current_node = 'start'
 end
 
-function _G.on_update()
-	if bg then bg:draw() end -- background
-	if lg then lg:draw(lg_x, lg_y, lg_w, lg_h) end -- large portrait
-	if sm then sm:draw(sm_x, sm_y, sm_w, sm_h) end -- small portrait
-	if a1 then a1:draw() end -- dialog
-	if a2 then a2:draw() end
-	if b1 then b1:draw() end -- choices
-	if b2 then b2:draw() end
-	if b3 then b3:draw() end
-	if ex then ex:draw() end -- exit button
-
-	if day then day:draw() end
-	if time then time:draw() end
+function on_update()
+	if bg   then bg   : draw() end
+	if lg   then lg   : draw(lg_x, lg_y, lg_w, lg_h) end
+	if sm   then sm   : draw(sm_x, sm_y, sm_w, sm_h) end
+	if a1   then a1   : draw() end -- dialog
+	if a2   then a2   : draw() end
+	if b1   then b1   : draw() end -- choices
+	if b2   then b2   : draw() end
+	if b3   then b3   : draw() end
+	if ex   then ex   : draw() end -- exit button
+	if day  then day  : draw() end
+	if time then time : draw() end
 end
 
-function _G.on_touch(x, y) 
+function on_touch(x, y) 
 	if ex and ex:contains(x, y) then 
 		dofile('screens/title.lua')
 	elseif b1 and b1:contains(x, y) then 
