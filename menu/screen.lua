@@ -67,4 +67,3 @@ end
 load_textures()
 draw()
 
-
