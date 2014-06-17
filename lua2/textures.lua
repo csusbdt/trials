@@ -50,8 +50,13 @@ local function text(font, text, color)
 	return o
 end
 
+local function discard_userdata()
+	for k in pairs(textures) do textures[k] = nil end
+end
+
 return {
 	image = image,
-	text  = text
+	text  = text,
+	discard_userdata
 }
 
