@@ -1,12 +1,12 @@
+-- Screen design size is 800 by 450.
+
 local dark  = { r =  30, g =  30, b =  30 }
 local light = { r = 120, g = 220, b = 220 }
-
--- Screen design size is 800 by 450.
 
 local default_color = black
 
 -- a1 and a2 are buttons that display dialog.
-a_font  = fonts.create("fonts/Delicious-Roman.otf", 22)
+a_font = fonts.create("fonts/Delicious-Roman.otf", 22)
 -- a_color  -- created in goto_node
 a1_x = 150
 a2_x = 150
@@ -61,7 +61,7 @@ if not sf.current_node then
 	sf.current_node = 'start'
 end
 
-function on_update()
+function on_render_targets_reset()
 	if bg   then bg   : draw() end
 	if lg   then lg   : draw(lg_x, lg_y, lg_w, lg_h) end
 	if sm   then sm   : draw(sm_x, sm_y, sm_w, sm_h) end
@@ -73,6 +73,9 @@ function on_update()
 	if ex   then ex   : draw() end -- exit button
 	if day  then day  : draw() end
 	if time then time : draw() end
+end
+
+function on_update()
 end
 
 function on_touch(x, y) 
