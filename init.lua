@@ -16,7 +16,11 @@ function on_window_size_changed()
 end
 
 if not app_fullscreen then
-	set_window_size(800, 450)
+	--set_window_size(2560, 1440)  -- /2    too big
+	set_window_size(1280, 720)   -- /2    excellent, but too big
+	--set_window_size(800, 450)    -- /3.2  poor
+	--set_window_size(640, 360)    -- /4    poor
+	--set_window_size(853, 480)    -- /3    poor
 	set_window_position(100, 100)
 end
 

@@ -1,7 +1,7 @@
 -- dimensions: 2560 by 1440
 
---local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
-local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
+--local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
 
 local bar
 local white_diamond_1

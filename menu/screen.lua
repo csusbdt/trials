@@ -1,7 +1,8 @@
 -- dimensions: 2560 by 1440
 
 --local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60 * 450 / 1440)
-local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60) -- * 450 / 1440)
+--local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
 local menu_color = white
 
 local resume_button

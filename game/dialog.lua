@@ -1,7 +1,10 @@
 -- dimensions: 2560 by 1440
 
-local name_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
-local dialog_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+--local name_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+local name_font = fonts.create("fonts/CaviarDreams.ttf", 60)
+
+local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 45)
+--local dialog_font = fonts.create("fonts/DroidSansMono.ttf", 50)
 
 local dialog = {}
 

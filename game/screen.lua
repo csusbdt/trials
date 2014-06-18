@@ -6,7 +6,7 @@ local menu = require('game/menu')
 dialog.lg = 'lg/Damien.png'
 dialog.sm = 'sm/MC.png'
 dialog.name = 'CECILIA'
-dialog.d = { "This is a line in a game.", "Is this OK?" }
+dialog.d = { "I'm saying something cool!", "Is this OK?" }
 
 local function draw()
 	set_draw_color(255, 255, 255, 255)
