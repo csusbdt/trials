@@ -1,15 +1,20 @@
 -- dimensions: 2560 by 1440
 
+local name_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+local dialog_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
+
 local dialog = {}
 
-local main_area
-local next_button
 local lg_portrait
+local main_area
+local name_button
+local next_button
 local sm_portrait
 
 function dialog.draw()
 	if lg_portrait then lg_portrait:draw() end
 	main_area:draw()
+	if name_button then name_button:draw() end
 	next_button:draw()
 	if sm_portrait then sm_portrait:draw() end
 end
@@ -17,7 +22,7 @@ end
 function dialog.load_textures()
 	if dialog.lg then
 		local lg_texture = textures.image(dialog.lg)
-		lg_portrait = buttons.create_from_texture(lg_texture, 1870, 460)
+		lg_portrait = buttons.create_from_texture(lg_texture, 1870, 447)
 	else
 		lg_portrait = nil
 	end
@@ -26,6 +31,16 @@ function dialog.load_textures()
 		sm_portrait = buttons.create_from_texture(sm_texture, 60, 780)
 	else
 		sm_portrait = nil
+	end
+	if dialog.name then
+		local name_center_x = 955
+		local name_center_y = 886
+		local name_texture = name_font:text(dialog.name, white)
+		local x = name_center_x - name_texture.w / 2
+		local y = name_center_y - name_texture.h / 2
+		name_button = buttons.create_from_texture(name_texture, x, y)
+	else
+		name_button = nil
 	end
 	local main_area_texture   = textures.image('gui/UI-main.png')
 	local next_button_texture = textures.image('gui/UI-button-next.png')

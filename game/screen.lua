@@ -5,6 +5,7 @@ local menu = require('game/menu')
 
 dialog.lg = 'lg/Damien.png'
 dialog.sm = 'sm/MC.png'
+dialog.name = 'CECILIA'
 
 local function draw()
 	set_draw_color(255, 255, 255, 255)
