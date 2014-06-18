@@ -1,6 +1,7 @@
 -- dimensions: 2560 by 1440
 
-local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
+--local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60 * 450 / 1440)
+local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60) -- * 450 / 1440)
 local menu_color = white
 
 local resume_button
@@ -14,9 +15,9 @@ local function load_textures()
 	local windowed_texture   = menu_font:text("WINDOWED",   menu_color)
 	local quit_texture       = menu_font:text("QUIT",       menu_color)
 
-	local x = 1000
-	local y = 700
-	local dy = 90
+	local x  = 1000 -- * 450 / 1440
+	local y  = 700  -- * 450 / 1440
+	local dy = 100  -- * 450 / 1440 
 	resume_button     = buttons.create_from_texture(resume_texture,     x, y); y = y + dy
 	fullscreen_button = buttons.create_from_texture(fullscreen_texture, x, y)
 	windowed_button   = buttons.create_from_texture(windowed_texture,   x, y); y = y + dy

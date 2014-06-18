@@ -1,7 +1,6 @@
 -- dimensions: 2560 by 1440
 
 local menu = require('game/menu')
---local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
 
 local main_area
 local next_button
@@ -19,7 +18,9 @@ local function load_textures()
 	local main_area_texture   = textures.image('gui/UI-main.png')
 	local next_button_texture = textures.image('gui/UI-button-next.png')
 	main_area   = buttons.create_from_texture(main_area_texture, 0, 780)
+	--main_area   = buttons.create_from_texture(main_area_texture, 0, 780 * 1440 / 450)
 	next_button = buttons.create_from_texture(next_button_texture, 2395, 1110)
+	--next_button = buttons.create_from_texture(next_button_texture, 2395 * 1440 / 450, 1110 * 1440 / 450)
 	menu.load_textures()
 end
 

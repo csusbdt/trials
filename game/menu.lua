@@ -1,7 +1,7 @@
 -- dimensions: 2560 by 1440
 
-local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
-local menu_color = white
+--local menu_font = fonts.create("fonts/CaviarDreams.ttf", 60)
+local menu_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
 
 local bar
 local white_diamond_1
@@ -26,18 +26,18 @@ local function draw()
 end
 
 local function load_textures()
-	local date_text = "June 6, Morning"
+	local date_text = "June 6 AM"
 
 	local bar_texture             = textures.image('gui/UI-border-bottom.png')
 	local white_diamond_texture   = textures.image('gui/UI-diamond-white.png')
 	local black_diamond_texture   = textures.image('gui/UI-diamond-black.png')
-	local date_button_texture     = menu_font:text(date_text,  menu_color)
-	local save_button_texture     = menu_font:text("SAVE",     menu_color)
-	local load_button_texture     = menu_font:text("LOAD",     menu_color)
-	local exit_button_texture     = menu_font:text("EXIT",     menu_color)
+	local date_button_texture     = menu_font:text(date_text,  black)
+	local save_button_texture     = menu_font:text("SAVE",     white)
+	local load_button_texture     = menu_font:text("LOAD",     white)
+	local exit_button_texture     = menu_font:text("EXIT",     white)
 
-	local x         = 120
 	local space     = 30
+	local x         = 340 - (white_diamond_texture.w + space + date_button_texture.w) / 2
 	local bar_y     = 1330
 	local diamond_y = 1330 + (110 - black_diamond_texture.h) / 2
 	local text_y    = 1330 + (110 - save_button_texture.h) / 2
