@@ -11,12 +11,19 @@ local name_button
 local next_button
 local sm_portrait
 
+local d
+
 function dialog.draw()
 	if lg_portrait then lg_portrait:draw() end
 	main_area:draw()
 	if name_button then name_button:draw() end
 	next_button:draw()
 	if sm_portrait then sm_portrait:draw() end
+	if d then
+		for i, v in ipairs(d) do
+			v:draw()
+		end
+	end
 end
 
 function dialog.load_textures()
@@ -42,6 +49,17 @@ function dialog.load_textures()
 	else
 		name_button = nil
 	end
+	if dialog.d then
+		local x = 720
+		local y = 1005
+		d = {}
+		for i, v in ipairs(dialog.d) do
+			local d_texture = dialog_font:text(v, black)
+			table.insert(d, buttons.create_from_texture(d_texture, x, y))
+			y = y + d_texture.h + 4
+		end
+	else d = nil end
+			
 	local main_area_texture   = textures.image('gui/UI-main.png')
 	local next_button_texture = textures.image('gui/UI-button-next.png')
 	main_area   = buttons.create_from_texture(main_area_texture, 0, 780)
