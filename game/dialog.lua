@@ -1,10 +1,5 @@
--- dimensions: 2560 by 1440
-
---local name_font = fonts.create("fonts/Caviar_Dreams_Bold.ttf", 60)
-local name_font = fonts.create("fonts/CaviarDreams.ttf", 60)
-
-local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 45)
---local dialog_font = fonts.create("fonts/DroidSansMono.ttf", 50)
+local name_font   = fonts.create("fonts/CaviarDreams.ttf", 30)
+local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 18)
 
 local dialog = {}
 
@@ -13,6 +8,9 @@ local main_area
 local name_button
 local next_button
 local sm_portrait
+
+local sm_portrait_name
+local lg_portrait_name
 
 local d
 
@@ -32,19 +30,19 @@ end
 function dialog.load_textures()
 	if dialog.lg then
 		local lg_texture = textures.image(dialog.lg)
-		lg_portrait = buttons.create_from_texture(lg_texture, 1870, 447)
+		lg_portrait = buttons.create_from_texture(lg_texture, 568, 20, 400, 800)
 	else
 		lg_portrait = nil
 	end
 	if dialog.sm then
 		local sm_texture = textures.image(dialog.sm)
-		sm_portrait = buttons.create_from_texture(sm_texture, 60, 780)
+		sm_portrait = buttons.create_from_texture(sm_texture, 69, 289, 160, 240)
 	else
 		sm_portrait = nil
 	end
 	if dialog.name then
-		local name_center_x = 955
-		local name_center_y = 886
+		local name_center_x = 385
+		local name_center_y = 353
 		local name_texture = name_font:text(dialog.name, white)
 		local x = name_center_x - name_texture.w / 2
 		local y = name_center_y - name_texture.h / 2
@@ -53,8 +51,8 @@ function dialog.load_textures()
 		name_button = nil
 	end
 	if dialog.d then
-		local x = 720
-		local y = 1005
+		local x = 300
+		local y = 400
 		d = {}
 		for i, v in ipairs(dialog.d) do
 			local d_texture = dialog_font:text(v, black)
@@ -63,10 +61,10 @@ function dialog.load_textures()
 		end
 	else d = nil end
 			
-	local main_area_texture   = textures.image('gui/UI-main.png')
-	local next_button_texture = textures.image('gui/UI-button-next.png')
-	main_area   = buttons.create_from_texture(main_area_texture, 0, 780)
-	next_button = buttons.create_from_texture(next_button_texture, 2395, 1110)
+	local main_area_texture   = textures.image('ui/UI-mobile-main.png')
+	local next_button_texture = textures.image('ui/UI-mobile-button-next.png')
+	main_area   = buttons.create_from_texture(main_area_texture, 0, 312)
+	next_button = buttons.create_from_texture(next_button_texture, 958, 444)
 end
 
 function dialog.on_touch(x, y)

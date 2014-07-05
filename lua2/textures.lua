@@ -31,7 +31,12 @@ local function image(filename)
 		return textures[filename]
 	end
 	local o = { name = filename }
-	o.ud, o.w, o.h = texture_from_file(filename)
+	local result
+	result, o.ud, o.w, o.h = pcall(texture_from_file, filename)
+	if not result then
+		msgbox('texture_from_file failed with ' .. filename .. '\n' .. o.ud)
+		os.exit()
+	end
 	setmetatable(o, texture_mt)
 	textures[filename] = o
 	return o
@@ -50,6 +55,8 @@ local function text(font, text, color)
 	return o
 end
 
+-- If the device lost the graphics state (app going to background and then shutdown),
+-- then we need to discard texture userdata.
 local function discard_userdata()
 	for k in pairs(textures) do textures[k] = nil end
 end

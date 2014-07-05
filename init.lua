@@ -6,23 +6,32 @@ music    = require('lua2.music')
 sounds   = require('lua2.sounds')
 sf       = require('lua2.savefile')
 
-black    = { r =   0, g =   0, b =   0 }
-white    = { r = 255, g = 255, b = 255 }
+black = { r =   0, g =   0, b =   0 }
+white = { r = 255, g = 255, b = 255 }
+dark  = { r =  40, g =  40, b =  40 }
+light = { r = 205, g = 205, b = 205 }
 
---set_hint_render_scale_quality_linear()
+function on_render_targets_reset()
+	if draw then draw() end
+end
+
+function on_device_reset()
+	textures.discard_userdata()
+	if load_textures then load_textures() end
+	if draw then draw() end
+end
 
 function on_window_size_changed()
-        if on_render_targets_reset then on_render_targets_reset() end
+	on_render_targets_reset()
 end
 
+--[[
 if not app_fullscreen then
-	--set_window_size(2560, 1440)  -- /2    too big
-	set_window_size(1280, 720)   -- /2    excellent, but too big
-	--set_window_size(800, 450)    -- /3.2  poor
-	--set_window_size(640, 360)    -- /4    poor
-	--set_window_size(853, 480)    -- /3    poor
+	set_window_size(800, 600)
 	set_window_position(100, 100)
 end
+--]]
 
-dofile('menu/screen.lua')
+--dofile('menu/screen.lua')
+dofile('game/screen.lua')
 
