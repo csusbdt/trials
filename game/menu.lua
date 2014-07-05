@@ -1,6 +1,9 @@
-local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
+local menu = {}
 
-local date_text = "?"
+local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
+local date_font = fonts.create("fonts/CaviarDreams.ttf", 22)
+
+menu.date = "?"
 
 local bar
 local white_diamond_1
@@ -12,18 +15,14 @@ local load_button
 local black_diamond_2
 local exit_button 
 
-local function set_date(date)
-	date_text = date
-end
-
 local function load_textures()
 	local bar_texture             = textures.image('ui/UI-mobile-border-bottom.png')
 	local white_diamond_texture   = textures.image('ui/UI-mobile-diamond-white.png')
 	local black_diamond_texture   = textures.image('ui/UI-mobile-diamond-black.png')
-	local date_button_texture     = menu_font:text(date_text,  black)
-	local save_button_texture     = menu_font:text("SAVE",     white)
-	local load_button_texture     = menu_font:text("LOAD",     white)
-	local exit_button_texture     = menu_font:text("EXIT",     white)
+	local date_button_texture     = date_font:text(menu.date,    black)
+	local save_button_texture     = menu_font:text("SAVE",  white)
+	local load_button_texture     = menu_font:text("LOAD",  white)
+	local exit_button_texture     = menu_font:text("EXIT",  white)
 
 	local space     = 12
 	local x         = 136 - (white_diamond_texture.w + space + date_button_texture.w) / 2
@@ -50,7 +49,8 @@ local function load_textures()
 	exit_button = buttons.create_from_texture(exit_button_texture, x, text_y)
 end
 
-local function draw()
+function menu.draw()
+	load_textures()
 	bar		: draw()
 	white_diamond_1	: draw()
 	date_button	: draw()
@@ -62,7 +62,7 @@ local function draw()
 	exit_button	: draw()
 end
 
-local function on_touch(x, y)
+function menu.on_touch(x, y)
 	if date_button:contains(x, y) then
 		msgbox('will show calendar')
 		return true
@@ -79,10 +79,5 @@ local function on_touch(x, y)
 	return false
 end
 
-return {
-	load_textures = load_textures ,
-	draw          = draw          ,
-	on_touch      = on_touch      ,
-	set_date      = set_date
-}
+return menu
 

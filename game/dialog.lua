@@ -14,20 +14,7 @@ local lg_portrait_name
 
 local d
 
-function dialog.draw()
-	if lg_portrait then lg_portrait:draw() end
-	main_area:draw()
-	if name_button then name_button:draw() end
-	next_button:draw()
-	if sm_portrait then sm_portrait:draw() end
-	if d then
-		for i, v in ipairs(d) do
-			v:draw()
-		end
-	end
-end
-
-function dialog.load_textures()
+local function load_textures()
 	if dialog.lg then
 		local lg_texture = textures.image(dialog.lg)
 		lg_portrait = buttons.create_from_texture(lg_texture, 568, 20, 400, 800)
@@ -67,9 +54,23 @@ function dialog.load_textures()
 	next_button = buttons.create_from_texture(next_button_texture, 958, 444)
 end
 
+function dialog.draw()
+	load_textures()
+	if lg_portrait then lg_portrait:draw() end
+	main_area:draw()
+	if name_button then name_button:draw() end
+	next_button:draw()
+	if sm_portrait then sm_portrait:draw() end
+	if d then
+		for i, v in ipairs(d) do
+			v:draw()
+		end
+	end
+end
+
 function dialog.on_touch(x, y)
 	if next_button:contains(x, y) then
-		msgbox("next pressed")
+		if next then next() end
 	end
 end
 

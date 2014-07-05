@@ -6,6 +6,9 @@ music    = require('lua2.music')
 sounds   = require('lua2.sounds')
 sf       = require('lua2.savefile')
 
+dialog   = require('game.dialog')
+menu     = require('game.menu')
+
 black = { r =   0, g =   0, b =   0 }
 white = { r = 255, g = 255, b = 255 }
 dark  = { r =  40, g =  40, b =  40 }

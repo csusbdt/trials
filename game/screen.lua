@@ -1,14 +1,6 @@
-local dialog = require('game/dialog')
-local menu   = require('game/menu')
-
-dialog.lg   = 'lg/Damien.png'
-dialog.sm   = 'sm/MC.png'
-dialog.name = 'CECILIA'
-dialog.d    = { "I'm saying something cool!", "Is this OK?" }
+if not sf.node then sf.node = 'start' end
 
 function load_textures()
-	dialog.load_textures()
-	menu.load_textures()
 end
 
 function draw()
@@ -30,6 +22,6 @@ function on_touch(x, y)
 	end
 end
 
-load_textures()
-draw()
+dofile('nodes/' .. sf.node .. '.lua')
+
 

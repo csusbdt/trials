@@ -1,31 +1,30 @@
-lg = 'lg/Damien.png'
-sm = 'sm/MC.png'
-bg = 'bg/schoolFiller.jpg'
-
-color = dark
-
-day  = 'Monday'
-time = 'Morning'
-
-sf.dame_anger = 0
-a1 = "Damien: It's a bust..."
-
-b1 = 'Criticize him'
-b2 = 'Agree with him'
-b3 = "..."
-
-c1 = 'intro/dame1'
-c2 = 'intro/dame2'
-c3 = 'intro/dame3'
-
-f1 = function()
-	sf.dame_anger = sf.dame_anger + 10
+--[[
+local function next()
+	print 'next'
 end
 
-f2 = function()
-	sf.dame_anger = sf.dame_anger + 10
+return {
+{ "June 12 morning", "schoolFiller", "CECLIA", 'MC', '', { "I'm Cecilia.", "The hero of this story." }, next },
+{ "June 12 morning", "schoolFiller", "CECLIA", 'MC', 'Damien.png', { "I'm Damien.", "The villain." } },
+}
+--]]
+
+menu.date = "June 12 morning"
+dialog.lg    = 'lg/Damien.png'
+dialog.sm    = 'sm/MC.png'
+dialog.name  = 'CECILIA'
+dialog.d     = { "I'm Cecilia.", "The hero of this story." }
+
+function next()
+	dialog.d = { "I'm Damien.", "The villain." }
+	draw()
+	next = next2
 end
 
-f3 = function()
-	sf.dame_anger = sf.dame_anger + 5
+function next2()
+	dialog.d = { "I am every where." }
+	draw()
 end
+
+draw()
+
