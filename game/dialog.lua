@@ -102,7 +102,8 @@ function dialog.on_touch(x, y)
 	end
 	for i, v in ipairs(choices) do
 		if v:contains(x, y) then 
-			if v.f then v.f() else dialog.c = nil end
+			dialog.c = nil
+			if v.f then v.f() end
 			draw()
 			return 
 		end

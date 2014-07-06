@@ -4,6 +4,7 @@ dialog.lg    = 'lg/Ruby.png'
 dialog.sm    = 'sm/MC.png'
 dialog.name  = 'RUBY'
 dialog.d     = { "Hi." }
+dialog.m     = 'music/Overworld.wav'
 
 draw()
 

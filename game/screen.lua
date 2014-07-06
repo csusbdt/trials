@@ -35,6 +35,8 @@ local function next_function()
 	if s[i].d then dialog.d = s[i].d end
 	if s[i].next then next = s[i].next end
 	if s[i].c then dialog.c = s[i].c else dialog.c = nil end
+	if s[i].m then dialog.m = s[i].m end
+	music.set(dialog.m)
 	i = i + 1
 end
 
@@ -43,6 +45,7 @@ function next_node_function(node)
 		sf.node = node
 		dialog.c = nil
 		dofile(node)
+		music.set(dialog.m)
 	end
 end
 
