@@ -11,6 +11,6 @@ set_next({
 	{ name = 'DAMIEN', d = { "I'm Damien.", "The villain." } },
 	{ d = { "I am every where." }, lg = 'lg/DameAnnoy.png' },
 	{ name = 'CECILIA', d = { "OK." } },
-	{ d = { "Bye." }, next = function() dofile('nodes/library/entrance.lua') end }
+	{ d = { "Bye." }, next = next_node_function('nodes/library/entrance.lua') }
 })
 

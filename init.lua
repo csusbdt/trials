@@ -35,6 +35,6 @@ if not app_fullscreen then
 end
 --]]
 
---dofile('menu/screen.lua')
-dofile('game/screen.lua')
+dofile('menu/screen.lua')
+--dofile('game/screen.lua')
 

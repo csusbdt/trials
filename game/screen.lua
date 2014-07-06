@@ -1,4 +1,4 @@
-if not sf.node then sf.node = 'start' end
+if not sf.node then sf.node = 'nodes/start.lua' end
 
 function load_textures()
 end
@@ -15,9 +15,10 @@ function on_update()
 end
 
 function on_touch(x, y)
-	if menu.on_touch(x, y) then
+	if not dialog.c and menu.on_touch(x, y) then
 		return
-	elseif dialog.on_touch(x, y) then
+	end
+	if dialog.on_touch(x, y) then
 		return
 	end
 end
@@ -33,8 +34,16 @@ local function next_function()
 	if s[i].name then dialog.name = s[i].name end
 	if s[i].d then dialog.d = s[i].d end
 	if s[i].next then next = s[i].next end
-	if s[i].c then dialog.c = s[i].c end
+	if s[i].c then dialog.c = s[i].c else dialog.c = nil end
 	i = i + 1
+end
+
+function next_node_function(node)
+	return function()
+		sf.node = node
+		dialog.c = nil
+		dofile(node)
+	end
 end
 
 function set_next(sequence)
@@ -43,5 +52,5 @@ function set_next(sequence)
 	next = next_function
 end
 
-dofile('nodes/' .. sf.node .. '.lua')
+dofile(sf.node)
 

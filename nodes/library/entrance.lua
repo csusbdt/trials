@@ -15,7 +15,7 @@ set_next({
 	{ d = { "So get lost." }, lg = 'lg/DameAnnoy.png' },
 	{ name = 'CECILIA', d = { "I don't know what you guys are talking about." }, lg = 'lg/Damien.png', 
 		c = {	
-			{ t = "Go to Student Center.", f = function() msgbox("go to center") end },
+			{ t = "Go to Student Center.", f = next_node_function("nodes/center/entrance.lua") },
 			{ t = "Stay in library." }
 		}
 	},
