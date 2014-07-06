@@ -3,31 +3,41 @@ local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 18)
 
 local dialog = {}
 
+local bg
 local lg_portrait
 local main_area
 local name_button
 local next_button
 local sm_portrait
 
+local bg_name
 local sm_portrait_name
 local lg_portrait_name
+
+local choices = {}
 
 local d
 
 local function load_textures()
-	if dialog.lg then
+	if dialog.bg and string.len(dialog.bg) > 0 then
+		local bg_texture = textures.image(dialog.bg)
+		bg = buttons.create_from_texture(bg_texture)
+	else
+		bg = nil
+	end
+	if dialog.lg and string.len(dialog.lg) > 0 then
 		local lg_texture = textures.image(dialog.lg)
 		lg_portrait = buttons.create_from_texture(lg_texture, 568, 20, 400, 800)
 	else
 		lg_portrait = nil
 	end
-	if dialog.sm then
+	if dialog.sm and string.len(dialog.sm) > 0 then
 		local sm_texture = textures.image(dialog.sm)
 		sm_portrait = buttons.create_from_texture(sm_texture, 69, 289, 160, 240)
 	else
 		sm_portrait = nil
 	end
-	if dialog.name then
+	if dialog.name and string.len(dialog.name) > 0 then
 		local name_center_x = 385
 		local name_center_y = 353
 		local name_texture = name_font:text(dialog.name, white)
@@ -37,7 +47,7 @@ local function load_textures()
 	else
 		name_button = nil
 	end
-	if dialog.d then
+	if dialog.d and #dialog.d > 0 then
 		local x = 300
 		local y = 400
 		d = {}
@@ -56,6 +66,7 @@ end
 
 function dialog.draw()
 	load_textures()
+	if bg then bg:draw() end
 	if lg_portrait then lg_portrait:draw() end
 	main_area:draw()
 	if name_button then name_button:draw() end
@@ -70,7 +81,7 @@ end
 
 function dialog.on_touch(x, y)
 	if next_button:contains(x, y) then
-		if next then next() end
+		if next then next(); draw() end
 	end
 end
 
