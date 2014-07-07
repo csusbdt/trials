@@ -15,24 +15,9 @@ local bg_name
 local sm_portrait_name
 local lg_portrait_name
 
-local choices = {}
-
 local d
 
 local function load_textures()
-	choices = {}
-	if dialog.c then
-		if #dialog.c > 3 then mgbox("Too many choices."); return end
-		local choice_x  = 100
-		local choice_y  = 100
-		local choice_dy =  30
-		for i, v in ipairs(dialog.c) do
-			local c_texture = choice_font:text(v.t, black)
-			choices[i] = buttons.create_from_texture(c_texture, choice_x, choice_y)
-			choices[i].f = v.f
-			choice_y = choice_y + choice_dy
-		end
-	end
 	if dialog.bg and string.len(dialog.bg) > 0 then
 		local bg_texture = textures.image(dialog.bg)
 		bg = buttons.create_from_texture(bg_texture)
@@ -91,23 +76,19 @@ function dialog.draw()
 			v:draw()
 		end
 	end
-	for i, v in ipairs(choices) do
-		v:draw()
-	end
+	ui_choices.draw()
 end
 
 function dialog.on_touch(x, y)
-	if not dialog.c and next_button:contains(x, y) then
-		if next then next(); draw(); return end
+	if not ui_choices.empty() then
+		return ui_choices.on_touch(x, y)
 	end
-	for i, v in ipairs(choices) do
-		if v:contains(x, y) then 
-			dialog.c = nil
-			if v.f then v.f() end
-			draw()
-			return 
-		end
+	if next_button:contains(x, y) and next then
+		next()
+		draw()
+		return true
 	end
+	return false
 end
 
 return dialog

@@ -6,6 +6,7 @@ music    = require('lua2.music')
 sounds   = require('lua2.sounds')
 sf       = require('lua2.savefile')
 
+ui_choices = require('ui_choices')
 dialog   = require('dialog')
 menu     = require('game_menu')
 

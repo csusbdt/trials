@@ -5,6 +5,7 @@ function draw()
 	render_clear()
 	dialog.draw()
 	menu.draw()
+	ui_choices.draw()
 	render()
 end
 
@@ -31,7 +32,8 @@ local function next_function()
 	if s[i].name then dialog.name = s[i].name end
 	if s[i].d then dialog.d = s[i].d end
 	if s[i].next then next = s[i].next end
-	if s[i].c then dialog.c = s[i].c else dialog.c = nil end
+	--if s[i].c then dialog.c = s[i].c else dialog.c = nil end
+	ui_choices.set(s[i].c)
 	if s[i].m then dialog.m = s[i].m end
 	music.set(dialog.m)
 	i = i + 1
