@@ -41,7 +41,7 @@ end
 
 function on_touch(x, y)
 	if resume_button:contains(x, y) then 
-		dofile('game/screen.lua')
+		dofile('game_screen.lua')
 	elseif delete_progress_button:contains(x, y) then
 		sf:clear()
 		sf.node = 'nodes/start.lua'

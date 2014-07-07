@@ -73,7 +73,7 @@ function menu.on_touch(x, y)
 		msgbox('loading')
 		return true
 	elseif exit_button:contains(x, y) then 
-		dofile('menu/screen.lua')
+		dofile('menu_screen.lua')
 		return true
 	end
 	return false

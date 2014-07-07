@@ -1,8 +1,5 @@
 if not sf.node then sf.node = 'nodes/start.lua' end
 
-function load_textures()
-end
-
 function draw()
 	set_draw_color(0, 0, 0, 255)
 	render_clear()
