@@ -1,8 +1,13 @@
+local ui_dialog = {}
+
 local name_font   = fonts.create("fonts/CaviarDreams.ttf", 30)
 local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 18)
-local choice_font = fonts.create("fonts/Delicious-Roman.otf", 24)
 
-local dialog = {}
+local bg_name
+local sm_portrait_name
+local lg_portrait_name
+
+dialog = {} -- contains: bg, lg, sm, name, d
 
 local bg
 local lg_portrait
@@ -11,13 +16,9 @@ local name_button
 local next_button
 local sm_portrait
 
-local bg_name
-local sm_portrait_name
-local lg_portrait_name
-
 local d
 
-local function load_textures()
+function ui_dialog.draw()
 	if dialog.bg and string.len(dialog.bg) > 0 then
 		local bg_texture = textures.image(dialog.bg)
 		bg = buttons.create_from_texture(bg_texture)
@@ -61,10 +62,7 @@ local function load_textures()
 	local next_button_texture = textures.image('ui/UI-mobile-button-next.png')
 	main_area   = buttons.create_from_texture(main_area_texture, 0, 312)
 	next_button = buttons.create_from_texture(next_button_texture, 958, 444)
-end
 
-function dialog.draw()
-	load_textures()
 	if bg then bg:draw() end
 	if lg_portrait then lg_portrait:draw() end
 	main_area:draw()
@@ -76,13 +74,9 @@ function dialog.draw()
 			v:draw()
 		end
 	end
-	ui_choices.draw()
 end
 
 function dialog.on_touch(x, y)
-	if not ui_choices.empty() then
-		return ui_choices.on_touch(x, y)
-	end
 	if next_button:contains(x, y) and next then
 		next()
 		draw()
@@ -91,5 +85,5 @@ function dialog.on_touch(x, y)
 	return false
 end
 
-return dialog
+return ui_dialog
 

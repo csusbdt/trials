@@ -3,7 +3,7 @@ if not sf.node then sf.node = 'nodes/start.lua' end
 function draw()
 	set_draw_color(0, 0, 0, 255)
 	render_clear()
-	dialog.draw()
+	ui_dialog.draw()
 	menu.draw()
 	ui_choices.draw()
 	render()
@@ -13,6 +13,9 @@ function on_update()
 end
 
 function on_touch(x, y)
+	if not ui_choices.empty() then
+		return ui_choices.on_touch(x, y)
+	end
 	if not dialog.c and menu.on_touch(x, y) then
 		return
 	end
