@@ -4,7 +4,7 @@ function draw()
 	set_draw_color(0, 0, 0, 255)
 	render_clear()
 	ui_dialog.draw()
-	menu.draw()
+	ui_menu.draw()
 	ui_choices.draw()
 	render()
 end
@@ -14,40 +14,41 @@ end
 
 function on_touch(x, y)
 	if not ui_choices.empty() then
-		return ui_choices.on_touch(x, y)
+		if ui_choices.on_touch(x, y) then return true end
 	end
-	if not dialog.c and menu.on_touch(x, y) then
-		return
+	if ui_menu.on_touch(x, y) then
+		return true
 	end
-	if dialog.on_touch(x, y) then
-		return
+	if ui_choices.empty() and ui_dialog.on_touch(x, y) then
+		return true
 	end
+	return false
 end
 
+local s
 local i = 1
 
 local function next_function()
 	if i > #s then msgbox("Next goes nowhere."); return end
-	if s[i].date then menu.date = s[i].date end
-	if s[i].bg then dialog.bg = s[i].bg end
-	if s[i].lg then dialog.lg = s[i].lg end
-	if s[i].sm then dialog.sm = s[i].sm end
-	if s[i].name then dialog.name = s[i].name end
-	if s[i].d then dialog.d = s[i].d end
+	if s[i].date then ui_menu.date = s[i].date end
+	if s[i].bg then ui_dialog.bg = s[i].bg end
+	if s[i].lg then ui_dialog.lg = s[i].lg end
+	if s[i].sm then ui_dialog.sm = s[i].sm end
+	if s[i].n then ui_dialog.n = s[i].n end
+	if s[i].d then ui_dialog.d = s[i].d end
 	if s[i].next then next = s[i].next end
-	--if s[i].c then dialog.c = s[i].c else dialog.c = nil end
-	ui_choices.set(s[i].c)
-	if s[i].m then dialog.m = s[i].m end
-	music.set(dialog.m)
+	ui_choices.c = s[i].c
+	if s[i].m then ui_dialog.m = s[i].m end
+	music.set(ui_dialog.m)
 	i = i + 1
 end
 
 function next_node_function(node)
 	return function()
 		sf.node = node
-		dialog.c = nil
+		ui_dialog.c = nil
 		dofile(node)
-		music.set(dialog.m)
+		music.set(ui_dialog.m)
 	end
 end
 

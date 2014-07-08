@@ -1,82 +1,95 @@
 local ui_dialog = {}
+-- bg = name of background image
+-- sm = name of small portrait
+-- lg = name of large portrait
+-- n  = name of person talking
+-- d  = array of dialog objects
 
 local name_font   = fonts.create("fonts/CaviarDreams.ttf", 30)
 local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 18)
 
-local bg_name
-local sm_portrait_name
-local lg_portrait_name
+--local bg_name
+--local sm_portrait_name
+--local lg_portrait_name
 
-dialog = {} -- contains: bg, lg, sm, name, d
+--dialog = {} -- contains: bg, lg, sm, name, d
 
-local bg
-local lg_portrait
-local main_area
-local name_button
+-- Note: most "buttons" are just images and do not have click handlers. 
+local main_area_button
 local next_button
+local bg_button
 local sm_portrait
-
-local d
+local lg_button
+local n_button
+local d_buttons
 
 function ui_dialog.draw()
-	if dialog.bg and string.len(dialog.bg) > 0 then
-		local bg_texture = textures.image(dialog.bg)
-		bg = buttons.create_from_texture(bg_texture)
+	local texture -- reusable temporary variable
+	if ui_dialog.bg and string.len(ui_dialog.bg) > 0 then
+		texture = textures.image(ui_dialog.bg)
+		bg_button = buttons.create_from_texture(texture)
 	else
-		bg = nil
+		bg_button = nil
 	end
-	if dialog.lg and string.len(dialog.lg) > 0 then
-		local lg_texture = textures.image(dialog.lg)
-		lg_portrait = buttons.create_from_texture(lg_texture, 568, 20, 400, 800)
+	if ui_dialog.lg and string.len(ui_dialog.lg) > 0 then
+		texture = textures.image(ui_dialog.lg)
+		lg_button = buttons.create_from_texture(texture, 568, 20, 400, 800)
 	else
-		lg_portrait = nil
+		lg_button = nil
 	end
-	if dialog.sm and string.len(dialog.sm) > 0 then
-		local sm_texture = textures.image(dialog.sm)
-		sm_portrait = buttons.create_from_texture(sm_texture, 69, 289, 160, 240)
+	if ui_dialog.sm and string.len(ui_dialog.sm) > 0 then
+		texture = textures.image(ui_dialog.sm)
+		sm_button = buttons.create_from_texture(texture, 69, 289, 160, 240)
 	else
-		sm_portrait = nil
+		sm_button = nil
 	end
-	if dialog.name and string.len(dialog.name) > 0 then
+	if ui_dialog.n and string.len(ui_dialog.n) > 0 then
 		local name_center_x = 385
 		local name_center_y = 353
-		local name_texture = name_font:text(dialog.name, white)
-		local x = name_center_x - name_texture.w / 2
-		local y = name_center_y - name_texture.h / 2
-		name_button = buttons.create_from_texture(name_texture, x, y)
+		texture = name_font:text(ui_dialog.n, white)
+		local x = name_center_x - texture.w / 2
+		local y = name_center_y - texture.h / 2
+		n_button = buttons.create_from_texture(texture, x, y)
 	else
-		name_button = nil
+		n_button = nil
 	end
-	if dialog.d and #dialog.d > 0 then
+	if ui_dialog.d and #ui_dialog.d > 0 then
 		local x = 300
 		local y = 400
-		d = {}
-		for i, v in ipairs(dialog.d) do
-			local d_texture = dialog_font:text(v, black)
-			table.insert(d, buttons.create_from_texture(d_texture, x, y))
-			y = y + d_texture.h + 4
+		d_buttons = {}
+		for i, v in ipairs(ui_dialog.d) do
+			texture = dialog_font:text(v, black)
+			table.insert(d_buttons, buttons.create_from_texture(texture, x, y))
+			y = y + texture.h + 4
 		end
-	else d = nil end
+	else d_buttons = nil end
 			
-	local main_area_texture   = textures.image('ui/UI-mobile-main.png')
-	local next_button_texture = textures.image('ui/UI-mobile-button-next.png')
-	main_area   = buttons.create_from_texture(main_area_texture, 0, 312)
-	next_button = buttons.create_from_texture(next_button_texture, 958, 444)
+	texture   = textures.image('ui/UI-mobile-main.png')
+	main_area_button   = buttons.create_from_texture(texture, 0, 312)
 
-	if bg then bg:draw() end
-	if lg_portrait then lg_portrait:draw() end
-	main_area:draw()
-	if name_button then name_button:draw() end
+	texture = textures.image('ui/UI-mobile-button-next.png')
+	next_button = buttons.create_from_texture(texture, 958, 444)
+
+	if bg_button then bg_button:draw() end
+
+	if lg_button then lg_button:draw() end
+
+	main_area_button:draw()
+
+	if n_button then n_button:draw() end
+
 	next_button:draw()
-	if sm_portrait then sm_portrait:draw() end
-	if d then
-		for i, v in ipairs(d) do
+
+	if sm_button then sm_button:draw() end
+
+	if d_buttons then
+		for i, v in ipairs(d_buttons) do
 			v:draw()
 		end
 	end
 end
 
-function dialog.on_touch(x, y)
+function ui_dialog.on_touch(x, y)
 	if next_button:contains(x, y) and next then
 		next()
 		draw()

@@ -8,7 +8,7 @@ sf       = require('lua2.savefile')
 
 ui_choices = require('ui_choices')
 ui_dialog  = require('ui_dialog')
-menu     = require('game_menu')
+ui_menu    = require('ui_menu')
 
 black = { r =   0, g =   0, b =   0 }
 white = { r = 255, g = 255, b = 255 }
@@ -21,14 +21,13 @@ end
 
 function on_device_reset()
 	textures.discard_userdata()
---	if load_textures then load_textures() end
 	if draw then draw() end
 end
 
 function on_window_size_changed()
-	on_render_targets_reset()
+	if draw then draw() end
 end
 
 dofile('menu_screen.lua')
---dofile('game/screen.lua')
+--dofile('game_screen.lua')
 
