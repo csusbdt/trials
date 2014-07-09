@@ -9,6 +9,7 @@ sf       = require('lua2.savefile')
 ui_choices = require('ui_choices')
 ui_dialog  = require('ui_dialog')
 ui_menu    = require('ui_menu')
+ui_log     = require('ui_log')
 
 black = { r =   0, g =   0, b =   0 }
 white = { r = 255, g = 255, b = 255 }

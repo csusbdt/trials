@@ -4,6 +4,7 @@ ui_dialog.lg    = 'lg/Damien.png'
 ui_dialog.sm    = 'sm/MC.png'
 ui_dialog.n     = 'CECILIA'
 ui_dialog.d     = { "I'm Cecilia.", "The hero of this story." }
+ui_log.add_dialog()
 
 draw()
 

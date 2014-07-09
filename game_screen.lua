@@ -35,7 +35,7 @@ local function next_function()
 	if s[i].lg then ui_dialog.lg = s[i].lg end
 	if s[i].sm then ui_dialog.sm = s[i].sm end
 	if s[i].n then ui_dialog.n = s[i].n end
-	if s[i].d then ui_dialog.d = s[i].d end
+	if s[i].d then ui_dialog.d = s[i].d; ui_log.add_dialog() end
 	if s[i].next then next = s[i].next end
 	ui_choices.c = s[i].c
 	if s[i].m then ui_dialog.m = s[i].m end
