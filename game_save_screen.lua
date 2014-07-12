@@ -1,5 +1,5 @@
-local game_save_buttons = require('game_save_buttons')
-local ui_overwrite      = require('ui_overwrite')
+local game_save_buttons    = require('game_save_buttons')
+local game_save_overwrite  = require('game_save_overwrite')
 
 local button_font = fonts.create("fonts/CaviarDreams.ttf", 32)
 
@@ -26,7 +26,7 @@ function draw()
 
 	for _, b in ipairs(btns) do b:draw() end
 
-	if ui_overwrite.show then ui_overwrite.draw() end
+	if game_save_overwrite.show then game_save_overwrite.draw() end
 
 	render()
 end
@@ -35,11 +35,11 @@ function on_update()
 end
 
 function on_touch(x, y)
-	if ui_overwrite.show then
-		if ui_overwrite.on_touch(x, y) then
-			ui_overwrite.show = false
-			if ui_overwrite.confirm then
-				gs.save(ui_overwrite.n)
+	if game_save_overwrite.show then
+		if game_save_overwrite.on_touch(x, y) then
+			game_save_overwrite.show = false
+			if game_save_overwrite.confirm then
+				gs.save(game_save_overwrite.n)
 				dofile('game_screen.lua')
 			else
 				draw()

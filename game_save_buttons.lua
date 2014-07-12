@@ -1,4 +1,4 @@
-local ui_overwrite = require('ui_overwrite')
+local game_save_overwrite  = require('game_save_overwrite')
 
 local game_save_button_mt = {
 	w = 16 * 25, 
@@ -19,8 +19,8 @@ function game_save_button_mt:touch()
 		gs.load(self.n)
 		dofile('game_screen.lua')
 	elseif ui.game_save_mode == 'saving' then
-		ui_overwrite.show = true
-		ui_overwrite.n = self.n
+		game_save_overwrite.show = true
+		game_save_overwrite.n = self.n
 	end
 end
 
