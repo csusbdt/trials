@@ -4,7 +4,7 @@ local ui_hud = { show = true }
 -- date = date to display
 
 local ui_background = require('ui_background')
-local ui_menu       = require('ui_menu')
+local game_menu       = require('game_menu')
 local ui_log        = require('ui_log')
 local ui_sound      = require('ui_sound')
 
@@ -109,11 +109,11 @@ function ui_hud.on_touch(x, y)
 		return true
 	end
 	if menu_button:contains(x, y) then
-		ui_menu.show = not ui_menu.show
+		game_menu.show = not game_menu.show
 		draw()
 		return true
 	end
-	if ui_menu.show then return false end
+	if game_menu.show then return false end
 	if ui_sound.show then return false end
 	if ui.c then
 		if ui_choices.on_touch(x, y) then

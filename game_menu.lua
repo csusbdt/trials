@@ -1,4 +1,4 @@
-local ui_menu = {}
+local game_menu = {}
 
 -- Items:
 -- resume - returns to game screen
@@ -19,7 +19,7 @@ local sound_button
 local fullscreen_button
 local exit_button
 
-function ui_menu.draw()
+function game_menu.draw()
 	-- Display overlay background.
 
 	local overlay_w = 300
@@ -68,24 +68,24 @@ function ui_menu.draw()
 	exit_button		: draw()
 end
 
-function ui_menu.on_touch(x, y)
+function game_menu.on_touch(x, y)
 	if resume_button:contains(x, y) then
-		ui_menu.show = false
+		game_menu.show = false
 		return true
 	end
 	if save_button:contains(x, y) then 
-		ui_menu.show = false
+		game_menu.show = false
 		ui.game_save_mode = 'saving'
 		dofile('game_save_screen.lua')
 		return true
 	end
 	if log_button:contains(x, y) then 
-		ui_menu.show = false
+		game_menu.show = false
 		ui_log.show = true
 		return true
 	end
 	if sound_button:contains(x, y) then 
-		ui_menu.show = false
+		game_menu.show = false
 		ui_sound.show = true
 		return true
 	end
@@ -97,16 +97,16 @@ function ui_menu.on_touch(x, y)
 			app_fullscreen = true
 			fullscreen()
 		end
-		ui_menu.show = false
+		game_menu.show = false
 		return true
 	end
 	if exit_button:contains(x, y) then 
-		ui_menu.show = false
+		game_menu.show = false
 		dofile('title_screen.lua')
 		return true
 	end
 	return false
 end
 
-return ui_menu
+return game_menu
 
