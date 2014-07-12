@@ -31,7 +31,7 @@ function ui_log.draw()
 	local overlay_y = (design_height - overlay_h) / 2
 
         blendmode_blend()
-        set_draw_color(180, 180, 180, 180)
+        set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
         fill_rect(overlay_x, overlay_y, overlay_w, overlay_h)
 
 	local x = overlay_x + 30
@@ -41,11 +41,11 @@ function ui_log.draw()
 	local dy = 30
 
 	if item_index > 0 then
-		texture = item_font:text(items[item_index].n .. ':', dark)
+		texture = ui.overlay_text_font:text(items[item_index].n .. ':', ui.overlay_text_color)
 		texture:draw(x, y)
 		y = y + dy
 		for i, v in ipairs(items[item_index].d) do
-			texture = item_font:text(v, dark)
+			texture = ui.overlay_text_font:text(v, ui.overlay_text_color)
 			texture:draw(x, y)
 			y = y + dy
 		end
@@ -54,13 +54,13 @@ function ui_log.draw()
 	x = 250
 	y = overlay_h - 15
 	local dx = 220
-	texture = menu_font:text("BACK", black)
+	texture = ui.overlay_button_font:text("BACK", ui.overlay_text_color)
 	up_button = buttons.create_from_texture(texture, x, y)
 	x = x + dx
-	texture = menu_font:text("FORWARD", black)
+	texture = ui.overlay_button_font:text("FORWARD", ui.overlay_text_color)
 	down_button = buttons.create_from_texture(texture, x, y)
 	x = x + dx
-	texture = menu_font:text("EXIT", black)
+	texture = ui.overlay_button_font:text("EXIT", ui.overlay_text_color)
 	exit_button = buttons.create_from_texture(texture, x, y)
 
 	up_button   : draw()

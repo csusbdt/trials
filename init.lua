@@ -13,7 +13,7 @@ light = { r = 205, g = 205, b = 205 }
 
 gs = require('game_save')
 
-ui = {}
+ui = require('ui')
 --ui_log        = require('ui_log')
 --ui_background = require('ui_background')
 --ui_hud        = require('ui_hud')

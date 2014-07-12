@@ -22,13 +22,13 @@ local exit_button
 function ui_menu.draw()
 	-- Display overlay background.
 
-	local overlay_w = 300 -- 50 * 16
-	local overlay_h = 50 *  9
+	local overlay_w = 300
+	local overlay_h = 450
 	local overlay_x = (design_width  - overlay_w) / 2
 	local overlay_y = (design_height - overlay_h) / 2
 
         blendmode_blend()
-        set_draw_color(180, 180, 180, 180)
+        set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
         fill_rect(overlay_x, overlay_y, overlay_w, overlay_h)
 
 	local x = overlay_x + 30
@@ -36,27 +36,27 @@ function ui_menu.draw()
 
 	-- Create button images.
 
-	local resume_texture = menu_font:text("RESUME" , dark)
-	local save_texture   = menu_font:text("SAVE"   , dark)
-	local log_texture    = menu_font:text("LOG"    , dark)
-	local sound_texture  = menu_font:text("SOUND"  , dark)
+	local resume_texture = ui.overlay_button_font:text("RESUME", ui.overlay_text_color)
+	local save_texture   = ui.overlay_button_font:text("SAVE", ui.overlay_text_color)
+	local log_texture    = ui.overlay_button_font:text("LOG", ui.overlay_text_color)
+	local sound_texture  = ui.overlay_button_font:text("SOUND", ui.overlay_text_color)
 	local fullscreen_texture 
 	if app_fullscreen then
-		fullscreen_texture = menu_font:text("WINDOWED",  dark)
+		fullscreen_texture = ui.overlay_button_font:text("WINDOWED", ui.overlay_text_color)
 	else
-		fullscreen_texture = menu_font:text("FULLSCREEN",  dark)
+		fullscreen_texture = ui.overlay_button_font:text("FULLSCREEN", ui.overlay_text_color)
 	end
-	local exit_texture     = menu_font:text("EXIT",  dark)
+	local exit_texture = ui.overlay_button_font:text("EXIT", ui.overlay_text_color)
 
 	-- Create buttons.
 
 	local dy = 40
-	resume_button = buttons.create_from_texture(resume_texture, x, y) ; y = y + dy
-	save_button   = buttons.create_from_texture(save_texture, x, y)   ; y = y + dy
-	log_button    = buttons.create_from_texture(log_texture, x, y); y = y + dy
-	sound_button  = buttons.create_from_texture(sound_texture, x, y); y = y + dy
-	fullscreen_button = buttons.create_from_texture(fullscreen_texture, x, y); y = y + dy
-	exit_button = buttons.create_from_texture(exit_texture, x, y); y = y + dy
+	resume_button     = buttons.create_from_texture(resume_texture, x, y)     ; y = y + dy
+	save_button       = buttons.create_from_texture(save_texture, x, y)       ; y = y + dy
+	log_button        = buttons.create_from_texture(log_texture, x, y)        ; y = y + dy
+	sound_button      = buttons.create_from_texture(sound_texture, x, y)      ; y = y + dy
+	fullscreen_button = buttons.create_from_texture(fullscreen_texture, x, y) ; y = y + dy
+	exit_button       = buttons.create_from_texture(exit_texture, x, y)       ; y = y + dy
 
 	-- Draw buttons.
 
