@@ -1,14 +1,13 @@
-ui_menu.date    = "June 13 morning"
-ui_dialog.bg    = 'bg/schoolFiller.jpg'
-ui_dialog.lg    = 'lg/Damien.png'
-ui_dialog.sm    = 'sm/MC.png'
-ui_dialog.n     = 'CECILIA'
-ui_dialog.d     = { "I'm Cecilia.", "The hero of this story." }
-ui_log.add_dialog()
+ui.date  = "June 13 morning"
+ui.bg    = 'bg/schoolFiller.jpg'
+ui.lg    = 'lg/Damien.png'
+ui.sm    = 'sm/MC.png'
+ui.n     = 'CECILIA'
+ui.d     = { "I'm Cecilia.", "The hero of this story." }
 
-draw()
+ui_log.update()
 
-set_next({
+sequence({
 	{ n = 'DAMIEN', d = { "I'm Damien.", "The villain." } },
 	{ d = { "I am every where." }, lg = 'lg/DameAnnoy.png' },
 	{ n = 'CECILIA', d = { "OK." } },

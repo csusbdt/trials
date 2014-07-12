@@ -1,11 +1,22 @@
-if not sf.node then sf.node = 'nodes/start.lua' end
+local ui_hud        = require('ui_hud')
+local ui_log        = require('ui_log')
+local ui_sound      = require('ui_sound')
+local ui_menu       = require('ui_menu')
+local ui_choices    = require('ui_choices')
+local ui_background = require('ui_background')
 
 function draw()
 	set_draw_color(0, 0, 0, 255)
 	render_clear()
-	ui_dialog.draw()
-	ui_menu.draw()
-	ui_choices.draw()
+	ui_background.draw()
+	if ui_hud.show then 
+		ui_hud.draw() 
+		if ui.c then ui_choices.draw() end
+		if     ui_log.show   then ui_log.draw()
+		elseif ui_menu.show  then ui_menu.draw()
+		elseif ui_sound.show then ui_sound.draw()
+		end
+	end
 	render()
 end
 
@@ -13,50 +24,69 @@ function on_update()
 end
 
 function on_touch(x, y)
-	if not ui_choices.empty() then
-		if ui_choices.on_touch(x, y) then return true end
-	end
-	if ui_menu.on_touch(x, y) then
+	if not ui_hud.show then
+		ui_hud.show = true
+		draw()
 		return true
 	end
-	if ui_choices.empty() and ui_dialog.on_touch(x, y) then
-		return true
+	if ui_log.show then
+		if ui_log.on_touch(x, y) then draw() end
+		return true 
+	end
+	if ui_sound.show then
+		if ui_sound.on_touch(x, y) then draw() end
+		return true 
+	end
+	if ui_menu.show then
+		if ui_menu.on_touch(x, y) then 
+			draw()
+			return true
+		end
+	end
+	if ui_hud.on_touch(x, y) then
+		draw()
+		return true 
 	end
 	return false
 end
 
-local s
-local i = 1
-
 local function next_function()
-	if i > #s then msgbox("Next goes nowhere."); return end
-	if s[i].date then ui_menu.date = s[i].date end
-	if s[i].bg then ui_dialog.bg = s[i].bg end
-	if s[i].lg then ui_dialog.lg = s[i].lg end
-	if s[i].sm then ui_dialog.sm = s[i].sm end
-	if s[i].n then ui_dialog.n = s[i].n end
-	if s[i].d then ui_dialog.d = s[i].d; ui_log.add_dialog() end
-	if s[i].next then next = s[i].next end
-	ui_choices.c = s[i].c
-	if s[i].m then ui_dialog.m = s[i].m end
-	music.set(ui_dialog.m)
-	i = i + 1
+	if ui.i > #ui.s then msgbox("Next goes nowhere."); return end
+	local d = ui.s[ui.i]
+	ui.date = d.date or ui.date
+	ui.bg = d.bg or ui.bg
+	ui.lg = d.lg or ui.lg
+	ui.sm = d.sm or ui.sm
+	ui.n = d.n or ui.n
+	ui.d = d.d
+	if ui.d then ui_log.update() end
+	next = d.next or next
+	ui.c = d.c
+	ui.m = d.m or ui.m
+	music.set(ui.m)
+	ui.i = ui.i + 1
+end
+
+function sequence(seq)
+	ui.i = 1
+	ui.s = seq
+	next = next_function
 end
 
 function next_node_function(node)
 	return function()
-		sf.node = node
-		ui_dialog.c = nil
+		gs.node = node
+		ui.c = nil
 		dofile(node)
-		music.set(ui_dialog.m)
+		music.set(ui.m)
 	end
 end
 
-function set_next(sequence)
-	i = 1
-	s = sequence
-	next = next_function
+if ui.s and ui.i and ui.i <= #ui.s then
+	-- We are continuing from where we left off.
+else
+	-- Need to run the next node.
+	dofile(gs.node)
 end
-
-dofile(sf.node)
+draw()
 

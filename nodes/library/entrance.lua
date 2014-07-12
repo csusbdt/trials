@@ -1,14 +1,14 @@
-ui_menu.date    = "June 12 afternoon"
-ui_dialog.bg    = 'bg/schoolFiller.jpg'
-ui_dialog.lg    = 'lg/Ruby.png'
-ui_dialog.sm    = 'sm/MC.png'
-ui_dialog.n	= 'RUBY'
-ui_dialog.d     = { "Hi." }
-ui_dialog.m     = 'music/Overworld.wav'
+ui.date  = "June 12 afternoon"
+ui.bg    = 'bg/schoolFiller.jpg'
+ui.lg    = 'lg/Ruby.png'
+ui.sm    = 'sm/MC.png'
+ui.n     = 'RUBY'
+ui.d     = { "Hi." }
+ui.m     = 'music/Overworld.wav'
 
-draw()
+ui_log.update()
 
-set_next({
+sequence({
 	{ d = { "I saw you from the second floor." } },
 	{ d = { "I came down to talk to you about something." } },
 	{ d = { "So what are you doing in the library?" } },
