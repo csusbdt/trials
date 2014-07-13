@@ -1,5 +1,5 @@
 local ui_hud        = require('ui_hud')
-local ui_log        = require('ui_log')
+local game_log        = require('game_log')
 local ui_sound      = require('ui_sound')
 local game_menu       = require('game_menu')
 local game_choices    = require('game_choices')
@@ -12,7 +12,7 @@ function draw()
 	if ui_hud.show then 
 		ui_hud.draw() 
 		if ui.c then game_choices.draw() end
-		if     ui_log.show   then ui_log.draw()
+		if     game_log.show   then game_log.draw()
 		elseif game_menu.show  then game_menu.draw()
 		elseif ui_sound.show then ui_sound.draw()
 		end
@@ -29,8 +29,8 @@ function on_touch(x, y)
 		draw()
 		return true
 	end
-	if ui_log.show then
-		if ui_log.on_touch(x, y) then draw() end
+	if game_log.show then
+		if game_log.on_touch(x, y) then draw() end
 		return true 
 	end
 	if ui_sound.show then
@@ -59,7 +59,7 @@ local function next_function()
 	ui.sm = d.sm or ui.sm
 	ui.n = d.n or ui.n
 	ui.d = d.d
-	if ui.d then ui_log.update() end
+	if ui.d then game_log.update() end
 	next = d.next or next
 	ui.c = d.c
 	ui.m = d.m or ui.m

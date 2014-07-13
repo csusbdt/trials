@@ -1,4 +1,4 @@
-ui_log = {}
+game_log = {}
 
 local item_font = fonts.create("fonts/CaviarDreams.ttf", 22)
 local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
@@ -11,7 +11,7 @@ local max_items = 20
 local items = {}
 local item_index = 0
 
-function ui_log.update()
+function log()
 	local item = {
 		n = ui.n or '', 
 		d = ui.d or ''
@@ -21,7 +21,7 @@ function ui_log.update()
 	item_index = #items
 end
 
-function ui_log.draw()
+function game_log.draw()
 
 	-- Display overlay background.
 
@@ -68,7 +68,7 @@ function ui_log.draw()
 	exit_button : draw()
 end
 
-function ui_log.on_touch(x, y)
+function game_log.on_touch(x, y)
 	if up_button:contains(x, y) then
 		if item_index > 1 then item_index = item_index - 1 end
 		return true
@@ -76,11 +76,11 @@ function ui_log.on_touch(x, y)
 		if item_index < #items then item_index = item_index + 1 end
 		return true
 	elseif exit_button:contains(x, y) then 
-		ui_log.show = false
+		game_log.show = false
 		return true
 	end
 	return false
 end
 
-return ui_log
+return game_log
 

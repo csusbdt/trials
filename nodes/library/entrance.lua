@@ -6,7 +6,7 @@ ui.n     = 'RUBY'
 ui.d     = { "Hi." }
 ui.m     = 'music/Overworld.wav'
 
-ui_log.update()
+log()
 
 sequence({
 	{ d = { "I saw you from the second floor." } },

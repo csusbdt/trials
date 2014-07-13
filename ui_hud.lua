@@ -6,7 +6,7 @@ local ui_hud = { show = true }
 local game_background = require('game_background')
 local game_menu       = require('game_menu')
 local game_choices    = require('game_choices')
-local ui_log        = require('ui_log')
+--local game_log        = require('game_log')
 local ui_sound      = require('ui_sound')
 
 local name_font   = fonts.create("fonts/CaviarDreams.ttf", 30)

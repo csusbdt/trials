@@ -8,7 +8,7 @@ local game_menu = {}
 -- exit - transitions to title screen
 
 local ui_sound = require('ui_sound')
-local ui_log   = require('ui_log')
+local game_log   = require('game_log')
 
 local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
 
@@ -81,7 +81,7 @@ function game_menu.on_touch(x, y)
 	end
 	if log_button:contains(x, y) then 
 		game_menu.show = false
-		ui_log.show = true
+		game_log.show = true
 		return true
 	end
 	if sound_button:contains(x, y) then 
