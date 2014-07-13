@@ -179,10 +179,12 @@ function on_touch(x, y)
 		draw()
 		return true
 	end
-	if ui.c then
+	if ui.c and #ui.c > 0 then 
 		if game_choices.on_touch(x, y) then
 			draw()
 			return true
+		else
+			return false
 		end
 	end
 	next()
