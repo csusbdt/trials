@@ -3,12 +3,12 @@ local ui_log        = require('ui_log')
 local ui_sound      = require('ui_sound')
 local game_menu       = require('game_menu')
 local ui_choices    = require('ui_choices')
-local ui_background = require('ui_background')
+local game_background = require('game_background')
 
 function draw()
 	set_draw_color(0, 0, 0, 255)
 	render_clear()
-	ui_background.draw()
+	game_background.draw()
 	if ui_hud.show then 
 		ui_hud.draw() 
 		if ui.c then ui_choices.draw() end

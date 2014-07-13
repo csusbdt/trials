@@ -3,7 +3,7 @@ local ui_hud = { show = true }
 -- d  = array of dialog objects
 -- date = date to display
 
-local ui_background = require('ui_background')
+local game_background = require('game_background')
 local game_menu       = require('game_menu')
 local ui_log        = require('ui_log')
 local ui_sound      = require('ui_sound')
@@ -99,7 +99,7 @@ function ui_hud.draw()
 	hide_button = buttons.create_from_texture(hide_texture, x, diamond_y)
 	hide_button:draw()
 
-	ui_background.draw_sm()
+	game_background.draw_sm()
 end
 
 function ui_hud.on_touch(x, y)
