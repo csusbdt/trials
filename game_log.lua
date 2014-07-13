@@ -76,7 +76,7 @@ function game_log.on_touch(x, y)
 		if item_index < #items then item_index = item_index + 1 end
 		return true
 	elseif exit_button:contains(x, y) then 
-		game_log.show = false
+		ui.overlay = 'none'
 		return true
 	end
 	return false

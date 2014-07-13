@@ -153,17 +153,17 @@ function on_touch(x, y)
 	if ui.overlay == 'menu' then
 		if game_menu.on_touch(x, y) then 
 			draw()
-			return true
 		elseif menu_button:contains(x, y) then
 			ui.overlay = 'none'
 			draw()
-			return true
 		end
+		return true
 	end
 	if ui.overlay == 'log' then
-		ui.overlay = 'none'
-		if game_log.on_touch(x, y) then draw() end
-		return true 
+		if game_log.on_touch(x, y) then
+			draw()
+		end
+		return true
 	end
 	if ui.overlay == 'sound' then
 		if game_sound.on_touch(x, y) then draw() end
