@@ -7,7 +7,7 @@ local game_menu = {}
 -- sound - displays music and sound effects adjustment popup
 -- exit - transitions to title screen
 
-local ui_sound = require('ui_sound')
+local game_sound = require('game_sound')
 local game_log   = require('game_log')
 
 local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
@@ -86,7 +86,7 @@ function game_menu.on_touch(x, y)
 	end
 	if sound_button:contains(x, y) then 
 		game_menu.show = false
-		ui_sound.show = true
+		game_sound.show = true
 		return true
 	end
 	if fullscreen_button:contains(x, y) then 

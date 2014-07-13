@@ -6,8 +6,7 @@ local ui_hud = { show = true }
 local game_background = require('game_background')
 local game_menu       = require('game_menu')
 local game_choices    = require('game_choices')
---local game_log        = require('game_log')
-local ui_sound      = require('ui_sound')
+local game_sound      = require('game_sound')
 
 local name_font   = fonts.create("fonts/CaviarDreams.ttf", 30)
 local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 18)
@@ -115,7 +114,7 @@ function ui_hud.on_touch(x, y)
 		return true
 	end
 	if game_menu.show then return false end
-	if ui_sound.show then return false end
+	if game_sound.show then return false end
 	if ui.c then
 		if game_choices.on_touch(x, y) then
 			draw()

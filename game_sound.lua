@@ -1,11 +1,11 @@
-ui_sound = {}
+game_sound = {}
 
 local item_font = fonts.create("fonts/CaviarDreams.ttf", 22)
 local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
 
 local exit_button 
 
-function ui_sound.draw()
+function game_sound.draw()
 
 	-- Display overlay background.
 
@@ -34,13 +34,13 @@ function ui_sound.draw()
 	exit_button : draw()
 end
 
-function ui_sound.on_touch(x, y)
+function game_sound.on_touch(x, y)
 	if exit_button:contains(x, y) then 
-		ui_sound.show = false
+		game_sound.show = false
 		return true
 	end
 	return false
 end
 
-return ui_sound
+return game_sound
 
