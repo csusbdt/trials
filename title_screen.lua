@@ -49,6 +49,7 @@ end
 
 function on_touch(x, y)
 	if new_game_button:contains(x, y) then 
+		gs.clear()
 		gs.node = 'nodes/start.lua'
 		dofile('game_screen.lua')
 	elseif load_button:contains(x, y) then 

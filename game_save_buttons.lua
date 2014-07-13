@@ -16,6 +16,7 @@ end
 
 function game_save_button_mt:touch()
 	if ui.game_save_mode == 'loading' then
+		ui.reset()
 		gs.load(self.n)
 		dofile('game_screen.lua')
 	elseif ui.game_save_mode == 'saving' then

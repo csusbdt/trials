@@ -5,10 +5,14 @@ mt.__index = mt
 
 setmetatable(gs, mt)
 
-function mt.load(n)
+function mt.clear()
 	for k in pairs(gs) do
 		gs[k] = nil
 	end
+end
+
+function mt.load(n)
+	mt.clear()
 	local data_string = read_file('save_' .. n) 
 	if not data_string then
 		gs.node = 'nodes/start.lua'

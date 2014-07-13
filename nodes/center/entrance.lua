@@ -6,7 +6,7 @@ ui.n     = 'RUBY'
 ui.d     = { "Hi." }
 ui.m     = nil
 
-ui_log.update()
+log()
 
 sequence({
 	{ d = { "Good idea to get away fro the at creep." } },
