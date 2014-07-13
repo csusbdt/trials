@@ -70,26 +70,25 @@ end
 
 function game_menu.on_touch(x, y)
 	if resume_button:contains(x, y) then
-		game_menu.show = false
+		ui.overlay = 'none'
 		return true
 	end
 	if save_button:contains(x, y) then 
-		game_menu.show = false
+		ui.overlay = 'none'
 		ui.game_save_mode = 'saving'
 		dofile('game_save_screen.lua')
 		return true
 	end
 	if log_button:contains(x, y) then 
-		game_menu.show = false
-		game_log.show = true
+		ui.overlay = 'log'
 		return true
 	end
 	if sound_button:contains(x, y) then 
-		game_menu.show = false
-		game_sound.show = true
+		ui.overlay = 'sound'
 		return true
 	end
 	if fullscreen_button:contains(x, y) then 
+		ui.overlay = 'none'
 		if app_fullscreen then
 			app_fullscreen = false
 			windowed()
@@ -97,11 +96,10 @@ function game_menu.on_touch(x, y)
 			app_fullscreen = true
 			fullscreen()
 		end
-		game_menu.show = false
 		return true
 	end
 	if exit_button:contains(x, y) then 
-		game_menu.show = false
+		ui.overlay = 'none'
 		dofile('title_screen.lua')
 		return true
 	end

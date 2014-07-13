@@ -7,7 +7,8 @@ local ui = {
 	overlay_text_color   = { r = 200, g = 200, b = 200, a = 255 },
 	overlay_text_font    = fonts.create("fonts/CaviarDreams.ttf", 22),
 	overlay_button_font  = fonts.create("fonts/CaviarDreams.ttf", 24),
-	background_only      = true
+	background_only      = false,
+	overlay              = 'none'
 }
 
 local function next_function()

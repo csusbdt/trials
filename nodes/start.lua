@@ -5,7 +5,7 @@ ui.sm    = 'sm/MC.png'
 ui.n     = 'CECILIA'
 ui.d     = { "I'm Cecilia.", "The hero of this story." }
 
-ui_log.update()
+log()
 
 sequence({
 	{ n = 'DAMIEN', d = { "I'm Damien.", "The villain." } },

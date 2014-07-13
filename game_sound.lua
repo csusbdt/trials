@@ -36,7 +36,7 @@ end
 
 function game_sound.on_touch(x, y)
 	if exit_button:contains(x, y) then 
-		game_sound.show = false
+		ui.overlay = 'none'
 		return true
 	end
 	return false
