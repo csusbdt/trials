@@ -7,8 +7,8 @@ local mt = {
 	overlay_a            = 225,
 	overlay_button_color = { r = 200, g = 200, b = 200, a = 255 },
 	overlay_text_color   = { r = 200, g = 200, b = 200, a = 255 },
-	overlay_text_font    = fonts.create("fonts/CaviarDreams.ttf", 22),
-	overlay_button_font  = fonts.create("fonts/CaviarDreams.ttf", 24),
+	overlay_text_font    = fonts.create("fonts/CaviarDreams.ttf", 45),
+	overlay_button_font  = fonts.create("fonts/CaviarDreams.ttf", 60),
 	background_only      = false,
 	overlay              = 'none'
 }

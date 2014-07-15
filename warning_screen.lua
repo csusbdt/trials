@@ -4,9 +4,9 @@ local statement_texture_2
 local ok_button
 local exit_button
 
-local warning_font   = fonts.create("fonts/CaviarDreams.ttf", 40)
-local statement_font = fonts.create("fonts/CaviarDreams.ttf", 30)
-local button_font    = fonts.create("fonts/CaviarDreams.ttf", 40)
+local warning_font   = fonts.create("fonts/CaviarDreams.ttf", 120)
+local statement_font = fonts.create("fonts/CaviarDreams.ttf", 72)
+local button_font    = fonts.create("fonts/CaviarDreams.ttf", 90)
 
 function draw()
 	set_draw_color(40, 40, 40, 255)
@@ -22,20 +22,20 @@ function draw()
 
 	-- Render textures and buttons.
 
-	local x  = 100
-	local y  = 100
+	local x  = (design_width - warning_texture.w) / 2
+	local y  = 200
 	warning_texture:draw(x, y)
 
-	x = 50
-	y = y + 100
+	x  = (design_width - statement_texture_1.w) / 2
+	y = y + 300
 	statement_texture_1:draw(x, y)
-	y = y + 50
+	y = y + 100
 	statement_texture_2:draw(x, y)
 
-	x = 100
-	y = y + 100
+	x = design_width / 3 - ok_texture.w / 2
+	y = y + 300
 	ok_button = buttons.create_from_texture(ok_texture, x, y)
-	x = 300
+	x = 2 * design_width / 3 - exit_texture.w / 2
 	exit_button = buttons.create_from_texture(exit_texture, x, y)
 
 	ok_button:draw()

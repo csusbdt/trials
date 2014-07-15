@@ -1,6 +1,6 @@
 ui.date  = "June 13 morning"
-ui.bg    = 'bg/schoolFiller.jpg'
-ui.lg    = 'lg/Damien.png'
+ui.bg    = 'bg/cecilias_room.jpg'
+ui.lg    = 'lg/ghost_smile.png'
 ui.sm    = 'sm/MC.png'
 ui.n     = 'CECILIA'
 ui.d     = { "I'm Cecilia.", "The hero of this story." }

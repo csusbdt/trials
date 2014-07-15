@@ -10,8 +10,6 @@ local game_menu = {}
 local game_sound = require('game_sound')
 local game_log   = require('game_log')
 
-local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
-
 local resume_button
 local save_button
 local log_button
@@ -22,8 +20,8 @@ local exit_button
 function game_menu.draw()
 	-- Display overlay background.
 
-	local overlay_w = 300
-	local overlay_h = 450
+	local overlay_w = 700
+	local overlay_h = 1000
 	local overlay_x = (design_width  - overlay_w) / 2
 	local overlay_y = (design_height - overlay_h) / 2
 
@@ -31,8 +29,8 @@ function game_menu.draw()
         set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
         fill_rect(overlay_x, overlay_y, overlay_w, overlay_h)
 
-	local x = overlay_x + 30
-	local y = overlay_y + 30
+	local x = overlay_x + 100
+	local y = overlay_y + 70
 
 	-- Create button images.
 
@@ -50,7 +48,7 @@ function game_menu.draw()
 
 	-- Create buttons.
 
-	local dy = 40
+	local dy = resume_texture.h + 16
 	resume_button     = buttons.create_from_texture(resume_texture, x, y)     ; y = y + dy
 	save_button       = buttons.create_from_texture(save_texture, x, y)       ; y = y + dy
 	log_button        = buttons.create_from_texture(log_texture, x, y)        ; y = y + dy

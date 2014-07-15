@@ -1,4 +1,4 @@
-local button_font = fonts.create("fonts/CaviarDreams.ttf", 36)
+local button_font = fonts.create("fonts/CaviarDreams.ttf", 82)
 
 local new_game_button
 local load_button
@@ -20,9 +20,9 @@ function draw()
 
 	-- Create buttons.
 
-	local x  = 100
-	local y  = 100
-	local dy =  60
+	local x  = design_width / 2 - new_game_texture.w / 2
+	local y  = 400
+	local dy =  new_game_texture.h + 20
 	new_game_button = buttons.create_from_texture(new_game_texture, x, y)
 	y = y + dy
 	load_button = buttons.create_from_texture(load_texture, x, y)

@@ -2,7 +2,7 @@ local game_choices = {}
 -- c is an array of choice objects
 -- a choice object is { t = text, f = click handler } where f can be nil
 
-local choice_font = fonts.create("fonts/Delicious-Roman.otf", 24)
+local choice_font = fonts.create("fonts/Delicious-Roman.otf", 70)
 
 local choice_buttons = nil
 
@@ -10,9 +10,9 @@ function game_choices.draw()
 	if #ui.c > 3 then mgbox("Too many choices."); return end
 
 	choice_buttons = {}
-	local x  = 100
-	local y  = 100
-	local dy =  30
+	local x  = 300
+	local y  = 200
+	local dy =  90
 	for i, v in ipairs(ui.c) do
 		local texture = choice_font:text(v.t, black)
 		choice_buttons[i] = buttons.create_from_texture(texture, x, y)
