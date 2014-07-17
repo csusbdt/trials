@@ -1,4 +1,4 @@
-ui.date  = "June 12 afternoon"
+ui.date  = "June 16 afternoon"
 ui.bg    = 'bg/schoolFiller.jpg'
 ui.lg    = 'lg/Ruby.png'
 ui.sm    = 'sm/MC.png'

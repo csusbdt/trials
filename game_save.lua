@@ -33,6 +33,7 @@ function mt.save(n)
 	if app_print_savefile then _G.print('game save = ' .. (data_string or '')) end
 	write_file('save_' .. n, data_string)
 	sf['save_bg_' .. n] = ui.bg
+	sf['save_date_' .. n] = ui.date
 end
 
 return gs

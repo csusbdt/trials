@@ -1,8 +1,6 @@
 local game_save_buttons    = require('game_save_buttons')
 local game_save_overwrite  = require('game_save_overwrite')
 
-local button_font = fonts.create("fonts/CaviarDreams.ttf", 32)
-
 local exit_button
 
 local btns = {}
@@ -13,11 +11,11 @@ function draw()
 
 	-- Create textures.
 
-	local exit_texture = button_font:text("EXIT" , light)
+	local exit_texture = ui.overlay_button_font:text("EXIT" , light)
 
 	-- Create buttons.
 
-	exit_button = buttons.create_from_texture(exit_texture, 50, design_height - 60)
+	exit_button = buttons.create_from_texture(exit_texture, exit_texture.w * .618, design_height - exit_texture.h * 1.618)
 	btns = game_save_buttons.create_buttons()
 
 	-- Render textures and buttons.

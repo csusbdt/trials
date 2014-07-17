@@ -1,9 +1,12 @@
 local game_save_overwrite  = require('game_save_overwrite')
 
 local game_save_button_mt = {
-	w = 16 * 25, 
-	h = 9 * 25
+	w = design_width * .35,
+	h = design_height * .35
 }
+
+local hspace = design_width * .30 / 3
+local vspace = design_height * .30 / 3
 
 local new_texture
 local save_texture
@@ -26,29 +29,44 @@ function game_save_button_mt:touch()
 end
 
 function game_save_button_mt:draw()
-	local btn_font = fonts.create("fonts/CaviarDreams.ttf", 40)
-	local k = 'save_bg_' .. self.n
-	if not sf[k] then
+	local texture
+	local x
+	local y
+	local btn_font = fonts.create("fonts/CaviarDreams.ttf", 70)
+	local date_font = fonts.create("fonts/CaviarDreams.ttf", 52)
+	local bg = 'save_bg_' .. self.n
+	local date = 'save_date_' .. self.n
+	if not sf[bg] then
 		set_draw_color(155, 60, 60, 255)
 		fill_rect(self.x, self.y, self.w, self.h)
 		if ui.game_save_mode == 'saving' then 
-			save_texture = btn_font:text("Save new", light)
+			save_texture = btn_font:text("NEW SAVE", light)
+			x = self.x + self.w / 2 - save_texture.w / 2
+			y = self.y + self.h / 2 - save_texture.h / 2
+			save_texture:draw(x, y)
 		elseif ui.game_save_mode == 'loading' then
-			new_texture = btn_font:text("New game", light)
+			new_texture = btn_font:text("NEW GAME", light)
+			x = self.x + self.w / 2 - new_texture.w / 2
+			y = self.y + self.h / 2 - new_texture.h / 2
+			new_texture:draw(x, y)
 		else
 			msgbox('ui.game_save_mode not set for game_save_button.lua')
 		end
 	else
-		local texture = textures.image(sf[k])
+		texture = textures.image(sf[bg])
 		texture:draw(self.x, self.y, self.w, self.h)
+	end
+	if sf[date] then
+		texture = date_font:text(sf[date], light)
+		texture:draw(self.x + 10, self.y + self.h + 10)
 	end
 end
 
 local function create_button(n)
-	local x = 25
-	local y = 25
-	local dx = game_save_button_mt.w + 25
-	local dy = game_save_button_mt.h + 25
+	local x = hspace
+	local y = 20
+	local dx = game_save_button_mt.w + hspace
+	local dy = game_save_button_mt.h + vspace
 	local b = { n = n }
 	if n == 1 then b.x = x;      b.y = y      end
 	if n == 2 then b.x = x + dx; b.y = y      end
