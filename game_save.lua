@@ -5,6 +5,13 @@ mt.__index = mt
 
 setmetatable(gs, mt)
 
+local function file_exists(filename)
+        local file = io.open(filename, 'r')
+        if not file then return false end
+        io.close(file)
+        return true
+end
+
 function mt.clear()
 	for k in pairs(gs) do
 		gs[k] = nil
@@ -13,25 +20,38 @@ end
 
 function mt.load(n)
 	mt.clear()
-	local data_string = read_file('save_' .. n) 
-	if not data_string then
+        local filename = save_dir .. path_separator .. 'save_' .. n, 'r'
+        if not file_exists(filename) then 
 		gs.node = 'nodes/start.lua'
-		return
+		return 
 	end
-	for k, v in string.gmatch(data_string, "([%-_%w]+)=([%/%-_%w%.]+)") do
-		gs[k] = v
-	end
+        local k = nil
+        for line in io.lines(filename) do
+                if k then
+                        gs[k] = line
+                        k = nil
+                else   
+                        k = line
+                end
+        end
 end
 
 function mt.save(n)
-	local data_string 
-	for k, v in pairs(gs) do
-		data_string = data_string and data_string .. ','
-		data_string = data_string or ''
-		data_string = data_string .. k .. '=' .. v
-	end
-	if app_print_savefile then _G.print('game save = ' .. (data_string or '')) end
-	write_file('save_' .. n, data_string)
+        local filename = save_dir .. path_separator .. 'save_' .. n, 'r'
+        local file, err = io.open(filename, 'w')
+        if err then
+                msgbox('Error in game_save.save:\n' .. err)
+                quit()
+        end
+        for k, v in pairs(gs) do
+                if string.find(k, '\n') or string.find(v, '\n') then
+                        msgbox('Can not store newline characters in game save files.')
+                        quit()
+                end
+                file:write(k .. '\n')
+                file:write(v .. '\n')
+        end
+        file:close()
 	sf['save_bg_' .. n] = ui.bg
 	sf['save_date_' .. n] = ui.date
 end
