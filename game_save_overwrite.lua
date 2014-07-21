@@ -1,8 +1,5 @@
 ui_overwrite = {}
 
---local question_font = fonts.create("fonts/CaviarDreams.ttf", 22)
---local button_font = fonts.create("fonts/CaviarDreams.ttf", 24)
-
 local question_texture
 local ok_button 
 local cancel_button 
@@ -19,22 +16,22 @@ function ui_overwrite.draw()
 	local overlay_y = (design_height - overlay_h) / 2
 
         blendmode_blend()
-        set_draw_color(180, 180, 180, 180)
+        set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
         fill_rect(overlay_x, overlay_y, overlay_w, overlay_h)
 
-	question_texture = ui.overlay_text_font:text("Do you wish to overwrite existing save file?", dark)
+	question_texture = ui.overlay_text_font:text("Do you wish to overwrite existing save file?", ui.overlay_text_color)
 	x = overlay_x + overlay_w / 2 - question_texture.w / 2
 	y = overlay_y + overlay_h / 4
 	question_texture:draw(x, y)
 
 	local texture
-	texture = ui.overlay_button_font:text("OK", dark)
+	texture = ui.overlay_button_font:text("OK", ui.overlay_button_color)
 	y = overlay_y + 5 * overlay_h / 8
 	x = overlay_x + overlay_w / 3 - texture.w / 2
 	ok_button = buttons.create_from_texture(texture, x, y)
 	ok_button : draw()
 
-	texture = ui.overlay_button_font:text("CANCEL", dark)
+	texture = ui.overlay_button_font:text("CANCEL", ui.overlay_button_color)
 	x = overlay_x + 2 * overlay_w / 3 - texture.w / 2
 	cancel_button = buttons.create_from_texture(texture, x, y)
 	cancel_button : draw()
