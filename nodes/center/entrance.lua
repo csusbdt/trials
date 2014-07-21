@@ -1,5 +1,5 @@
 ui.date  = "June 13 afternoon"
-ui.bg    = 'bg/schoolFiller.jpg'
+ui.bg    = 'bg/cecilias_room_day.jpg'
 ui.lg    = 'lg/Ruby.png'
 ui.sm    = 'sm/MC.png'
 ui.n     = 'RUBY'
