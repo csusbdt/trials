@@ -28,15 +28,25 @@ local function draw_bg()
 end
 
 local function draw_lg()
+	if not ui.lg or string.len(ui.lg) == 0 then
+		blendmode_blend()
+		set_draw_color(0, 0, 0, 55)
+		fill_rect(1600, 140, 800, 1200)
+	end
 	if not ui.lg or string.len(ui.lg) == 0 then return end
 	lg_texture = textures.image(ui.lg)
-	lg_texture:draw(1800, 0)
+	lg_texture:draw(1600, 140)
 end
 
 local function draw_sm()
+	if not ui.sm or string.len(ui.sm) == 0 then
+		blendmode_blend()
+		set_draw_color(0, 0, 0, 55)
+		fill_rect(170, 740, 400, 600)
+	end
 	if not ui.sm or string.len(ui.sm) == 0 then return end
 	sm_texture = textures.image(ui.sm)
-	sm_texture:draw(170, 700)
+	sm_texture:draw(170, 740)
 end
 
 local function draw_main()

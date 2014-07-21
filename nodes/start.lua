@@ -9,7 +9,8 @@ log()
 
 sequence({
 	{ n = 'DAMIEN', d = { "I'm Damien.", "The villain." } },
-	{ d = { "I am every where." }, lg = 'lg/DameAnnoy.png' },
+	{ n = 'SYSTEM', d = { "Portrait test.", "sm = 400 x 600", "lg = 600 x 1200" }, lg = '', sm = '' }, 
+	{ d = { "I am every where." }, sm = 'sm/MC.png', lg = 'lg/DameAnnoy.png' },
 	{ n = 'CECILIA', d = { "OK." } },
 	{ d = { "Bye." }, next = next_node_function('nodes/library/entrance.lua') }
 })
