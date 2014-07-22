@@ -28,5 +28,6 @@ dark  = { r =  40, g =  40, b =  40 }
 light = { r = 205, g = 205, b = 205 }
 
 dofile('util/time_functions.lua')
+dofile('util/node_functions.lua')
 dofile('warning_screen.lua')
 

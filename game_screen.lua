@@ -197,6 +197,7 @@ function on_touch(x, y)
 	end
 	if ui.c and #ui.c > 0 then 
 		if game_choices.on_touch(x, y) then
+			next()
 			draw()
 			return true
 		else
@@ -212,7 +213,8 @@ if ui.s and ui.i and ui.i <= #ui.s then
 	-- We are continuing from where we left off.
 else
 	-- Need to run the next node.
-	dofile(gs.node)
+	gonode(gs.node)
+	next()
 end
 
 draw()
