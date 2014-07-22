@@ -22,7 +22,9 @@ function mt.load(n)
 	mt.clear()
         local filename = save_dir .. path_separator .. 'save_' .. n, 'r'
         if not file_exists(filename) then 
+		-- Initialize story node.
 		gs.node = 'nodes/start.lua'
+
 		return 
 	end
         local k = nil

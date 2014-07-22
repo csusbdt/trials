@@ -1,10 +1,11 @@
-ui.date  = "June 16 afternoon"
 ui.bg    = 'bg/cecilias_room_night.jpg'
 ui.lg    = 'lg/ghost_smile.png'
 ui.sm    = 'sm/MC.png'
 ui.n     = 'RUBY'
 ui.d     = { "Hi." }
 ui.m     = 'music/Overworld.wav'
+
+next_time()
 
 log()
 

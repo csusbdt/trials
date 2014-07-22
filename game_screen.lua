@@ -90,7 +90,12 @@ end
 local function draw_date()
 	white_diamond_texture = textures.image('gui/UI-diamond-white.png')
 	local space = 26
-	local date_texture = date_font:text(ui.date, white)
+	local date = 
+		(gs.dow or '?') .. ' ' .. 
+		(gs.time or '?') .. ', ' .. 
+		(gs.month or '?') .. ' ' .. 
+		(gs.day or '?')
+	local date_texture = date_font:text(date, white)
 	local x = 340 - (white_diamond_texture.w + space + date_texture.w) / 2
 	local date_y = bar_y + date_texture.h / 2 + 0 -- adjust down a little
 	local diamond_y = bar_y + bar_texture.h / 2 - white_diamond_texture.h / 2
@@ -137,7 +142,7 @@ function draw()
 	if ui.c and #ui.c > 0 then draw_choices() end
 
 	draw_bar()
-	if ui.date and string.len(ui.date) > 0 then draw_date() end
+	draw_date()
 	draw_menu_button()
 	draw_hide_button()
 

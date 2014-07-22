@@ -1,4 +1,20 @@
-ui.date  = "June 13 morning"
+-- Initialize game states.
+
+-- Initialize dispositions.
+gs.kaira   = 0
+gs.ruby    = 0
+gs.lily    = 0
+gs.damien  = 0
+gs.wilhelm = 0
+gs.jessie  = 0
+gs.erika   = 0
+
+-- Initialize date and time.
+gs.month = 'Sep'
+gs.day   = 12
+gs.dow   = 'Mon'
+gs.time  = 'morning'
+
 ui.bg    = 'bg/cecilias_room_day.jpg'
 ui.lg    = 'lg/ghost_shock.png'
 ui.sm    = 'sm/MC.png'
