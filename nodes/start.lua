@@ -54,7 +54,7 @@ return {
 		d = { "The strange girl notices her broken vase and starts to cry." },
 		c = choices
 	},
-	{ d = { "I'm sorry." }, sm = 'sm/MC.png' },
+	{ n = 'CECILIA', d = { "I'm sorry." }, sm = 'sm/MC.png' },
 	{ d = { "I see that I broke your vase." } },
 	{ 
 		f = function() 

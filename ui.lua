@@ -10,7 +10,10 @@ local mt = {
 	overlay_text_font    = fonts.create("fonts/CaviarDreams.ttf", 45),
 	overlay_button_font  = fonts.create("fonts/CaviarDreams.ttf", 60),
 	background_only      = false,
-	overlay              = 'none'
+	overlay              = 'none',
+	bg                   = '',
+	lg                   = '',
+	sm                   = ''
 }
 
 mt.__index = mt
