@@ -34,7 +34,7 @@ return {
 		d  = { "Cecilia is running down the street, late for class as normal." }
 	},
 	{ d = { "Normally, this wouldn’t bother her,", "but if one is late for class the first day,", "you get dropped." } },
-	{ d = { "She accidentally bumps into a strange girl." } },
+	{ d = { "She accidentally bumps into a strange girl." }, lg = 'lg/ghost_shock.png' },
 	{ d = { "Cecilia didn't notice at the time, but she broke the girl's vase." } },
 	{ n = 'STRANGE GIRL', d = { "Owww...." } },
 	{ 
@@ -55,7 +55,7 @@ return {
 		c = choices
 	},
 	{ n = 'CECILIA', d = { "I'm sorry." }, sm = 'sm/MC.png' },
-	{ d = { "I see that I broke your vase." } },
+	{ d = { "I see that I broke your vase." }, lg = 'lg/ghost_smile.png' },
 	{ 
 		f = function() 
 			ui.reset()
@@ -64,38 +64,4 @@ return {
 		end
 	}
 }
-
---[[
--- Normal node initialization.
-ui.bg    = 'bg/cecilias_room_day.jpg'
-ui.lg    = ''
-ui.sm    = 'sm/MC.png'
-ui.n     = ''
-ui.d     = { "Cecilia is running down the street, late for class as normal." }
-
-local function apologize()
-	gs.ruby = -40
-	gonode("nodes/physics.lua")
-end
-
-sequence({
-	{ d = { "Normally, this wouldn’t bother her,", "but if one is late for class the first day,", "you get dropped." } },
-	{ d = { "She accidentally bumps into a strange girl." } },
-	{ d = { "Cecilia didn't notice at the time, but she broke the girl's vase." } },
-	{ n = 'STRANGE GIRL', d = { "Owww...." } },
-	{ n = 'CECILIA', d = { "Owww!" }, sm = 'sm/MC_shock.png' }, 
-	{ d = { "Watch where you’re going!" } }, 
-	{ d = { "Geez, you’re going to make me late!" } }, 
-	{ n = 'STRANGE GIRL', d = { "...S-sorry! I’m sorry! I..." }, sm = 'sm/MC.png' },
-	{ d = { "..." } },
--- TODO from here
-	{ n = '', d = { "The strange girl notices her broken vase and starts to cry." },
-		c = {	
-			{ t = "Apologize and be late.", f = next_node_function("nodes/physics.lua") },
-			{ t = "Leave the girl.", f = next_node_function("nodes/center/entrance.lua") }
-		}
-	},
-	{ d = { "TODO: branch here" }, next = next_node_function('nodes/library/entrance.lua') }
-})
---]]
 
