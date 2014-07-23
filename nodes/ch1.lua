@@ -1,56 +1,46 @@
-gs.month = 'Sep'
-gs.day   = 12
-gs.dow   = 'Mon'
-gs.time  = 'morning'
+add({ n = '', bg = '', sm = 'sm/MC.png', d = { "I overslept.", "I'm going to be late for class." } })
 
-add({
-	sm = 'sm/MC.png',
-	bg = 'bg/erickas_room.jpg',
-	d  = { "Cecilia is running down the street, late for class as normal." }
-})
+add({ d = { "..." } })
 
-add({ 
-	d = {	"Normally, this wouldn’t bother her,", 
-		"but if one is late for class the first day,", 
-		"you get dropped." } 
-})
+add({ n = 'CECILIA', sm = 'sm/MC_shock.png', d = { "Owwwwww!" } })
 
-add({ lg = 'lg/ghost_shock.png', d = { "She accidentally bumps into a strange girl." } })
-
-add({ d = { "Cecilia didn't notice at the time, but she broke the girl's vase." } })
+add({ n = '', lg = 'lg/ghost_shock.png', d = { "I bumped into a strange girl." } })
 
 add({ n = 'STRANGE GIRL', d = { "Owww...." } })
 
-add({ n = 'CECILIA', sm = 'sm/MC_shock.png', d = { "Owww!" } })
-
-add({ d = { "Watch where you’re going!" } })
-
-add({ d = { "Geez, you’re going to make me late!" } })
+add({ n = 'CECILIA', d = { "Watch where you’re going!", "Geez, you’re going to make me late!" } })
 
 add({ n = 'STRANGE GIRL', sm = 'sm/MC.png', d = { "...S-sorry! I’m sorry! I..." } })
 
 add({ d = { "..." } })
 
+local function finish()
+	add({ n = 'STRANGE GIRL', d = { "I don't know what to do.", "My heart is broken." } })
+	add({ d = { "Because of you." } })
+	add({ f = function() gonode('nodes/physics.lua') end })
+end
+
+local function appologize()
+	gs.ruby = gs.ruby - 40 
+	gs.lily = gs.lily - 60
+	add({ n = 'CECILIA', d = { "I'm sorry.", "I'm just in a big hurry to get to class on time." } })
+	add({ n = 'STRANGE GIRL', d = { "This vase belonged to my grandmother.", "Sob, sob, sob, ..." } })
+	finish()
+end
+
+local function leave()
+	gs.ruby = gs.ruby - 60 
+	gs.lily = gs.lily - 80
+	add({ n = 'CECILA', d = { "Sorry. Gotta go." } })
+	finish()
+end
+
 add({ 
 	n = '', 
 	d = { "The strange girl notices her broken vase and starts to cry." },
 	c = {
-		{ t = "Apologize and be late.", f = function() gs.ruby = -40 end },
-		{ t = "Leave the girl.", f = function() 
-			gs.lily = -60
-			gonode("nodes/physics.lua")
-		end }
+		{ t = "Apologize and be late.", f = appologize },
+		{ t = "Leave the girl.", f = leave }
 	}
-})
-
-add({ n = 'CECILIA', sm = 'sm/MC.png', d = { "I'm sorry." } })
-
-add({ lg = 'lg/ghost_smile.png', d = { "I see that I broke your vase." } })
-
-add({ 
-	f = function() 
-		ui.reset()
-		ui.d = { "THE END" }
-	end
 })
 
