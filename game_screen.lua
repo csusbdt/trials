@@ -7,8 +7,6 @@ local name_font   = fonts.create("fonts/CaviarDreams.ttf", 70)
 local dialog_font = fonts.create("fonts/Delicious-Roman.otf", 50)
 local date_font   = fonts.create("fonts/CaviarDreams.ttf", 50)
 
-local name_color = { r = 51, g = 153, b = 255, a = 255 }
-
 local bg_texture
 local sm_texture
 local lg_texture
@@ -96,7 +94,7 @@ local function draw_dialog()
 end
 
 local function draw_name()
-	local texture = name_font:text(ui.n, name_color)
+	local texture = name_font:text(ui.n, blue)
 	local y = main_y + 45 
 	texture:draw(name_x, y)
 end

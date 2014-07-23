@@ -7,14 +7,14 @@ local up_button
 local down_button 
 local exit_button 
 
-local max_items = 20
+local max_items = 17
 local items = {}
-local item_index = 0
 
 function log()
+	if not ui.d or #ui.d == 0 then return end
 	local item = {
-		n = ui.n or '', 
-		d = ui.d or ''
+		n = ui.n, 
+		d = ui.d
 	}
 	table.insert(items, item)
 	if #items > max_items then table.remove(items, 1) end
@@ -22,64 +22,35 @@ function log()
 end
 
 function game_log.draw()
-	-- Display overlay background.
+	local log_box_texture = textures.image('gui/UI-log-box.png')
 
-	local overlay_w = 1500
-	local overlay_h = 700
-	local overlay_x = (design_width  - overlay_w) / 2
-	local overlay_y = (design_height - overlay_h) / 2
+	local x = (design_width - log_box_texture.w) / 2
+	local y = (design_height - 110 - log_box_texture.h) / 2
 
-        blendmode_blend()
-        set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
-        fill_rect(overlay_x, overlay_y, overlay_w, overlay_h)
+	log_box_texture:draw(x, y)
 
-	local x = overlay_x + 100
-	local y = overlay_y + 70
-
-	local texture
+	name_x = x + 30
+	dialog_x = x + 360
+	y = y + 190
 	local dy = 60
+	local texture
 
-	if item_index > 0 then
-		texture = ui.overlay_text_font:text(items[item_index].n .. ':', ui.overlay_text_color)
-		texture:draw(x, y)
-		y = y + dy
-		for i, v in ipairs(items[item_index].d) do
-			texture = ui.overlay_text_font:text(v, ui.overlay_text_color)
-			texture:draw(x, y)
+	for _, item in ipairs(items) do
+		if item.n and string.len(item.n) > 0 then
+			texture = ui.overlay_text_font:text(item.n .. ':', blue)
+			texture:draw(name_x, y)
+		end
+		for _, v in ipairs(item.d) do
+			texture = ui.overlay_text_font:text(v, black)
+			texture:draw(dialog_x, y)
 			y = y + dy
 		end
 	end
-
-	texture = ui.overlay_button_font:text("BACK", ui.overlay_text_color)
-	y = overlay_y + overlay_h - texture.h * 1.618
-	x = overlay_x + overlay_w / 4 - texture.w / 2
-	up_button = buttons.create_from_texture(texture, x, y)
-
-	texture = ui.overlay_button_font:text("FORWARD", ui.overlay_text_color)
-	x = overlay_x + 2 * overlay_w / 4 - texture.w / 2
-	down_button = buttons.create_from_texture(texture, x, y)
-
-	texture = ui.overlay_button_font:text("EXIT", ui.overlay_text_color)
-	x = overlay_x + 3 * overlay_w / 4 - texture.w / 2
-	exit_button = buttons.create_from_texture(texture, x, y)
-
-	up_button   : draw()
-	down_button : draw()
-	exit_button : draw()
 end
 
 function game_log.on_touch(x, y)
-	if up_button:contains(x, y) then
-		if item_index > 1 then item_index = item_index - 1 end
-		return true
-	elseif down_button:contains(x, y) then 
-		if item_index < #items then item_index = item_index + 1 end
-		return true
-	elseif exit_button:contains(x, y) then 
-		ui.overlay = 'none'
-		return true
-	end
-	return false
+	ui.overlay = 'none'
+	return true
 end
 
 return game_log
