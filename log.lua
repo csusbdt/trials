@@ -1,27 +1,29 @@
-game_log = {}
+local log = {}
 
---local item_font = fonts.create("fonts/CaviarDreams.ttf", 22)
---local menu_font = fonts.create("fonts/CaviarDreams.ttf", 24)
-
-local up_button 
-local down_button 
-local exit_button 
-
-local max_items = 17
+local max_lines = 17
+local lines = 0
 local items = {}
 
-function log()
-	if not ui.d or #ui.d == 0 then return end
+function log.add(d)
 	local item = {
 		n = ui.n, 
-		d = ui.d
+		d = d
 	}
 	table.insert(items, item)
-	if #items > max_items then table.remove(items, 1) end
-	item_index = #items
+	lines = lines + #d
+	while lines > max_lines do
+		lines = lines - #items[1].d
+		table.remove(items, 1) 
+	end
 end
 
-function game_log.draw()
+function log.reset()
+	for k in pairs(items) do 
+		items[k] = nil 
+	end
+end
+
+function log.draw()
 	local log_box_texture = textures.image('gui/UI-log-box.png')
 
 	local x = (design_width - log_box_texture.w) / 2
@@ -48,10 +50,10 @@ function game_log.draw()
 	end
 end
 
-function game_log.on_touch(x, y)
+function log.on_touch(x, y)
 	ui.overlay = 'none'
 	return true
 end
 
-return game_log
+return log
 

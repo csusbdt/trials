@@ -8,7 +8,6 @@ local game_menu = {}
 -- exit - transitions to title screen
 
 local game_sound = require('game_sound')
-local game_log   = require('game_log')
 
 local resume_button
 local save_button
@@ -97,9 +96,6 @@ function game_menu.on_touch(x, y)
 		return true
 	end
 	if exit_button:contains(x, y) then 
-		ui.reset()
-		gs.clear()
-		--ui.overlay = 'none'
 		dofile('title_screen.lua')
 		return true
 	end

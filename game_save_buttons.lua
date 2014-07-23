@@ -19,8 +19,12 @@ end
 
 function game_save_button_mt:touch()
 	if ui.game_save_mode == 'loading' then
+		log.reset()
+		qu.reset()
 		ui.reset()
+		qu.next()
 		gs.load(self.n)
+		gonode(gs.node)
 		dofile('game_screen.lua')
 	elseif ui.game_save_mode == 'saving' then
 		game_save_overwrite.show = true
@@ -53,8 +57,13 @@ function game_save_button_mt:draw()
 			msgbox('ui.game_save_mode not set for game_save_button.lua')
 		end
 	else
-		texture = textures.image(sf[bg])
-		texture:draw(self.x, self.y, self.w, self.h)
+		if string.len(sf[bg]) > 0 then
+			texture = textures.image(sf[bg])
+			texture:draw(self.x, self.y, self.w, self.h)
+		else
+			set_draw_color(60, 155, 60, 255)
+			fill_rect(self.x, self.y, self.w, self.h)
+		end
 	end
 	if sf[date] then
 		texture = date_font:text(sf[date], light)

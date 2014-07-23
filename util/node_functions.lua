@@ -1,67 +1,49 @@
+--event_queue = {}
+
 function gonode(node)
 	gs.node = node
-	ui.i = 1
-	ui.s = dofile(node)
-	log()
+	ui.reset()
+	qu.reset()
+	dofile(node)
+	qu.next()
+end
+
+--[[
+
+function clear_events()
+	while #event_queue > 0 do
+		table.remove(event_queue) 
+	end
+end
+
+function add(event)
+	table.insert(event_queue, event)
+end
+
+function push_front_list(list)
+	for _, e in ipairs(event_queue) do
+		table.insert(list, e)
+	end
+	event_queue = list
 end
 
 function next()
-	if ui.i > #ui.s then msgbox("Next goes nowhere."); return end
-	local d = ui.s[ui.i]
-	ui.bg = d.bg or ui.bg
-	ui.lg = d.lg or ui.lg
-	ui.sm = d.sm or ui.sm
-	ui.n  = d.n  or ui.n
-	ui.d  = d.d
-	if ui.d then log() end
-	ui.c = d.c
-	ui.m = d.m or ui.m
-	music.set(ui.m)
-	ui.i = ui.i + 1
-	if d.f then d.f() end
-end
-
---[[
-local function next_function()
-	if ui.i > #ui.s then msgbox("Next goes nowhere."); return end
-	local d = ui.s[ui.i]
-	ui.date = d.date or ui.date
-	ui.bg = d.bg or ui.bg
-	ui.lg = d.lg or ui.lg
-	ui.sm = d.sm or ui.sm
-	ui.n = d.n or ui.n
-	ui.d = d.d
-	if ui.d then log() end
-	next = d.next or next
-	ui.c = d.c
-	ui.m = d.m or ui.m
-	music.set(ui.m)
-	ui.i = ui.i + 1
-end
-
-function sequence(seq)
-	ui.i = 1
-	ui.s = seq
-	next = next_function
-end
---]]
-
---function next_node(node)
---	gs.node = node
---	ui.c = nil
---	dofile(node)
---	music.set(ui.m)
---end
-
---[[
-function next_node_function(node)
-	return function()
-		gs.node = node
-		ui.c = nil
-		dofile(node)
-		music.set(ui.m)
+print(#event_queue)
+	if not #event_queue == 0 then
+		msgbox("Next goes nowhere.")
+		quit()
 	end
+	local e = table.remove(event_queue, 1)
+	if e.bg then ui.bg = e.bg end
+	if e.lg then ui.lg = e.lg end
+	if e.sm then ui.sm = e.sm end
+	if e.n  then ui.n  = e.n  end
+	if e.m  then ui.m  = e.m  end
+	music.set(ui.m)
+	ui.d = e.d
+	if ui.d then log() end
+	ui.c = e.c
+	if e.f then e.f() end
 end
 --]]
-
 

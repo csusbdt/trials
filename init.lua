@@ -6,8 +6,11 @@ music    = require('lua2.music')
 sounds   = require('lua2.sounds')
 sf       = require('lua2.savefile')
 
-gs = require('game_save')
-ui = require('ui')
+gs  = require('game_save')
+ui  = require('ui')
+log = require('log')
+qu  = require('queue')
+add = qu.add
 
 function on_render_targets_reset()
 	if draw then draw() end

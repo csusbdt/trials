@@ -1,4 +1,4 @@
-local game_log        = require('game_log')
+--local game_log        = require('game_log')
 local game_sound      = require('game_sound')
 local game_menu       = require('game_menu')
 local game_choices    = require('game_choices')
@@ -22,7 +22,7 @@ local hide_button
 
 local main_y = design_width - 110 * 1.618
 local name_x = 750
-local bar_y  
+local bar_y 
 
 local function load_textures()
 	main_texture          = textures.image('gui/UI-main.png')
@@ -30,7 +30,7 @@ local function load_textures()
 	hide_button_texture   = textures.image('gui/UI-x-button.png')
 	menu_button_texture   = textures.image('gui/UI-menu-button.png')
 	white_diamond_texture = textures.image('gui/UI-diamond-white.png')
-	bar_texture = textures.image('gui/UI-border-bottom.png')
+	bar_texture           = textures.image('gui/UI-border-bottom.png')
 	if string.len(ui.bg) > 0 then 
 		bg_texture = textures.image(ui.bg) 
 	end
@@ -169,7 +169,7 @@ function draw()
 	if ui.overlay == 'menu' then
 		game_menu.draw()
 	elseif ui.overlay == 'log' then
-		game_log.draw()
+		log.draw()
 	elseif ui.overlay == 'sound' then
 		game_sound.draw()
 	end
@@ -196,7 +196,7 @@ function on_touch(x, y)
 		return true
 	end
 	if ui.overlay == 'log' then
-		if game_log.on_touch(x, y) then
+		if log.on_touch(x, y) then
 			draw()
 		end
 		return true
@@ -217,25 +217,24 @@ function on_touch(x, y)
 	end
 	if ui.c and #ui.c > 0 then 
 		if game_choices.on_touch(x, y) then
-			next()
+			qu.next()
 			draw()
 			return true
 		else
 			return false
 		end
 	end
-	next()
+	qu.next()
 	draw()
 	return true
 end
 
-if ui.s and ui.i and ui.i <= #ui.s then
+--if #event_queue > 0 then
 	-- We are continuing from where we left off.
-else
+--else
 	-- Need to run the next node.
-	gonode(gs.node)
-	next()
-end
+--	gonode(gs.node)
+--end
 
 draw()
 

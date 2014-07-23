@@ -49,8 +49,11 @@ end
 
 function on_touch(x, y)
 	if new_game_button:contains(x, y) then 
-		gs.clear()
-		gs.node = 'nodes/start.lua'
+		log.reset()
+		qu.reset()
+		ui.reset()
+		gs.reset()
+		gonode(gs.node)
 		dofile('game_screen.lua')
 	elseif load_button:contains(x, y) then 
 		ui.game_save_mode = 'loading'
