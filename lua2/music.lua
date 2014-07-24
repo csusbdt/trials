@@ -13,7 +13,7 @@ local function set(filename)
 
 	music_filename = filename
 
-	if music_filename == nil then return end
+	if music_filename == nil or string.len(music_filename) == 0 then return end
 	
 	local wave = waves.get(music_filename)
 	if wave then
