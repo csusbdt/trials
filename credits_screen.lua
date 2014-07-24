@@ -1,26 +1,45 @@
-local description_font   = fonts.create("fonts/CaviarDreams.ttf", 32)
-local button_font = fonts.create("fonts/CaviarDreams.ttf", 36)
+local title_font = fonts.create("fonts/CaviarDreams.ttf", 82)
+local line_font = fonts.create("fonts/CaviarDreams.ttf", 48)
 
-local description_texture
 local exit_button
+local line_y
+
+local function draw_line(line)
+	texture = line_font:text(line, ui.overlay_button_color)
+	local x = design_width / 2 - texture.w / 2
+	texture:draw(x, line_y)
+	line_y = line_y + texture.h * 1.618
+end
 
 function draw()
-	set_draw_color(40, 40, 40, 255)
+	set_draw_color(ui.overlay_r, ui.overlay_g, ui.overlay_b, ui.overlay_a)
 	render_clear()
+	local texture
+	local x 
+	local y = 100
 
-	-- Create textures.
+	texture = title_font:text("CREDITS", ui.overlay_button_color)
+	x = design_width / 2 - texture.w / 2
+	y = 0.618 * texture.h
+	texture:draw(x, y)
 
-	local description_texture = button_font:text("This is a stub for the credits screen." , light)
-	local exit_texture  = button_font:text("EXIT"    , light)
+	line_y = 250
+	draw_line("Leigh-ann Griswould : Designer, Writer, Character Artist")
+	draw_line("Eli Salazar : Background Art, Finishing")
+	draw_line("Deanna Sulli : UI Design")
+	draw_line("Abigail Williams : Music Composition, Sound Effects")
+	draw_line("Scott Vance : Advisement Music/Sound")
+	draw_line("David Turner : Lead Programmer")
+	draw_line("Mark Swoope : Programmer")
+	draw_line("Mark Sorriano : Advisement Graphics Programming")
+	draw_line("Beth Steffel : Advisement Art")
+	draw_line("Arturo Concepcion : Management")
 
-	-- Create buttons.
-
-	exit_button = buttons.create_from_texture(exit_texture, 200, 200)
-
-	-- Render textures and buttons.
-
-	description_texture : draw(100, 100)
-	exit_button   : draw()
+	texture = title_font:text("BACK", ui.overlay_button_color)
+	x = design_width / 2 - texture.w / 2
+	y = design_height - 1.618 * texture.h
+	exit_button = buttons.create_from_texture(texture, x, y)
+	exit_button:draw()
 
 	render()
 end
