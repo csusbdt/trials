@@ -1,7 +1,7 @@
 fonts    = require('lua2.fonts')
 textures = require('lua2.textures')
 buttons  = require('lua2.buttons')
-waves    = require('lua2.waves')
+--waves    = require('lua2.waves')
 music    = require('lua2.music')
 sounds   = require('lua2.sounds')
 sf       = require('lua2.savefile')

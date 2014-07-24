@@ -1,4 +1,4 @@
-add({ bg = '', sm = 'sm/MC.png', d  = { "It's physics." } })
+add({ bg = '', sm = 'sm/MC.png', s = 'waves/door.wav', d = { "It's physics." } })
 
 add({ d = { "Nothing happens." } })
 

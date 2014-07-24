@@ -96,6 +96,7 @@ function game_menu.on_touch(x, y)
 		return true
 	end
 	if exit_button:contains(x, y) then 
+		music.set(nil)
 		dofile('title_screen.lua')
 		return true
 	end

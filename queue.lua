@@ -31,6 +31,9 @@ function mt.next()
 	if ui.d then log.add(e.d) end
 	ui.c = e.c
 	if e.f then e.f() end
+	if e.s then 
+		sounds.play(e.s)
+	end
 end
 
 return qu

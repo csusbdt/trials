@@ -1,4 +1,4 @@
-add({ n = '', bg = '', sm = 'sm/MC.png', d = { "I overslept.", "I'm going to be late for class." } })
+add({ n = '', bg = '', sm = 'sm/MC.png', m = 'music/Overworld.wav', d = { "I overslept.", "I'm going to be late for class." } })
 
 add({ d = { "..." } })
 
@@ -8,7 +8,7 @@ add({ n = '', lg = 'lg/ghost_shock.png', d = { "I bumped into a strange girl." }
 
 add({ n = 'STRANGE GIRL', d = { "Owww...." } })
 
-add({ n = 'CECILIA', d = { "Watch where you’re going!", "Geez, you’re going to make me late!" } })
+add({ n = 'CECILIA', m = 'music/friendly.wav', d = { "Watch where you’re going!", "Geez, you’re going to make me late!" } })
 
 add({ n = 'STRANGE GIRL', sm = 'sm/MC.png', d = { "...S-sorry! I’m sorry! I..." } })
 
