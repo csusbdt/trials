@@ -1,4 +1,4 @@
-add({ bg = 'bg/physics.jpg', sm = 'sm/MC.png', s = 'waves/door.wav', d = { "It's physics." } })
+add({ bg = bg.physics, sm = sm.mc, s = sn.door, d = { "It's physics." } })
 
 add({ d = { "Nothing happens." } })
 
@@ -20,7 +20,7 @@ add({
 	} 
 })
 
-add({ d = { "Leave physics lab." }, bg = 'bg/cecilias_room_day.jpg', f = next_time })
+add({ bg = bg.cecilia_room_day, f = next_time, d = { "Leave physics lab." } })
 
 add({ d = { "Talk with Erika." } })
 

@@ -8,6 +8,11 @@ sf       = require('lua2.savefile')
 
 gs  = require('game_save')
 ui  = require('ui')
+sm  = require('sm')
+lg  = require('lg')
+bg  = require('bg')
+mu  = require('mu')
+sn  = require('sn')
 log = require('log')
 qu  = require('queue')
 add = qu.add
