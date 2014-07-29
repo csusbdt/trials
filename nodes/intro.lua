@@ -7,11 +7,13 @@ add({ sm = sm.mc, m = mu.friendly, d = { "I hear a girl crying." } })
 
 add({ d = { "I hesitantly flip on the lights." } })
 
-add({ n = 'CECILIA', bg = bg.cecilia_room_night, sm = sm.mc_shock, d = { "EEEEEEEK!  A GHOST!" } })
+add({ n = 'CECILIA', bg = bg.ghost_cg1, sm = sm.mc_shock, d = { "EEEEEEEK!  A GHOST!" } })
 
-add({ n = 'GHOST', lg = lg.ghost_smile, m = '', d = { "..." } })
+add({ n = 'GHOST', lg = lg.ghost, bg = bg.cecilia_room_night, d = { "I'm not a ghost.", "I'm a real girl." } })
 
-add({ d = { "..." } })
+add({ n = 'GHOST', d = { "I'm leaving.", "Goodbye." } })
 
-add({ f = function() next_time(); gonode("nodes/ch1.lua") end })
+add({ n = '', lg = '', d = { "That was weird." } })
+
+add({ n = '', lg = '', d = { "I'm going to sleep." }, node = 'nodes/ch1/start.lua' })
 

@@ -1,4 +1,3 @@
---local game_log        = require('game_log')
 local game_sound      = require('game_sound')
 local game_menu       = require('game_menu')
 local game_choices    = require('game_choices')

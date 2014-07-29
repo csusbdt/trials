@@ -38,3 +38,21 @@ function next_time()
 	if gs.time == 'morning' then next_day() end
 end
 
+function next_morning()
+	repeat
+		next_time()
+	until gs.time == 'morning'
+end
+
+function next_afternoon()
+	repeat
+		next_time()
+	until gs.time == 'afternoon'
+end
+
+function next_night()
+	repeat
+		next_time()
+	until gs.time == 'night'
+end
+

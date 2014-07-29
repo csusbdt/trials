@@ -3,7 +3,8 @@ local bg = {
 	cecilia_room_night   = 'bg/cecilia_room_night.jpg',
 	ericka_room          = 'bg/ericka_room.jpg',
 	physics              = 'bg/physics.jpg',
-	sidewalk_with_campus = 'bg/sidewalk_with_campus.jpg'
+	sidewalk_with_campus = 'bg/sidewalk_with_campus.jpg',
+	ghost_cg1            = 'bg/ghost_cg1.png'
 };
 
 return bg;

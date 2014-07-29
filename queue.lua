@@ -16,6 +16,12 @@ function mt.add(e)
 end
 
 function mt.next()
+	while ui.node do
+		node = ui.node
+		ui.node = nil
+		dofile(node)
+		gs.node = node
+	end
 	if #qu == 0 then 
 		print('queue empty')
 		return
@@ -33,6 +39,9 @@ function mt.next()
 	if e.f then e.f() end
 	if e.s then 
 		sounds.play(e.s)
+	end
+	if e.node then
+		ui.node = e.node
 	end
 end
 

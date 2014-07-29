@@ -22,9 +22,9 @@ function game_save_button_mt:touch()
 		log.reset()
 		qu.reset()
 		ui.reset()
-		qu.next()
 		gs.load(self.n)
-		gonode(gs.node)
+		dofile(gs.node)
+		qu.next()
 		dofile('game_screen.lua')
 	elseif ui.game_save_mode == 'saving' then
 		game_save_overwrite.show = true

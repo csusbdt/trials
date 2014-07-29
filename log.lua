@@ -1,6 +1,6 @@
 local log = {}
 
-local max_lines = 17
+local max_lines = 16
 local lines = 0
 local items = {}
 
@@ -34,7 +34,7 @@ function log.draw()
 	name_x = x + 30
 	dialog_x = x + 360
 	y = y + 190
-	local dy = 60
+	local dy = 50
 	local texture
 
 	for _, item in ipairs(items) do
@@ -47,6 +47,7 @@ function log.draw()
 			texture:draw(dialog_x, y)
 			y = y + dy
 		end
+		y = y + 10
 	end
 end
 
