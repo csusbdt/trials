@@ -14,7 +14,7 @@ function draw()
 
 	local new_game_texture = button_font:text("NEW GAME" , light)
 	local load_texture     = button_font:text("LOAD"     , light)
-	local gallery_texture  = button_font:text("GALLERY"  , light)
+	--local gallery_texture  = button_font:text("GALLERY"  , light)
 	local credits_texture  = button_font:text("CREDITS"  , light)
 	local exit_texture     = button_font:text("EXIT"     , light)
 
@@ -26,8 +26,8 @@ function draw()
 	new_game_button = buttons.create_from_texture(new_game_texture, x, y)
 	y = y + dy
 	load_button = buttons.create_from_texture(load_texture, x, y)
-	y = y + dy
-	gallery_button = buttons.create_from_texture(gallery_texture, x, y)
+	--y = y + dy
+	--gallery_button = buttons.create_from_texture(gallery_texture, x, y)
 	y = y + dy
 	credits_button = buttons.create_from_texture(credits_texture, x, y)
 	y = y + dy
@@ -37,7 +37,7 @@ function draw()
 
 	new_game_button : draw()
 	load_button     : draw()
-	gallery_button  : draw()
+	--gallery_button  : draw()
 	credits_button  : draw()
 	exit_button     : draw()
 
@@ -60,8 +60,8 @@ function on_touch(x, y)
 	elseif load_button:contains(x, y) then 
 		ui.game_save_mode = 'loading'
 		dofile('game_save_screen.lua')
-	elseif gallery_button:contains(x, y) then 
-		dofile('gallery_screen.lua')
+	--elseif gallery_button:contains(x, y) then 
+	--	dofile('gallery_screen.lua')
 	elseif credits_button:contains(x, y) then 
 		dofile('credits_screen.lua')
 	elseif exit_button:contains(x, y) then
