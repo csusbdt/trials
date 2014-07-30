@@ -31,7 +31,6 @@ function next_day()
 end
 
 function next_time()
-print(gs.time)
 	if     gs.time == 'Morning'   then gs.time = 'Afternoon'
 	elseif gs.time == 'Afternoon' then gs.time = 'Night'
 	elseif gs.time == 'Night'     then 
