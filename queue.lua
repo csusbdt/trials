@@ -33,8 +33,12 @@ function mt.next()
 	if e.n  then ui.n  = e.n  end
 	if e.m  then ui.m  = e.m  end
 	music.set(ui.m)
-	ui.d = e.d
-	if ui.d then log.add(e.d) end
+	if type(e.d) == 'string' then
+		ui.d = { e.d }
+	else
+		ui.d = e.d
+	end
+	if ui.d then log.add(ui.d) end
 	ui.c = e.c
 	if e.f then e.f() end
 	if e.s then 

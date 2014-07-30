@@ -1,8 +1,23 @@
 -- Quest with Ruby in Art Studio
 
-add({ n = 'RUBY', lg = lg.ruby_worry, sm = sm.mc, d = { "You are in the art studio.", "..." }, f = next_afternoon })
+add({ 
+	n = '', 
+	lg = '', 
+	sm = sm.mc, 
+	bg = bg.paint_studio,
+	d = "I see easels all around me.", 
+	f = next_afternoon 
+})
 
-add({ n = 'CECILIA', sm = sm.mc_shock, d = { "Yes, I see easels and weasels all around me." } })
+add({ 
+	n = 'RUBY', 
+	lg = lg.ruby_worry, 
+	d = "Hi."
+})
+
+add({ n = 'CECILIA', d = "Hi." })
+
+add({ n = '', d = "Discussion ..." })
 
 local choice1
 local choice2

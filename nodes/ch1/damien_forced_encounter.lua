@@ -1,8 +1,8 @@
--- Foced encouter with Damien in physics class
+add({ n = 'DAMIEN', lg = lg.damien, sm = sm.mc, d = "Hi." })
 
-add({ n = 'DAMIEN', lg = lg.damien, sm = sm.mc, f = next_time, d = { "Forced encounter.", "..." } })
+add({ n = 'CECILIA', sm = sm.mc_shock, d = "I wasn't expecting to see you today." })
 
-add({ n = 'CECILIA', sm = sm.mc_shock, d = { "You again!" } })
+add({ n = '', sm = sm.mc, d = "Some discussion..." })
 
 local choice1
 local choice2

@@ -1,8 +1,22 @@
 -- Scene with Damien
 
-add({ n = 'DAMIEN', lg = lg.damien, sm = sm.mc, m = mu.friendly, d = { "I am Damien.", "..." } })
+add({ 
+	n = '', 
+	lg = '', 
+	f = next_afternoon,
+	bg = bg.lecture_hall,
+	sm = sm.mc_sweat, 
+	m = mu.friendly, 
+	d = { "I made it to class." }
+})
 
-add({ n = 'CECILIA', sm = sm.mc_shock, d = { "Nice to meet you." } })
+add({ sm = sm.mc, d = { "I need to settle down and think straight.", "Physics is hard to understand." } })
+
+add({ n = 'DAMIEN', lg = lg.damien, sm = sm.mc, m = mu.friendly, d = { "Hi.", "I'm Damien." } })
+
+add({ n = 'CECILIA', d = { "Nice to meet you." } })
+
+add({ n = '', d = { "Lot's of dialog..." } })
 
 local choice1
 local choice2
@@ -10,7 +24,7 @@ local finish
 
 add({ 
 	n = '', 
-	d = { "You decide." },
+	d = { "You decide about soemthing." },
 	c = {
 		{ t = "choice 1", f = function() choice1() end },
 		{ t = "choice 2", f = function() choice2() end }
@@ -28,7 +42,7 @@ choice2 = function()
 end
 
 finish = function()
-	add({ n = '', d = { "I'm going to skip afternoon." }, node = 'nodes/ch1/night1.lua' })
+	add({ n = '', d = { "I'm going to return to my room." }, node = 'nodes/ch1/night1.lua' })
 end
 
 

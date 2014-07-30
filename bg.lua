@@ -4,7 +4,9 @@ local bg = {
 	ericka_room          = 'bg/ericka_room.jpg',
 	physics              = 'bg/physics.jpg',
 	sidewalk_with_campus = 'bg/sidewalk_with_campus.jpg',
-	ghost_cg1            = 'bg/ghost_cg1.png'
+	ghost_cg1            = 'bg/ghost_cg1.jpg',
+	paint_studio         = 'bg/paint_studio.jpg',
+	lecture_hall         = 'bg/lecture_hall.jpg',
 };
 
 return bg;

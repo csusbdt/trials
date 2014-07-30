@@ -1,4 +1,10 @@
-add({ n = '', lg = '', sm = sm.mc, d = { "I wonder what to do.", "..." } })
+add({ 
+	n = '',
+	lg = '',
+	sm = sm.mc,
+	bg = bg.cecilia_room_day,
+	d = "I wonder what to do."
+})
 
 local ruby_quest
 local choice2
