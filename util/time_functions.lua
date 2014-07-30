@@ -31,28 +31,33 @@ function next_day()
 end
 
 function next_time()
-	if     gs.time == 'morning'   then gs.time = 'afternoon'
-	elseif gs.time == 'afternoon' then gs.time = 'night'
-	elseif gs.time == 'night'     then gs.time = 'morning'
+print(gs.time)
+	if     gs.time == 'Morning'   then gs.time = 'Afternoon'
+	elseif gs.time == 'Afternoon' then gs.time = 'Night'
+	elseif gs.time == 'Night'     then 
+		gs.time = 'Morning'
+		next_day()
+	else
+		msgbox("Unknown time: " .. gs.time)
+		quit()
 	end
-	if gs.time == 'morning' then next_day() end
 end
 
 function next_morning()
 	repeat
 		next_time()
-	until gs.time == 'morning'
+	until gs.time == 'Morning'
 end
 
 function next_afternoon()
 	repeat
 		next_time()
-	until gs.time == 'afternoon'
+	until gs.time == 'Afternoon'
 end
 
 function next_night()
 	repeat
 		next_time()
-	until gs.time == 'night'
+	until gs.time == 'Night'
 end
 

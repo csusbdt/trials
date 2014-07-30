@@ -37,6 +37,5 @@ light = { r = 205, g = 205, b = 205 }
 blue  = { r = 51, g = 153, b = 255, a = 255 }
 
 dofile('util/time_functions.lua')
-dofile('util/node_functions.lua')
 dofile('warning_screen.lua')
 
