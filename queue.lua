@@ -16,11 +16,12 @@ function mt.add(e)
 end
 
 function mt.next()
+	local update_gs = false
 	while ui.node do
 		node = ui.node
 		ui.node = nil
 		dofile(node)
-		gs.node = node
+		update_gs = true
 	end
 	if #qu == 0 then 
 		print('queue empty')
@@ -47,6 +48,18 @@ function mt.next()
 	if e.node then
 		ui.node = e.node
 	end
+	if update_gs then
+		gs.time  = ui.time
+		gs.dow   = ui.dow
+		gs.day   = ui.day
+		gs.month = ui.month
+		gs.node  = node
+		gs.lg    = ui.lg
+		gs.sm    = ui.sm
+		gs.bg    = ui.bg
+		gs.m     = ui.m
+	end
+	--draw()
 end
 
 return qu

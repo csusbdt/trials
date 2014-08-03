@@ -11,5 +11,6 @@ side-quests
 ruby-talk
 
 --]]
-dofile("nodes/ch1/ruby.lua")
+add({ node = 'nodes/ch1/ruby.lua' })
+qu.next()
 

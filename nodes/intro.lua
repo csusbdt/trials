@@ -1,7 +1,7 @@
-gs.month = 'Sep'
-gs.day   = 12
-gs.dow   = 'Sun'
-gs.time  = 'Night'
+ui.month = 'Sep'
+ui.day   = 12
+ui.dow   = 'Sun'
+ui.time  = 'Night'
 
 add({ sm = sm.mc, d = { "Returning home from a night out with my friend, I stepped into my pitch", "black room." } })
 

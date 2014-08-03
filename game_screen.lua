@@ -110,10 +110,10 @@ end
 local function draw_date()
 	local space = 26
 	local date = 
-		(gs.dow or '?') .. ' ' .. 
-		(gs.time or '?') .. ', ' .. 
-		(gs.month or '?') .. ' ' .. 
-		(gs.day or '?')
+		(ui.dow or '?') .. ' ' .. 
+		(ui.time or '?') .. ', ' .. 
+		(ui.month or '?') .. ' ' .. 
+		(ui.day or '?')
 	local date_texture = date_font:text(date, black)
 	local x = 340 - (white_diamond_texture.w + space + date_texture.w) / 2
 	local date_y = bar_y + date_texture.h / 2 - 4 -- adjust a little

@@ -17,6 +17,7 @@ function game_choices.draw()
 	local dy =  option_button_texture.h * 1.2
 	for i, v in ipairs(ui.c) do
 		choice_buttons[i] = buttons.create_from_texture(option_button_texture, x, y)
+		choice_buttons[i].node = v.node
 		choice_buttons[i].f = v.f
 		choice_buttons[i]:draw()
 		local texture = choice_font:text(v.t, white)
@@ -33,6 +34,12 @@ function game_choices.on_touch(x, y)
 		if v:contains(x, y) then 
 			ui.c = nil
 			if v.f then v.f() end
+			if v.node then
+				ui.node = v.node
+				qu.next()
+				draw()
+				return
+			end
 			return true
 		end
 	end

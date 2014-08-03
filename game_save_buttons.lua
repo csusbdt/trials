@@ -53,8 +53,6 @@ function game_save_button_mt:draw()
 			x = self.x + self.w / 2 - new_texture.w / 2
 			y = self.y + self.h / 2 - new_texture.h / 2
 			new_texture:draw(x, y)
-		else
-			msgbox('ui.game_save_mode not set for game_save_button.lua')
 		end
 	else
 		if string.len(sf[bg]) > 0 then

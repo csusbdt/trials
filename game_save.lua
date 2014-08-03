@@ -39,6 +39,14 @@ function mt.load(n)
 			k = line
 		end
 	end
+	ui.time  = gs.time
+	ui.dow   = gs.dow
+	ui.day   = gs.day
+	ui.month = gs.month
+	ui.bg    = gs.bg
+	ui.lg    = gs.lg
+	ui.sm    = gs.sm
+	ui.m     = gs.m
 end
 
 function mt.save(n)
@@ -59,10 +67,10 @@ function mt.save(n)
 	file:close()
 	sf['save_bg_' .. n] = ui.bg
 	local date =
-		(gs.dow or '?') .. ' ' ..
-		(gs.time or '?') .. ', ' ..
-		(gs.month or '?') .. ' ' ..
-		(gs.day or '?')
+		(gs.dow   or '?') .. ' '  ..
+		(gs.time  or '?') .. ', ' ..
+		(gs.month or '?') .. ' '  ..
+		(gs.day   or '?')
 	sf['save_date_' .. n] = date
 end
 

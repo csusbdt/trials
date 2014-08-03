@@ -1,4 +1,8 @@
-﻿
+﻿--[[
+         +--> ruby_appologize --+
+ruby --> |                      | --> ruby_finish
+         +--> ruby_leave -------+
+--]]
 
 add({ n = 'CECILIA', bg = bg.sidewalk_with_campus, sm = sm.mc_shock, m = mu.other, f = next_time, d = { "OUT THE WAY!!!" } })
 
@@ -28,48 +32,12 @@ add({ n = '', lg ='', d = { "The girl slowly got on her knees and started to pic
 
 add({ n = 'CECILIA', d = {"(Oh geez, out of all the times for this to happen... Why now...?"} })
 
-local ruby_appologize
-local ruby_leave
-local ruby_finish
-
 add({ 
 	n = 'CECILIA', sm = sm.mc_shock,
 	d = { "(I feel bad for the girl, but I'm already burning daylight standing", "here! Class is going to start at any moment, and if I'm", "late, I'll get kicked out of the class!)" },
 	c = {
-		{ t = "Apologize and be late. @.@", f = function() ruby_appologize() end },
-		{ t = "Leave the girl. >.>", f = function() ruby_leave() end }
+		{ t = "Apologize and be late. @.@", f = function() gs.ruby = gs.ruby - 40 end, node = 'nodes/ch1/ruby_appologize.lua' },
+		{ t = "Leave the girl. >.>", f = function() gs.lily = gs.lily - 60 end, node = 'nodes/ch1/ruby_leave.lua' }
 	}
 })
-
-ruby_appologize = function()
-	gs.ruby = gs.ruby - 40 
-	gs.lily = gs.lily - 60
-	add({ n = 'CECILIA', d = { "I'm sorry.", "I'm just in a big hurry to get to class on time...", "I didn't mean to run into you!" } })
-	add({ n = '', lg = lg.ruby_cry, d = { "The girl looked up to me, tears streaming down her face. " } })
-	add({ n = 'GIRL', d = { "...I...I-I know... It's my fault... I-I should've", "been watching where I was going..."} })
-	add({ n = 'CECILIA', d = {"No... It's both our fault. Here, let me help you."} })
-	add({ n = '', sm = sm.ruby_worry, d = {"You knelt down and start to pick up the shards.", "The girl looked watched you for a few moments before wiping", "her eyes off and going back to picking up shards."} })
-	add({ bg = '', lg = '', d = {" ..."} })
-	add({ d = {" ........"} })
-	add({ d = {".........................."} }) 
-	add({ bg = bg.sidewalk_with_campus, lg = lg.ruby_worry, d = {"You finished picking up the shards, but with the time it took,", "You are defintely late."} })
-	add({ n = 'GIRL', d = {"...Th-thank..."} })
-	add({ n = '', d = {"Before she could finish her sentence, another girl from far", "away yelled out to the girl."} })
-	add({ d = {"As the other girl approached her, you decided to run ahead to attend class,", "hoping the teacher will go easy on you since it's a freshman class."} })
-	ruby_finish()
-end
-
-ruby_leave = function()
-	gs.ruby = gs.ruby - 60 
-	gs.lily = gs.lily - 80
-	add({ n = 'CECILA', d = { "I'm sorry, I really am, but I need to get going!" } })
-	add({ n = 'GIRL', d = {"..."} })
-	add({ n = 'CECILIA', d = {"(I feel like a scumbag, leaving her there, but my own", "needs comes before her's!"} })
-	add({ n = '', d = {"You left the girl and resumed running down the street towards your class.", "All you can hear was her sniffling as you ran away."} })
-	ruby_finish()
-end
-
-ruby_finish = function()
-	add({ n = '', bg = '', lg = '', d = { "You got to class, and it turns out the teacher was late, so she", "didn't know who was late and who wasn't! Lucky!" },  node = 'nodes/ch1/damien.lua' })
-end
 

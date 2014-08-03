@@ -19,28 +19,14 @@ add({ n = 'CECILIA', d = { "Hi." } })
 
 add({ n = '', d = "Discussion..." })
 
-local choice1
-local choice2
-local finish
-
 add({ 
 	n = '', 
 	d = { "You decide between 2 choices." },
 	c = {
-		{ t = "choice 1", f = function() choice1() end },
-		{ t = "choice 2", f = function() choice2() end }
+		{ t = "choice 1", f = function() gs.will = gs.will + 10 end, node = 'nodes/ch1/will_a.lua' },
+		{ t = "choice 2", f = function() gs.will = gs.will + 20 end, node = 'nodes/ch1/will_b.lua' },
 	}
 })
-
-choice1 = function()
-	add({ n = 'CECILIA', d = "I took choice 1." })
-	finish()
-end
-
-choice2 = function()
-	add({ n = 'CECILA', d = "I took choice 2." })
-	finish()
-end
 
 finish = function()
 	add({ d = "Good bye Will." })

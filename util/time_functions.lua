@@ -1,43 +1,46 @@
 function next_month()
-	if     gs.month == 'Jan' then gs.month = 'Feb'
-	elseif gs.month == 'Feb' then gs.month = 'Mar'
-	elseif gs.month == 'Mar' then gs.month = 'Apr'
-	elseif gs.month == 'Apr' then gs.month = 'May'
-	elseif gs.month == 'May' then gs.month = 'Jun'
-	elseif gs.month == 'Jun' then gs.month = 'Jul'
-	elseif gs.month == 'Jul' then gs.month = 'Aug'
-	elseif gs.month == 'Aug' then gs.month = 'Sep'
-	elseif gs.month == 'Sep' then gs.month = 'Oct'
-	elseif gs.month == 'Oct' then gs.month = 'Nov'
-	elseif gs.month == 'Nov' then gs.month = 'Dec'
-	elseif gs.month == 'Dec' then gs.month = 'Jan'
+	if     ui.month == 'Jan' then ui.month = 'Feb'
+	elseif ui.month == 'Feb' then ui.month = 'Mar'
+	elseif ui.month == 'Mar' then ui.month = 'Apr'
+	elseif ui.month == 'Apr' then ui.month = 'May'
+	elseif ui.month == 'May' then ui.month = 'Jun'
+	elseif ui.month == 'Jun' then ui.month = 'Jul'
+	elseif ui.month == 'Jul' then ui.month = 'Aug'
+	elseif ui.month == 'Aug' then ui.month = 'Sep'
+	elseif ui.month == 'Sep' then ui.month = 'Oct'
+	elseif ui.month == 'Oct' then ui.month = 'Nov'
+	elseif ui.month == 'Nov' then ui.month = 'Dec'
+	elseif ui.month == 'Dec' then ui.month = 'Jan'
 	end
 end
 
 function next_day()
-	gs.day = gs.day + 1
-	if gs.day == 31 then
-		gs.day = 1
+	ui.day = ui.day + 1
+	if ui.day == 31 then
+		ui.day = 1
 		next_month()
 	end
-	if     gs.dow == 'Mon' then gs.dow = 'Tue'
-	elseif gs.dow == 'Tue' then gs.dow = 'Wed'
-	elseif gs.dow == 'Wed' then gs.dow = 'Thu'
-	elseif gs.dow == 'Thu' then gs.dow = 'Fri'
-	elseif gs.dow == 'Fri' then gs.dow = 'Sat'
-	elseif gs.dow == 'Sat' then gs.dow = 'Sun'
-	elseif gs.dow == 'Sun' then gs.dow = 'Mon'
+	if     ui.dow == 'Mon' then ui.dow = 'Tue'
+	elseif ui.dow == 'Tue' then ui.dow = 'Wed'
+	elseif ui.dow == 'Wed' then ui.dow = 'Thu'
+	elseif ui.dow == 'Thu' then ui.dow = 'Fri'
+	elseif ui.dow == 'Fri' then ui.dow = 'Sat'
+	elseif ui.dow == 'Sat' then ui.dow = 'Sun'
+	elseif ui.dow == 'Sun' then ui.dow = 'Mon'
 	end
 end
 
 function next_time()
-	if     gs.time == 'Morning'   then gs.time = 'Afternoon'
-	elseif gs.time == 'Afternoon' then gs.time = 'Night'
-	elseif gs.time == 'Night'     then 
-		gs.time = 'Morning'
+	if     ui.time == 'Morning'   then ui.time = 'Afternoon'
+	elseif ui.time == 'Afternoon' then ui.time = 'Night'
+	elseif ui.time == 'Night'     then 
+		ui.time = 'Morning'
 		next_day()
+	elseif not ui.time then
+		msgbox("Time set to nil.")
+		quit()
 	else
-		msgbox("Unknown time: " .. gs.time)
+		msgbox("Unknown time: " .. ui.time)
 		quit()
 	end
 end
@@ -45,18 +48,18 @@ end
 function next_morning()
 	repeat
 		next_time()
-	until gs.time == 'Morning'
+	until ui.time == 'Morning'
 end
 
 function next_afternoon()
 	repeat
 		next_time()
-	until gs.time == 'Afternoon'
+	until ui.time == 'Afternoon'
 end
 
 function next_night()
 	repeat
 		next_time()
-	until gs.time == 'Night'
+	until ui.time == 'Night'
 end
 
