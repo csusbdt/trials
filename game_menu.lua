@@ -23,6 +23,8 @@ local menu_option_font = fonts.create(menu_option_font_name, menu_option_font_si
 
 function game_menu.draw()
 
+	draw_grey_overlay()
+
 	menu_box_texture = textures.image('gui/UI-menu-box.png')
 
 	local x = (design_width  - menu_box_texture.w) / 2

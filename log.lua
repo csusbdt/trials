@@ -26,6 +26,7 @@ function log.reset()
 end
 
 function log.draw()
+	draw_grey_overlay()
 	local log_box_texture = textures.image('gui/UI-log-box.png')
 
 	local x = (design_width - log_box_texture.w) / 2

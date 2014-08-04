@@ -25,6 +25,11 @@ dark  = { r =  40, g =  40, b =  40 }
 light = { r = 205, g = 205, b = 205 }
 blue  = { r = 51, g = 153, b = 255, a = 255 }
 
+overlay_r = 50
+overlay_g = 50
+overlay_b = 50
+overlay_a = 225
+
 menu_option_font_color = { r = 200, g = 200, b = 200, a = 255 }
 menu_option_font_name  = 'fonts/CaviarDreams.ttf'
 menu_option_font_size  = 54
@@ -44,6 +49,13 @@ sn  = require('sn')
 log = require('log')
 qu  = require('queue')
 add = qu.add
+
+function draw_grey_overlay()
+        blendmode_blend()
+        set_draw_color(overlay_r, overlay_g, overlay_b, overlay_a)
+        fill_rect(0, 0, design_width, design_height)
+        blendmode_none()
+end
 
 dofile('util/time_functions.lua')
 dofile('warning_screen.lua')

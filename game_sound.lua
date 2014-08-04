@@ -8,6 +8,7 @@ local down_button
 local up_button 
 
 function game_sound.draw()
+	draw_grey_overlay()
 	-- Display overlay background.
 
 	local overlay_w = 1000
