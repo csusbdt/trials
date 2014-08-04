@@ -1,8 +1,10 @@
 local log = {}
 
-local max_lines = 16
+local max_lines = 17
 local lines = 0
 local items = {}
+
+local log_font = fonts.create(log_font_name, log_font_size)
 
 function log.add(d)
 	local item = {
@@ -31,19 +33,19 @@ function log.draw()
 
 	log_box_texture:draw(x, y)
 
+	local texture = log_font:text('POSSIBLE RUNAWAY:', log_font_color_1)
 	name_x = x + 30
-	dialog_x = x + 360
+	dialog_x = name_x + texture.w + 20
 	y = y + 190
 	local dy = 50
-	local texture
 
 	for _, item in ipairs(items) do
 		if item.n and string.len(item.n) > 0 then
-			texture = ui.overlay_text_font:text(item.n .. ':', blue)
+			texture = log_font:text(item.n .. ':', log_font_color_1)
 			texture:draw(name_x, y)
 		end
 		for _, v in ipairs(item.d) do
-			texture = ui.overlay_text_font:text(v, black)
+			texture = log_font:text(v, log_font_color_2)
 			texture:draw(dialog_x, y)
 			y = y + dy
 		end

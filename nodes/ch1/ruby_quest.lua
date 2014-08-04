@@ -13,7 +13,7 @@ add({
 	n = 'RUBY', 
 	lg = lg.ruby_worry, 
 	d = "Hi.",
-	f = function() msgbox('I still need to develop logic for ruby_quest.lua.') end
+	f = function() print('I still need to develop logic for ruby_quest.lua.') end
 })
 
 add({ n = 'CECILIA', d = "Hi." })
