@@ -30,10 +30,22 @@ function next_day()
 	end
 end
 
+function is_morning()
+	return ui.time == 'Morning'
+end
+
+function is_afternoon()
+	return ui.time == 'Afternoon'
+end
+
+function is_night()
+	return ui.time == 'Night'
+end
+
 function next_time()
-	if     ui.time == 'Morning'   then ui.time = 'Afternoon'
-	elseif ui.time == 'Afternoon' then ui.time = 'Night'
-	elseif ui.time == 'Night'     then 
+	if     is_morning()   then ui.time = 'Afternoon'
+	elseif is_afternoon() then ui.time = 'Night'
+	elseif is_night()     then 
 		ui.time = 'Morning'
 		next_day()
 	elseif not ui.time then

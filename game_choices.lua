@@ -7,7 +7,7 @@ local choice_font = fonts.create("fonts/Delicious-Roman.otf", 60)
 local choice_buttons = nil
 
 function game_choices.draw()
-	if #ui.c > 3 then mgbox("Too many choices."); return end
+	if #ui.c > 5 then msgbox("Too many choices."); return end
 
 	local option_button_texture = textures.image('gui/UI-option-button.png')
 
