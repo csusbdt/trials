@@ -23,7 +23,7 @@ add({ d = {"He had pale white skin, and pierced lips and ears... His clothes", "
 
 add({ n = 'CECILIA', lg = lg.damien, d = {"...Wanna be partners?"} })
 
-add({ n = '', d = {"I didn't really want to be partners with him, since he looked like he", "wouldn't take this project seriously."} })
+add({ n = '', d = {"I didn't really want to be partners with him, since he looked like he", "wouldn't take lab seriously, but I needed a partner."} })
 
 add({ n = 'PUNK BOY', d = {"...Yea, sure."} })
 
@@ -31,17 +31,17 @@ add({ n = 'CECILIA', d = {"Alright, sweet! That's one less problem to worry abou
 
 add({ n = 'DAMIEN', d = {"It's Damien. Well, I guess I'll leave you to do most of the", "work. "} })
 
-add({ n = 'CECILIA', d = {"H-huh?! What are you saying, we're partners!"} })
+add({ n = 'CECILIA', sm = sm.mc_shock, d = {"H-huh?! What are you saying, we're partners!"} })
 
-add({ n = 'DAMIEN', d = {"Yea, but... I don't really have the time to be doing stuff", "like coming to class every day or paying attention in the labs."} })
+add({ n = 'DAMIEN', lg = lg.damien_eyes_closed,  d = {"Yea, but... I don't really have the time to be doing stuff", "like coming to class every day or paying attention in the labs."} })
 
-add({ d = {"All you would need to do is let me copy your notes and do most", "of the lab work okay?"} })
+add({ d = {"All you would need to do is let me copy your notes and do most", "of the lab work, okay?"} })
 
 add({ n = 'CECILIA', d = {"(W-what? He just expects to do all of the work here?!)"} })
 
-add({ d = {"Yea, that's not going to work, 'buddy'. We're partners, and", "you need to do some of the work to, you know! There's no free rides with me!"} })
+add({ sm = sm.mc_upset, d = {"Yea, that's not going to work, 'buddy'. We're partners, and", "you need to do some of the work to, you know! There's no free rides with me!"} })
 
-add({ n = 'DAMIEN', d = {"Hmph, like anyone would want a ride from you. All you're doing", "is helping out your partner, it's not that big of a deal."} })
+add({ n = 'DAMIEN', lg = lg.damien_irritated, d = {"Hmph, like anyone would want a ride from you. All you're doing", "is helping out your partner, it's not that big of a deal."} })
 
 add({ n = 'CECILIA', d = {"It is a big deal. You want me to do all of the work!"} })
 
@@ -51,39 +51,52 @@ add({ n = 'CECILIA', d = {"I can't believe you! If you're not going to do work, 
 
 add({ d = {"(I'm at my limit, there's no way I'm pairing up with this guy!)"} })
 
---add({ n = 'DAMIEN
+add({ n = 'DAMIEN', d = {"You do know college is required for a lot of jobs, right? Jeez,", "if I would've known you were going to be this much of a pain, I would've", "looked for another partner..."} })
 
-add({ n = 'DAMIEN', lg = lg.damien, sm = sm.mc, m = mu.friendly, d = { "Hi.", "I'm Damien." } })
-
-add({ n = 'CECILIA', d = { "Nice to meet you." } })
-
-add({ n = '', d = { "Lot's of dialog..." } })
+add({ n = 'CECILIA', d = { "(Same to you, 'buddy'.)" } })
 
 local choice1
 local choice2
 local finish
 
-add({ 
-	n = '', 
-	d = { "You decide about soemthing." },
+add({  
+	d = { "(This guy seems really annoying... But I'm kind of stuck with him for the next three", "months... What should I do to smooth things over?)" },
 	c = {
-		{ t = "choice 1", f = function() choice1() end },
-		{ t = "choice 2", f = function() choice2() end }
+		{ t = "Be the bigger person >:/", f = function() choice1() end },
+		{ t = "Just ignore him >.>", f = function() choice2()  end }
 	}
 })
 
 choice1 = function()
-	add({ n = 'CECILIA', d = { "I picked choice 1.", "..." } })
+	add({ sm = sm.mc, d = { "Okay, fine. Be that way. But do not come complaining to me if you get", "a bad score on something!" } })
+	add({ n = 'DAMIEN', d = {"I'll be copying your notes, so if I get a bad score, so would you."} })
+	add({ n = 'CECILIA', d = {"No, but my notes are pretty weird... You probably won't understand them."} })
+	add({ n = 'DAMIEN', d = {"Hm, well then, let me see your notes from today."} })
+	add({ n = '', d = {"Damien looked through the notes...", "His expression seemed bothered as Cecilia gave him a delivish smirk."} })
+	add({ n = 'DAMIEN', lg = lg.damien_eyes_closed, d = {"..."} })
+	add({ n = 'CECILIA', d = {"See? Told you you wouldn't understand it~!"} })
+	add({ n = 'DAMIEN', d = {"And? All that means is that you have to learn to write legible", "notes for class. At any rate, I'm done talking with you."} })
+	add({ n = '', lg = '', d = {"Damien stood up and left out of the lecture hall without saying another word."} })
+	add({ n = 'CECILIA', d = {"Asshole... Like I'd ever do that for him!"} })
+	gs.damien = gs.damien - 70
 	finish()
 end
 
 choice2 = function()
-	add({ n = 'CECILA', d = { "I picked choice 2." } })
+	add({ d = { "(I'm not going to even bother trying to talk to this guy. I'll just end", "up getting more stressed out from this class...)" } })
+	add({ d = {"(I'll just do my own thing, and if he doesn't come to class, I'll just ask the", "lab instructor if I can join another group or something...)"} })
+	add({ d = {"..."} })
+	add({ lg = lg.damien_irritated, n = 'DAMIEN', d = {"...Got nothing to say, eh?"} })
+	add({ n = 'CECILIA', d = {"..."} })
+	add({ n = 'DAMIEN', d = {"Heh... Fine. You're a lot better when you don't talk as much anyways..."} })
+	add({ n = '', lg = '', d = {"With that said, Damien left... After a few minutes of packing your stuff, you", "decided to leave too..."} })
+	gs.damien = gs.damien - 50
 	finish()
 end
 
 finish = function()
-	add({ n = '', d = { "I'm going to return to my room." }, node = 'nodes/ch1/night1.lua' })
+	add({ sm = '', d = { "Because of everything that happened today, you decided to eat alone at home", "alone before continuing your first day of classes..." } })
+	add({ d = {"The day continued on, nothing interesting happening..."}, node = 'nodes/ch1/night1.lua' })
 end
 
 
