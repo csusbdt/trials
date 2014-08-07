@@ -62,7 +62,7 @@ local finish
 add({  
 	d = { "(This guy seems really annoying... But I'm kind of stuck with him for the next three", "months... What should I do to smooth things over?)" },
 	c = {
-		{ t = "Be the bigger person >:/", f = function() choice1() end },
+		{ t = "Try to cut your losses >:/", f = function() choice1() end },
 		{ t = "Just ignore him >.>", f = function() choice2()  end }
 	}
 })
