@@ -6,16 +6,18 @@ add({
 	bg = bg.cecilia_room_night, 
 	sm = sm.mc, 
 	f = next_night, 
-	d = { "Some trival conversion...", "..." } 
+	d = { "After Dinner..." } 
 })
 
-add({ d = "Time for sleep." })
+add({ n = 'GHOST', lg = lg.ghost, d = "Welcome back!" })
 
-add({ bg = '', d = "Zzzzzzzzzz." })
+add({ n = 'CECILIA', d = "Hey, did you remember anything?" })
 
-add({ bg = bg.cecilia_room_day, f = next_morning, d = "I had a good sleep." })
+add({ n = 'GHOST', d = {"No, not really. I'm gonna keep trying though.!"} })
 
-add({ d = "I'm going out." })
+add({ n = 'CECILIA', d = {"Okay. I guess I'll get ready for tomorrow..."} })
 
-add({ bg = bg.sidewalk_with_campus, d = "It's nice outside.", node = 'nodes/ch1/damien_forced_encounter.lua' })
+add({ n = '', bg = '', lg = '', sm = '', d = {"..."} })
+
+add({ d = {"....."}, node = 'nodes/ch1/damien_forced_encounter.lua' })
 
