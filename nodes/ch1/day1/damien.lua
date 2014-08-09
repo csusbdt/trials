@@ -96,7 +96,7 @@ end
 
 finish = function()
 	add({ sm = '', d = { "Because of everything that happened today, you decided to eat alone at home", "alone before continuing your first day of classes..." } })
-	add({ d = {"The day continued on, nothing interesting happening..."}, node = 'nodes/ch1/night1.lua' })
+	add({ d = {"The day continued on, nothing interesting happening..."}, node = 'nodes/ch1/day1/night1.lua' })
 end
 
 

@@ -11,6 +11,6 @@ side-quests
 ruby-talk
 
 --]]
-add({ node = 'nodes/ch1/ruby.lua' })
+add({ node = 'nodes/ch1/day1/ruby.lua' })
 qu.next()
 
