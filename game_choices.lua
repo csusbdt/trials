@@ -13,7 +13,7 @@ function game_choices.draw()
 
 	choice_buttons = {}
 	local x  = 300
-	local y  = 200
+	local y  = 200 - 20 * #ui.c
 	local dy =  option_button_texture.h * 1.2
 	for i, v in ipairs(ui.c) do
 		choice_buttons[i] = buttons.create_from_texture(option_button_texture, x, y)

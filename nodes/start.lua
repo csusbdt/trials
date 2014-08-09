@@ -5,7 +5,7 @@ gs.damien  = 0
 gs.will    = 0
 gs.jessie  = 0
 
---dofile('nodes/intro.lua')
 add({ node = 'nodes/intro.lua' })
+--add({ node = 'nodes/test.lua' })
 qu.next()
 
