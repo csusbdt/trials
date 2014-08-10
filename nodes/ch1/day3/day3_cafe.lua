@@ -6,9 +6,9 @@ add({ bg = '', n = '', d = {"((Missing the BG, so, deal with the Eternal", "Dark
 
 add({ d = {"The Cafe, located in the Student Union, where many students", "come to eat, hang out, study, etc."} })
 
-add({ d = {"Today was as busy as it always gets, with sounds of orders", "being placed and food getting cooked."} })
+add({ d = {"Today was as busy as it always gets, with sounds of orders", "being placed and food being cooked."} })
 
-add({ d = {"While you were gazing through the different food places, you saw", "a familiar face surrounded by girls in front of the sandwhich", "shop."} })
+add({ d = {"While you were gazing through the different food places, you saw", "a familiar face surrounded by girls in front of the sandwhich", "venue."} })
 
 add({ n = 'CECILIA', d = {"Oh, I think that's William, the TA for my Tuesday/Thrusday class..."} })
 
@@ -20,7 +20,7 @@ add({ n = 'GIRL 2', d = {"Screw the jet, I wanna take a ride on that yacht! I he
 
 add({ n = 'GIRL 3', d = {"Why are you guys asking about summer trips? Will~ You're family has", "a winter home, right? Ohh~ We should go together! Just you. And. Me~!"} })
 
-add({ n ='WILLIAM', lg = lg.will_nervous, d = {"Ladies, ladies... Don't fight! I'll make sure to invite you whenever I take a trip, okay?"} })
+add({ n ='WILLIAM', lg = lg.will_nervous, d = {"Ladies, ladies... Don't fight! I'll make sure to invite", "you whenever I take a trip, okay?"} })
 
 add({ n = 'CECILIA', d = {"(Oh geez, these girls are almost as transpartent as their outfits! I normally", "would ignore these type of situation, but I can hear 'em on the other" "side of the cafe!)"} })
 
