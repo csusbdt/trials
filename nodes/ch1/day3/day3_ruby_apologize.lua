@@ -32,4 +32,4 @@ add({ n = 'CECILIA', d = {"(So, her name is Ruby...)"} })
 
 add({ d = {"Okay, well... I'll catch you later, Ruby."} })
 
-add({ n = '', d = {"Before you left, you saw Ruby turn towards you.", "She seemed shocked you knew her name..."}, node = 'nodes/ch1/day3/night3.lua' })
+add({ n = '', d = {"Before you left, you saw Ruby turn towards you.", "She seemed shocked you knew her name..."}, node = 'nodes/ch1/day3/night3.lua', f = next_time })
