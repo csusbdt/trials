@@ -17,8 +17,8 @@ add({
 	d = {"He doesn't seem too pleased with me... What should I do?"},
 	c = {
 		{ t = "Apologize D:", f = function() choice1() end },
-		{ t = "Ignore him >.>", f = function() choice2()  end },
-		{ t = "Talk to him :3", f = function() choice3() end
+		{ t = "Ignore him >.>", f = function() choice2() end },
+		{ t = "Talk to him :3", f = function() choice3() end }
 	}
 })
 

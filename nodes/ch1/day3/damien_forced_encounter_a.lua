@@ -8,7 +8,7 @@ add({ n = 'DAMIEN', lg = lg.damien_irritated, d = {"..."} })
 
 add({ n = 'CECILIA', d = {"On Sunday night, a lot happened, and on Monday too...", "things happened that made me kind of stressed."} })
 
-add({ n = 'DAMIEN', lg = lg.damien_eyes_closed d = {"........"} })
+add({ n = 'DAMIEN', lg = lg.damien_eyes_closed, d = {"........"} })
 
 add({ n = 'CECILIA', d = {"So uh... yea..."} })
 

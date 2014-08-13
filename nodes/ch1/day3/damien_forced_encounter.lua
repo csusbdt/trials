@@ -17,8 +17,8 @@ add({ n = 'CECILIA', sm = sm.mc, d = {"(It looks like he's still in a bad mood f
 add({  
 	d = { "(Even if, we're lab partners, so I should try to get along", "with him..." },
 	c = {
-		{ t = "Apologize D:", f = function() gs.damien = gs.damien + 20 end, node = 'nodes/ch1/day3/damien_forced_encounter_a.lua' end },
-		{ t = "Ignore him >.>", f = function() gs.damien = gs.damien + 10 end, node = 'nodes/ch1/day3/damien_forced_encounter_b.lua' end }
+		{ t = "Apologize D:", f = function() gs.damien = gs.damien + 20 end, node = 'nodes/ch1/day3/damien_forced_encounter_a.lua' },
+		{ t = "Ignore him >.>", f = function() gs.damien = gs.damien + 10 end, node = 'nodes/ch1/day3/damien_forced_encounter_b.lua' }
 	}
 })
 

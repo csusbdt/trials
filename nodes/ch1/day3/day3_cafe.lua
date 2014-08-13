@@ -22,23 +22,23 @@ add({ n = 'GIRL 3', d = {"Why are you guys asking about summer trips? Will~ You'
 
 add({ n ='WILLIAM', lg = lg.will_nervous, d = {"Ladies, ladies... Don't fight! I'll make sure to invite", "you whenever I take a trip, okay?"} })
 
-add({ n = 'CECILIA', d = {"(Oh geez, these girls are almost as transpartent as their outfits! I normally", "would ignore these type of situation, but I can hear 'em on the other" "side of the cafe!)"} })
+add({ n = 'CECILIA', d = { "(Oh geez, these girls are almost as transparent as their outfits! I normally", "would ignore these type of situations, but I can hear 'em on the other", "side of the cafe!)" } })
 
-add({ n = 'GIRL 3', d = {"Awww~ But that's what you said last time~!"} })
+add({ n = 'GIRL 3', d = "Awww~ But that's what you said last time~!" })
 
-add({ n = 'GIRL 2', d = {"Yea! You better not forget this time Will, or else will punish you~!"} })
+add({ n = 'GIRL 2', d = "Yea! You better not forget this time Will, or else will punish you~!" })
 
-add({ n = 'GIRL 1', d = {"Liek, omg, isn't that a tad bit kinkeh~? You're kind of", "turning into a total slut, y'know!"} })
+add({ n = 'GIRL 1', d = { "Liek, omg, isn't that a tad bit kinkeh~? You're kind of", "turning into a total slut, y'know!" } })
 
-add({ n = 'GIRL 2', d = {"Ugh... Whatever, Miss Ten-Guys-In-One-Month..."} })
+add({ n = 'GIRL 2', d = "Ugh... Whatever, Miss Ten-Guys-In-One-Month..." })
 
-add({ n = '', d = {"In a matter of seconds, the girls started to argue and bicker over", "who is... 'looser'."} })
+add({ n = '', d = { "In a matter of seconds, the girls started to argue and bicker over", "who is... 'looser'." } })
 
-add({ n = 'CECILIA', d = {"(Oh geez, now they're fighting... And I didn't think they", "could get any louder... I don't think I can take anymore of this...)"} })
+add({ n = 'CECILIA', d = {"(Oh geez, now they're fighting... And I didn't think they", "could get any louder... I don't think I can take anymore of this...)" } })
 
-add({ n = '', d = {"The fighting continued..."} })
+add({ n = '', d = "The fighting continued..." })
 
-add({ d = {".........."} })
+add({ d = ".........." })
 
 add({ n = 'CECILIA', d = {"(...I'm done. I was next in line to order, but I just", "can't bother. They've ruined my appetite with their constant bickering", "over their sexual experiences..."} })
 
