@@ -7,6 +7,9 @@ local bg = {
 	ghost_cg1            = 'bg/ghost_cg1.jpg',
 	paint_studio         = 'bg/paint_studio.jpg',
 	lecture_hall         = 'bg/lecture_hall.jpg',
+	grassy_area          = 'bg/grassy_area.jpg',
+	ruby_close_up        = 'bg/ruby_close_up.jpg',
+	cafe                 = 'bg/cafe.jpg',
 };
 
 return bg;
