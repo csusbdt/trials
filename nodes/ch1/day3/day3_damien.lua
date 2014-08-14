@@ -36,8 +36,8 @@ add({
 	n = 'CECILIA',
 	d = {"(Ugh, why must he always do this...?")},
 	c = {
-		{ t = "Shoot the Wind. :)", f = function() gs.ruby = gs.ruby - 10 end, node = 'nodes/ch1/day3/day3_damien_a.lua' end },
-		{ t = "Eat with him :D", f = function() gs.damien = gs.damien - 5 end, node = 'nodes/ch1/day3/day3_damien_b.lua' end },
-		{ t = "Talk about School :3", f = function() gs.damien = gs.damien + 10 end, node = 'nodes/ch1/day3/day3_damien_c.lua' end}
+		{ t = "Chat with him. :)", f = function() gs.damien = gs.damien - 5 end, node = 'nodes/ch1/day3/day3_damien_a.lua' end },
+		{ t = "Eat with him. :D", f = function() gs.damien = gs.damien - 10 end, node = 'nodes/ch1/day3/day3_damien_b.lua' end },
+		{ t = "Talk about School. :3", f = function() gs.damien = gs.damien + 10 end, node = 'nodes/ch1/day3/day3_damien_c.lua' end}
 	}
 })

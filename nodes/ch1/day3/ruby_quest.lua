@@ -45,12 +45,12 @@ add({ n = 'GIRL', d = {"A-ah... Okay... Oh! By the way, my name is Ruby."} })
 
 add({ n = 'CECILIA', d = {"Ah, my name is Cecilia. Nice to meet you, Ruby!"} })
 
-bool ruby_quest
+--Is the below correct?
 
 add({ 
 	n = '',
 	d = {"The two of you talked about various forms of Art before your", "next class"} }),
-	ruby_quest = true,
+	gs.ruby_quest = true,
 	gs.ruby_quest_progress = 0,
 	gs.ruby_quest_complete = 0,
 	node = 'nodes/ch1/day3/night3.lua' 
