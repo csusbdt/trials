@@ -1,6 +1,7 @@
 --Nighttime, Wednesday. Talking to anyone will result in small amount of dialogue.
 
 add({ 
+	f = next_time,
 	n = '', 
 	bg = bg.cecilia_room_night, 
 	d = {"Nighttime, in your dorm. What would you like to do?"},

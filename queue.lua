@@ -41,7 +41,6 @@ function mt.next()
 	end
 	if ui.d then log.add(ui.d) end
 	ui.c = e.c
-	if e.f then e.f() end
 	if e.s then 
 		sounds.play(e.s)
 	end
@@ -59,7 +58,7 @@ function mt.next()
 		gs.bg    = ui.bg
 		gs.m     = ui.m
 	end
-	--draw()
+	if e.f then e.f() end
 end
 
 return qu

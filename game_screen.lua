@@ -228,12 +228,5 @@ function on_touch(x, y)
 	return true
 end
 
---if #event_queue > 0 then
-	-- We are continuing from where we left off.
---else
-	-- Need to run the next node.
---	gonode(gs.node)
---end
-
 draw()
 

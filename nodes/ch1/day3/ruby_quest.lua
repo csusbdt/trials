@@ -47,13 +47,28 @@ add({ n = 'CECILIA', d = {"Ah, my name is Cecilia. Nice to meet you, Ruby!"} })
 
 --Is the below correct?
 
+--[[ MY ANSWER
+	I moved the next_time function call into the first add of night3.lua.
+	I also placed code that updates the game state (gs) into a function that
+	is in the last add of this node file.  Notice that the last line in this
+	function is qu.next(); this means the code moves to the next element in
+	the queue automatically without the user clicking to go next.
+--]]
+
 add({ 
 	n = '',
-	d = {"The two of you talked about various forms of Art before your", "next class"} }),
-	gs.ruby_quest = true,
-	gs.ruby_quest_progress = 0,
-	gs.ruby_quest_complete = 0,
-	node = 'nodes/ch1/day3/night3.lua' 
+	d = {"The two of you talked about various forms of Art before your", "next class"}
 })
 
-add({ d = {"The day went on with nothing interesting happening..."}, f = next_time, node = 'nodes/ch1/day3/night3.lua' })
+add({ d = {"The day went on with nothing interesting happening..."} })
+
+add({ 
+	node = 'nodes/ch1/day3/night3.lua',
+	f = function()
+		gs.ruby_quest = true
+		gs.ruby_quest_progress = 0
+		gs.ruby_quest_complete = 0
+		qu.next()
+	end
+})
+

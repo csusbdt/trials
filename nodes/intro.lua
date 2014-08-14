@@ -1,8 +1,3 @@
-ui.month = 'Sep'
-ui.day   = 12
-ui.dow   = 'Sun'
-ui.time  = 'Night'
-
 add({ sm = sm.mc, d = { "Returning home from a night out with my friend, I stepped into my pitch", "black room." } })
 
 add({ d = { "Tonight was my first night as college students, so my friend, Erika,", "pitched an idea to go out for a reunion dinner." } })
