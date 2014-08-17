@@ -58,7 +58,15 @@ elseif gs.ruby_quest_progress == 6 then
 	add({ d = {"Can I keep this?"} })
 	add({ n = 'CECILIA', d = {"Uh, sure! I can just make another set if I ever need to!"} })
 	add({ n = 'RUBY', d = {"Thank you!"} }
---Does this seem right?	
-	add({ f = function() gs.ruby = gs.ruby + 10, gs.ruby_quest_progress = -1, gs.ruby_quest_complete = 1 end })
+	add({ 
+		f = function() 
+		gs.ruby = gs.ruby + 10
+		gs.ruby_quest_progress = -1	
+		gs.ruby_quest_complete = 1
+		qu.next()
+		 end 
+	})
 
 end
+
+add({ f = function() gs.ruby_quest_progress = gs.ruby_quest_progress + 1 end })
