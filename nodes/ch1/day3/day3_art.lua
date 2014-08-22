@@ -17,9 +17,9 @@ add({ n = '', d = {"The girl noticed you come in and immediately looked away, tu
 add({ n = 'CECILIA', d = {"(Yea, I don't blame her, I kind of ruined her vase...)"} })
 
 add({ 
-	d = {"(Still, I feel bad, I should at least try to apologize, or something...)"} })
+	d = { "(Still, I feel bad, I should at least try to apologize, or something...)" },
 	c = {
-		{ t = "Talk about Art :D", f = function() gs.ruby = gs.ruby + 20 end, node = 'nodes/ch1/day3/ruby_quest.lua' end },
-		{ t = "Apologize D:", f = function() gs.ruby = gs.ruby + 25 end, node = 'nodes/ch1/day3/day3_ruby_apologize.lua' end },
+		{ t = "Talk about Art :D", f = function() gs.ruby = gs.ruby + 20 end, node = 'nodes/ch1/day3/ruby_quest.lua' },
+		{ t = "Apologize D:", f = function() gs.ruby = gs.ruby + 25 end, node = 'nodes/ch1/day3/day3_ruby_apologize.lua' }
 	}
 })

@@ -12,15 +12,31 @@ function game_choices.draw()
 	local option_button_texture = textures.image('gui/UI-option-button.png')
 
 	choice_buttons = {}
+	choice_text = {}
 	local x  = 300
 	local y  = 200 - 20 * #ui.c
 	local dy =  option_button_texture.h * 1.2
+
+	local option_button_width = option_button_texture.w
 	for i, v in ipairs(ui.c) do
-		choice_buttons[i] = buttons.create_from_texture(option_button_texture, x, y)
+		choice_text[i] = choice_font:text(v.t, white)
+		if choice_text[i].w * 1.1 > option_button_width then
+			option_button_width = choice_text[i].w * 1.1 
+		end
+	end
+
+	for i, v in ipairs(ui.c) do
+		choice_buttons[i] = buttons.create_from_texture(
+			option_button_texture, 
+			x, 
+			y, 
+			option_button_width, 
+			option_button_texture.h)
 		choice_buttons[i].node = v.node
 		choice_buttons[i].f = v.f
 		choice_buttons[i]:draw()
-		local texture = choice_font:text(v.t, white)
+		--local texture = choice_font:text(v.t, white)
+		local texture = choice_text[i]
 		local text_x = x + 40
 		local text_y = y + option_button_texture.h / 2 - texture.h / 2 - 8
 		texture:draw(text_x, text_y)

@@ -15,9 +15,21 @@ if gs.ruby_quest == false then
 	add({ n = 'CECILIA', d = {"Ah, no. I was just looking around. I'll be leaving", "now."} })
 	add({ n = 'PROFESSOR', d = {"Okay. If you have any questions about the art studio", "or about art equipment, or art in general, just let me know."} })
 	add({ n = 'CECILIA', d = {"okay, thank you ma'am!"} })
-	add({ n = '', d = {"You exited the Art studio and took a little stroll before", "heading back to your dorm and turning in for the night."}, 
+	add({ 
+		n = '', 
+		d = {	"You exited the Art studio and took a little stroll before", 
+			"heading back to your dorm and turning in for the night."
+		}
+	}) 
 end
 
 if gs.ruby_quest == true then
-	add({ d = {"The Art studio is empty. The smell of paint and clay is", "a bit overwhelming..."}, node = 'nodes/ch1/ruby_quest_progress_check.lua' })
-	
+	add({ 
+		d = {
+			"The Art studio is empty. The smell of paint and clay is", 
+			"a bit overwhelming..."
+		}, 
+		node = 'nodes/ch1/ruby_quest_progress_check.lua'
+	})
+end
+
