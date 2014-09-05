@@ -12,6 +12,7 @@ local bg = {
 	ruby_close_up         = 'bg/ruby_close_up.jpg',
 	cafe                  = 'bg/cafe.jpg',
 	track                 = 'bg/track.jpg',
+	culture_center        = 'culture_center.jpg',
 };
 
 return bg;
