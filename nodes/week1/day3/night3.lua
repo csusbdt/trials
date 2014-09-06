@@ -5,35 +5,76 @@ add({
 	n = '', 
 	lg = '',
 	bg = bg.cecilia_room_night, 
-	d = {"Nighttime, in your dorm. What would you like to do?"},
+	d = {"When you got back to your room after dinner... You saw Kaira fiddling", "around with something."}
+	
+})
+
+add({ n = 'CECILIA', lg = lg.ghost, d = {"Hey, what are you doing, pipsqueak?"} })
+
+add({ n = 'KAIRA', d = {"Who you callin' pipsqueak!?"} })
+
+add({ n = 'CECILIA', d = {"You. Hey, is that my suitcase!?"} })
+
+add({ n = 'KAIRA', d = {"Well, you weren't using it... so I thought I could."} })
+
+add({ n = 'CECILIA', d = {"That's not how it goes... Also, what could a ghost have anyways?"} })
+
+add({ d = {"A cracked marble, a ribbon..., some... piece of", "paper, and a broken... mask? What is this stuff?"} })
+
+add({ n = 'KAIRA', d = {"They're my treasures! I forgot I had these on me."} })
+
+add({ n = 'CECILIA', d = {"I'm not even going to try to understand how you still", "have these things..."} })
+
+add({ n = 'KAIRA', d = {"Ghosts still have clothes on, so, I guess any stuff", "you have on you when you die stays with you..."} })
+
+add({ n = 'CECILIA', d = {"Hm, makes sense... So, do you remember anything about your", "life with these treasures?"} })
+
+add({ n = 'KAIRA', d = {"Kind of... I've been trying to remember. What do you think?"} })
+
+local choice1
+local choice2
+local finish
+
+add({ 
+	n = 'CECILIA',
+	d = {"What do I think? Uh..."},
 	c = {
-		{ t = "Chat with Erika", f = function() choice1() end },
-		{ t = "Chat with Kaira", f = function() choice2() end },
-		{ t = "Go out.", node = 'nodes/week1/day3/night_out.lua'}
+		{t = "Might be connected to your hobbies..."}, f = function() choice1() end },
+		{t = "Might be connected to your friends..."}, f = function() choice2() end }
 	}
 })
 
 choice1 = function()
-	add({ n = 'CECILIA', d = {"(I should see what Erika's up to.)"} })
-	add({ bg = bg.erika_room, d = {"Yo, Erika. Wanna talk for a bit?"} })
-	add({ n = 'ERIKA', d = {"Oh, hey! Yea, let's chat."} })
-	add({ n = '', d = {"You spent some time with Erika, talking about a range", "of subjects before heading to bed."}, node = 'nodes/week1/day4/morning_encounter.lua', f = next_time })
+	add({ n = 'KAIRA', d = {"My... hobbies?"} })
+	add({ d = {"..."} })
+	add({ d = {"......"} })
+	add({ d = {".............."} })
+	add({ n = '', d = {"She's been staring at the stuff for a while..."} })
+	add({ n = 'KAIRA', d = {"Nope. I don't think so... I've never been the type to sit", "around playin' with marbles, or playin' dress up, or thinkin' about", "music."} })
+	add({ d = {"But... I think... me and friends do do stuff like this every now and... a...gain."} })
+	finish()
 end
 
 choice2 = function()
-	add({ n = 'CECILIA', d = {"(I wonder if Kaira has found out anything...)"} })
-	add({ d = {"Hey, Kaira. You there?"} })
-	add({ n = '', lg = lg.ghost, d = {"Kaira materialized on your bed..."} })
-	add({ n = 'KAIRA', d = {"Yes! I'm here!"} })
-	add({ n = 'CECILIA', d = {"Do you remember anything?"} })
-	add({ n = 'KAIRA', d = {"Hm... I think so... I think I remember that I", "really love burritos!"} })
-	add({ lg = lg.ghost_smile, d = {"That burrito you ate earlier looked so yummy!"} })
-	add({ n = 'CECILIA', d = {"Oh, so that's why I felt a small breath on my neck... You", "were sniffing my burrito when I went to take a bite!"} })
-	add({ n = 'KAIRA', d = {"Heheh~ Sorry."} })
-	add({ n = 'CECILIA', d = {"But seriously, you have to start thinking more", "on your past life."} })
-	add({ n = 'KAIRA', lg = lg.ghost, d = {"Hm... Oh! R-righty... I will."} })
-	add({ d = {"So, how was class?"} })
-	add({ n = '', d = {"You spent the rest of the evening talking to Kaira", "about your day today before you went to sleep."}, node = 'nodes/week1/day4/morning_encounter.lua', f = next_time })
+	add({ n = 'KAIRA', d = {"My... friends?"} })
+	add({ d = {"..."} })
+	add({ d = {"......."} })
+	add({ d = {"................"} })
+	add({ n = '', d = {"She's been staring at the stuff for a while..."} })
+	add({ n = 'KAIRA', d = {"...! Oh, maybe it is...!"} })
+	finish()
 end
+
+finish = function()
+	add({ n = 'CEICLIA', d = {"Do you remember something?"} })
+	add({ n = 'KAIRA', d = {"Uh huh. I think this is somehow connected to my friends!"} })
+	add({ d = {"Yea... it's coming back to me... These were someone gave to me,", "from each of my friends!"} })
+	add({ d = {"You wanna hear about them?"} })
+	add({ n = 'CECILIA', d = {"If it'll help you move on, then yea..."}, node = 'nodes/week1/day3/treasure.lua' })
+end
+
+
+
+
 
 
