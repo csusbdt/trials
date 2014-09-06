@@ -5,7 +5,7 @@ ui.time  = 'Night'
 
 add({ n = 'DAMIEN', d = { "I'm Damien.", "The villain." }, lg = 'lg/ghost_smile.png', sm = 'sm/MC.png' })
 
-add({ d = { "I am every where." }, sm = 'sm/MC.png', lg = 'lg/damien_irritated.png' })
+add({ bg = bg.ruby_cg1, d = { "I am every where." }, sm = 'sm/MC.png', lg = 'lg/damien_irritated.png' })
 
 add({ c = {
 		{ t = "One" }
