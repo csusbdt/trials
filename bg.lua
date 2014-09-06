@@ -9,10 +9,10 @@ local bg = {
 	paint_studio          = 'bg/paint_studio.jpg',
 	lecture_hall          = 'bg/lecture_hall.jpg',
 	grassy_area           = 'bg/grassy_area.jpg',
-	ruby_close_up         = 'bg/ruby_close_up.jpg',
+	ruby_cg1	      = 'bg/ruby_cg1.jpg',
 	cafe                  = 'bg/cafe.jpg',
 	track                 = 'bg/track.jpg',
-	culture_center        = 'culture_center.jpg',
+	culture_center        = 'bg/culture_center.jpg',
 };
 
 return bg;

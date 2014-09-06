@@ -98,4 +98,4 @@ add({ d = { "Of course, I just told myself that I was tired, and I was hallucina
 
 add({ sm = sm.mc_sweat, d = { "'Oh well,' I thought. 'I'll just deal with this tomorrow...", "If I can get to sleep...'" } })
 
-add({ sm = '', d = { "But then, tomorrow came..." }, f = next_time, node = 'nodes/ch1/start.lua' })
+add({ sm = '', d = { "But then, tomorrow came..." }, node = 'nodes/week1/start.lua' })
