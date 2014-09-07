@@ -2,9 +2,7 @@
 
 add({ d = {"Mm, I'm starved! I should hit the cafe first!"} })
 
-add({ bg = '', n = '', d = {"((Missing the BG, so, deal with the Eternal", "Darkness of the SU~))"} })
-
-add({ d = {"The Cafe, located in the Student Union, where many students", "come to eat, hang out, study, etc."} })
+add({ bg = bg.cafe, n = '', d = {"The Cafe, located in the Student Union, where many students", "come to eat, hang out, study, etc."} })
 
 add({ d = {"Today was as busy as it always gets, with sounds of orders", "being placed and food being cooked."} })
 
