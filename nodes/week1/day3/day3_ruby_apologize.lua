@@ -4,11 +4,11 @@ add({ d = {"(Right, I should try to clear the air between us...)"} })
 
 add({ d = {"Um, hey... I remember you, on Monday... We... bumped into", "each other."} })
 
-add({ n = 'GIRL', d = {"...Mhm..."} })
+add({ n = 'RUBY?', d = {"...Mhm..."} })
 
 add({ n = 'CECILIA', d = {"Yea, I um... came to say I'm sorry. I was in a hurry because", "I was late, and I just bumped into you... and broke your vase."} })
 
-add({ n = 'GIRL', d = {"...."} })
+add({ n = 'RUBY?', d = {"...."} })
 
 add({ d = {"I know you didn't mean to do it on purpose, but... I spent", "such a long time working on that..."} })
 
@@ -16,7 +16,7 @@ add({ d = {"I can forgive you, but... It was such a precious item I made."} })
 
 add({ n = 'CECILIA', d = {"Oh... I'm sorry, really!"} })
 
-add({ n = 'GIRL', d = {"It's alright, I can't keep moping over this forever..."} })
+add({ n = 'RUBY?', d = {"It's alright, I can't keep moping over this forever..."} })
 
 add({ n = 'CECILIA', d = {"Yeah... Uh..."} })
 

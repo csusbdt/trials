@@ -30,6 +30,8 @@ add({ n = 'CECILIA', d = { "...Oh... I-I..." } })
 
 add({ n = '', lg ='', d = { "The girl slowly got on her knees and started to pick up the pieces. Her head was", "hung low, but I could tell she was crying." } })
 
+add({ d = {"You noticed her pick up a piece that had the words, 'To Ruby' written on it"} })
+
 add({ n = 'CECILIA', d = {"(Oh geez, out of all the times for this to happen... Why now...?"} })
 
 add({ 
