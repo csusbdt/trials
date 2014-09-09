@@ -26,5 +26,5 @@ add({ n = 'CECILIA', d = {"That jerk! I am never being nice to him again!"} })
 
 add({ d = {"...It's about time for my next class. I should get going."} })
 
-add({ n = '', d = {"Your last class for today was boring. You couldn't help but", "to fall asleep while writing mid-sentence."}, node = 'nodes/week1/day3/night3.lua', f = next_time })
+add({ n = '', d = {"Your last class for today was boring. You couldn't help but", "to fall asleep while writing mid-sentence."}, node = 'nodes/week1/day3/night3.lua' })
 

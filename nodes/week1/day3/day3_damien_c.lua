@@ -30,5 +30,5 @@ add({ d = {"I don't want to spend too much time studying..."} })
 
 add({ n = 'CECILIA', d = {"Mhm! Fair enough. So, what do you think is going", "to be hard for you?"} })
 
-add({ n = '', d = {"You spent the rest of your free time talking about Physics and", "other classes before you had to leave for class."}, node = 'nodes/week1/day3/night3.lua', f = next_time })
+add({ n = '', d = {"You spent the rest of your free time talking about Physics and", "other classes before you had to leave for class."}, node = 'nodes/week1/day3/night3.lua' })
 

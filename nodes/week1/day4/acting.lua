@@ -30,7 +30,7 @@ add({ d = {"(Damn, he left... But his story sounds a lot like Kaira's... So, may
 
 add({ d = {"(Damnit, just means more work for me... On top of that, but he seems", "really secretive about it too... I'll have to get closer to him to get him", "in order to get him to talk.)"} })
 
-add({ d = {"(Well, I guess I better go eat before there's a hole in my stomach."} })
+add({ d = {"(Well, I guess I better go eat before there's a hole in my stomach.)"} })
 
 add({ 
 	n = '', 
@@ -39,6 +39,6 @@ add({
 		gs.will = gs.will + 10
 		gs.will_scene = 2
 	end,
-	node = 'nodes/week1/day4/will_finish.lua'
+	node = 'nodes/week1/day4/night4.lua'
 })
 

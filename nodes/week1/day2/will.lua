@@ -5,7 +5,7 @@ add({
 	lg = '',
 	sm = sm.mc,
 	bg = bg.cecilia_room_day,
-	f = next_morning,
+	f = next_time,
 	d = "....."
 })
 

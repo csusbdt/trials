@@ -4,15 +4,13 @@ add({ n = '', bg = bg.sidewalk_with_campus, d = {"The next day..."} })
 
 add({ n = 'CECILIA', d = {"I'm glad this class begins a little later than that physics", "class... I don't have to hurry and run into people."} })
 
-add({ d = {"But still, I should look for her again... Let's see, she might be into", "art since that vase looked like it was made by an amatuer... I should", "check out the art department when I get the chance."} })
-
 add({ n = 'FAMILIAR VOICE', d = {"Oh hey. You're in one of my classes, right?"} })
 
 add({ n = 'CECILIA', d = {"Huh?"} })
 	
 add({ n = '', d = {"You turned around and saw William, the TA for the class you have today."} })
 	
-add({ n = 'WILLIAM', lg = lg.will d = {"I thought I recognized you, hello!"} })
+add({ n = 'WILLIAM', lg = lg.will, d = {"I thought I recognized you, hello!"} })
 
 add({ n = 'CECILIA', d = {"Oh, hi..."} })
 

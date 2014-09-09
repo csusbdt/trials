@@ -1,13 +1,12 @@
--- Scene with Damien
+-- Scene with Damien, I need to separate this into three files.
 
 add({ sm = '', d = {"Time Marches on..."} })
 
 add({ 
 	n = 'CECILIA',
-	f = next_afternoon,
 	bg = bg.lecture_hall,
 	sm = sm.mc_sweat, 
-	m = mu.friendly, 
+--	m = mu.friendly, 
 	d = { "(Woo... This Class... It's going to beat the crap out of me...)" }
 })
 
@@ -95,7 +94,7 @@ choice2 = function()
 end
 
 finish = function()
-	add({ sm = '', d = { "Because of everything that happened today, you decided to eat alone at home", "alone before continuing your first day of classes..." } })
+	add({ sm = '', d = { "Because of everything that happened today, you decided to eat alone at home", "alone before continuing your first day of classes..."} })
 	add({ d = {"The day continued on, nothing interesting happening..."}, node = 'nodes/week1/day1/night1.lua' })
 end
 

@@ -22,5 +22,5 @@ add({ d = {"..."} })
 
 add({ d = {"After eating lunch, you checked the time on your phone.", "It's time for your next class..."} })
 
-add({ d = {"Sighing, you went to class and couldn't stay focused on the", "material covered."}, node = 'nodes/week1/day3/night3.lua', f = next_time })
+add({ d = {"Sighing, you went to class and couldn't stay focused on the", "material covered."}, node = 'nodes/week1/day3/night3.lua' })
 

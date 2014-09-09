@@ -20,4 +20,4 @@ add({ n = '', d = {"After saying that, he got up with his stuff and left without
 
 add({ n = 'CECILIA', d = {"(Kind of rude, but... whatever. At least he didn't bitch me out or something..."} })
 
-add({ n = '', d = {"After a few more minutes, you looked at the time and realized it's time for", "class. You got up and headed over there right away."}, node = 'nodes/week1/day4/night4.lua', f = next_time })
+add({ n = '', d = {"After a few more minutes, you looked at the time and realized it's time for", "class. You got up and headed over there right away."}, node = 'nodes/week1/day4/night4.lua' })

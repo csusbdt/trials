@@ -24,5 +24,5 @@ add({ n = 'CECILIA', d = {"...Looks like I really messed up this time..."} })
 
 add({ d = {"I was just trying to be helpful, too... Oh well..."} })
 
-add({ n = '', d = {"You spent the rest of your time walking around, looking for something", "to do. Eventually, your break was over and you had to go to your next class."}, node = 'nodes/week1/day4/night4.lua', f = next_time })
+add({ n = '', d = {"You spent the rest of your time walking around, looking for something", "to do. Eventually, your break was over and you had to go to your next class."}, node = 'nodes/week1/day4/night4.lua' })
 

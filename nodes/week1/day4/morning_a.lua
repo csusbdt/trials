@@ -20,5 +20,5 @@ add({ d = {"(Geez, and here I thought he was going to be nice...)"} })
 
 add({ d = {"(But... Kaira did mention a kid that liked to play the villian... Could it", "be that he is...?)"} })
 
-add({ bg = bg.lecture_hall, d = {"(Well, we're already at the classroom. I guess I'll have to ask him about it later."} })
+add({ bg = bg.lecture_hall, d = {"(Well, we're already at the classroom. I guess I'll have to ask him about it later.)"}, node = 'nodes/week1/day4/morning_finish.lua' })
 

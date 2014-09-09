@@ -50,5 +50,5 @@ add({
 	d = {"The two of you talked about various forms of Art before your", "next class"}
 })
 
-add({ d = {"The day went on with nothing interesting happening..."}, node = 'nodes/week1/day3/night3.lua', f = next_time })
+add({ d = {"The day went on with nothing interesting happening..."}, node = 'nodes/week1/day3/night3.lua' })
 

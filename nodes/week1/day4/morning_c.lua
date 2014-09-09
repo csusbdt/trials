@@ -12,4 +12,4 @@ add({ n = 'CECILIA', d = {"Wha... Really?! That's insane!"} })
 
 add({ n = 'WILLIAM', d = {"Welcome to college!"} })
 
-add({ n = 'CECILIA', d = {"Ahahah... ahah..."} })
+add({ n = 'CECILIA', d = {"Ahahah... ahah..."}, node = 'nodes/week1/day4/morning_finish.lua' })

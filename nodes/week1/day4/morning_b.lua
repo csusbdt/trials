@@ -16,5 +16,5 @@ add({ n = 'WILLIAM', d = {"Yea, it's understandable. Just don't be like me and w
 
 add({ n = 'CECILIA', d = {"Heheh, I won't! Thanks for the warning, though."} })
 
-add({ n = 'WILLIAM', d = {"Yea, no problem. A TA needs to help out the younger students."} })
+add({ n = 'WILLIAM', d = {"Yea, no problem. A TA needs to help out the younger students."}, node = 'nodes/week1/day4/morning_finish.lua' })
 

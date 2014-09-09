@@ -39,8 +39,8 @@ add({
 	n = 'CECILIA',
 	d = {"What do I think? Uh..."},
 	c = {
-		{t = "Might be connected to your hobbies..."}, f = function() choice1() end },
-		{t = "Might be connected to your friends..."}, f = function() choice2() end }
+		{t = "Might be connected to your hobbies...", f = function() choice1() end },
+		{t = "Might be connected to your friends...", f = function() choice2() end }
 	}
 })
 
