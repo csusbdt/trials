@@ -35,10 +35,7 @@ add({ d = {"(Well, I guess I better go eat before there's a hole in my stomach.)
 add({ 
 	n = '', 
 	d = {"With a sigh, you head inside of the dorm house and make you way to", "your suite. You grab a bite and then head out to your next class."}, 
-	f = function() 
-		gs.will = gs.will + 10
-		gs.will_scene = 2
-	end,
+	f = function() gs.will_scene = 1 end,
 	node = 'nodes/week1/day4/night4.lua'
 })
 

@@ -32,6 +32,6 @@ add({ n = 'CECILIA', d = {"It's fine. Bye!"} })
 
 add({ n = 'CECILIA', lg = '', d = {"The whole time we were talking, she seemed very nervous... Maybe she still is", "upset over what happened on Monday? At any rate, I should try to talk", "to her more and learn more about her."} })
 
-add({ n = '', d = {"..."}, f = function() gs.ruby = gs.ruby + 5 end })
+add({ n = '', d = {"..."} })
 
-add({ n = 'CECILIA', d = {"Lunch was delicious! But now it's time for class..."}, node = 'nodes/week1/day4/night4.lua' })
+add({ n = 'CECILIA', d = {"Lunch was delicious! But now it's time for class..."}, f = function() gs.ruby = gs.ruby + 5 end, node = 'nodes/week1/day4/night4.lua' })

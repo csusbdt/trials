@@ -24,4 +24,4 @@ add({ n = 'WILLIAM', d = {"Okay. Good bye."} })
 
 add({ n = 'CECILIA', lg = '', d = {"(Damn... I guess it wasn't him. But, it was a long shot. I don't expect him to", "be involved with her...)"} })
 
-add({ n = '', d = {"You shrug to yourself and make your way to your suite. After lunch, it was time", "for your next class."}, f = function() gs.will = gs.will + 10 end, node = 'nodes/week1/day4/night4.lua' })
+add({ n = '', d = {"You shrug to yourself and make your way to your suite. After lunch, it was time", "for your next class."}, node = 'nodes/week1/day4/night4.lua' })

@@ -23,7 +23,7 @@ add({ n = 'CECILIA', d = {"(Oh yea, maybe I should ask him a bit about it...)"} 
 add({ 
 	d = {"But damnit, she mentioned two guys, a wannabe actor and a wannabe rock star... Which", "one could he be?"},
 	c = {
-		{t = "Ask about the Acting.", node = 'nodes/week1/day4/acting.lua'},
-		{t = "Ask about the Rock Star.", node = 'nodes/week1/day4/rockstar.lua'}
+		{t = "Ask about the Acting.", f = function() gs.will = gs.will + 15 end, node = 'nodes/week1/day4/acting.lua'},
+		{t = "Ask about the Rock Star.", f = function() gs.will = gs.will + 10 end, node = 'nodes/week1/day4/rockstar.lua'}
 	}
 })
