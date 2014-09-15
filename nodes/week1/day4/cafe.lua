@@ -34,4 +34,4 @@ add({ n = 'CECILIA', lg = '', d = {"The whole time we were talking, she seemed v
 
 add({ n = '', d = {"..."} })
 
-add({ n = 'CECILIA', d = {"Lunch was delicious! But now it's time for class..."}, f = function() gs.ruby = gs.ruby + 5 end, node = 'nodes/week1/day4/night4.lua' })
+add({ n = 'CECILIA', d = {"Lunch was delicious! But now it's time for class..."}, node = 'nodes/week1/day4/night4.lua' })

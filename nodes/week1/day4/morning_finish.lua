@@ -10,7 +10,7 @@ add({
 	n = 'CECILIA', 
 	d = {"What should I do for my break?"},
 	c = {
-		{t = "Go to the Cafe", node = 'nodes/week1/day4/cafe.lua'},
+		{t = "Go to the Cafe", f = function() gs.ruby = gs.ruby + 5 end, node = 'nodes/week1/day4/cafe.lua'},
 		{t = "Take a stroll", node = 'nodes/week1/day4/grassy.lua'},
 		{t = "Go to your Dorm Room", node = 'nodes/week1/day4/dorms.lua'}
 	}

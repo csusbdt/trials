@@ -19,7 +19,7 @@ add({ n = 'CECILIA', d = {"(Yea, I don't blame her, I kind of ruined her vase...
 add({ 
 	d = { "(Still, I feel bad, I should at least try to apologize, or something...)" },
 	c = {
-		{ t = "Talk about Art :D", f = function() gs.ruby = gs.ruby + 20 end, node = 'nodes/week1/day3/ruby_art.lua' },
+		{ t = "Talk about Art :D", f = function() gs.ruby = gs.ruby + 15 end, node = 'nodes/week1/day3/ruby_art.lua' },
 		{ t = "Apologize D:", f = function() gs.ruby = gs.ruby + 25 end, node = 'nodes/week1/day3/day3_ruby_apologize.lua' }
 	}
 })

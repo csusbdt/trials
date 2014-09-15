@@ -23,7 +23,7 @@ add({
 	d = {"Alright, so what am I going to do today?"},
 	c = {
 		{t = "Go to the Cafe.", node = 'nodes/week1/day5/cafe.lua'},
-		{t = "Go to the Art Studio.", node = 'nodes/week1/day5/art.lua'},
+		{t = "Go to the Art Studio.", f = function() gs.ruby = gs.ruby + 15 end, node = 'nodes/week1/day5/art.lua'},
 		{t = "Explore Around.", node = 'nodes/week1/day5/not_here.lua'}
 	}
 })

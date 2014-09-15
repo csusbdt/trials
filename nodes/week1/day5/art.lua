@@ -95,7 +95,6 @@ if gs.ruby_scene == 0 then
 		d = {"Mhm, bye!"}, 
 		node = 'node/week1/day5/after_art.lua', 
 		f = function() 
-			gs.ruby = gs.ruby + 15
 			gs.ruby_scene = 1
 		end
 	})
