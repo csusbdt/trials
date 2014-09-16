@@ -28,12 +28,18 @@ add({ n = 'CECILIA', d = {"Scared of what?"} })
 
 add({ n = 'KAIRA', d = {"Scared that... the cruel things he said were his true feelings...", "I think..."} })
 
-add({ d = {"I-I... can't remember much... Sorry."} })
+add({ d = {"I-I... can't remember much... But, I think... The Marble and the Ribbon", "are the girl's stuff and the other stuff is the boys' stuff."} })
 
-add({ d = {"Alrighty. I hope that helps."} })
+add({ d = {"I hope that helps."} })
+
 add({ n = 'CECILIA', d = {"Mmm... Just a little bit. I'll have to ask around."} })
+
 add({ n = 'KAIRA', d = {"Alrighty! If I find out anything more, I'll let you know!"} })
+
 add({ n = 'CECILIA', d = {"I expect you to."} })
+
 add({ bg = '', lg = '', n = '', d = {"That night, when you were lying awake in your bed..."} })
+
 add({ n = 'CECILIA', d = {"(Could that guy really be here at this college...? He could've left", "this town at any point in this lifetime...)"} })
+
 add({ d = {"(I should get some sleep... Thinking about it late at night won't", "answer any questions...)"}, node = 'nodes/week1/day4/morning_encounter.lua', f = next_time })
