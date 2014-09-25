@@ -8,9 +8,9 @@ add({ n = 'CECILIA', d = {"Yea, but... I thought I'd make conversation..."} })
 
 add({ n = 'DAMIEN', d = {"Well, I've been hanging around bars lately..."} })
 
-add({ n = 'CECILIA', d = {"Bars? You're too young to drink..."} })
+add({ n = 'CECILIA', d = {"Bars? You're too young to drink."} })
 
-add({ n = 'DAMIEN', d = {"The one I visit often is... more of an independent coffee shop. Though, they do", "sell alcohol at night."} })
+add({ n = 'DAMIEN', d = {"The one I visit often is... more of an independent coffee shop. Though, they do", "sell alcohol at night, though."} })
 
 add({ n = 'CECILIA', d = {"Oh... Hm..."} })
 
@@ -34,7 +34,7 @@ add({ n = '', d = {"...Without saying another word, he was gone."} })
 
 add({ n = 'CECILIA', d = {"(A 'bar', huh? ...Jeez, now I'm curious!)"} })
 
-add({ d = {"(...And I forgot to ask him about the summer rock band camp thing...)"} })
+add({ d = {"(...And I forgot to ask him about the summer rock band camp thing. I'll just", "ask him later...)"} })
 
 add({ 
 	d = {"(I'll just have to ask him later...)"}, 
