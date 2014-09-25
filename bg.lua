@@ -14,6 +14,7 @@ local bg = {
 	independent_cafe      = 'bg/independent_cafe.jpg',
 	track                 = 'bg/track.jpg',
 	culture_center        = 'bg/culture_center.jpg',
+	kitchen               = 'bg/kitchen.jpg',
 };
 
 return bg;
