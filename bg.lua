@@ -12,6 +12,7 @@ local bg = {
 	ruby_cg1	      = 'bg/ruby_cg1.jpg',
 	cafe                  = 'bg/cafe.jpg',
 	independent_cafe      = 'bg/independent_cafe.jpg',
+	independent_cafe_2    = 'bg/independent_cafe_2.jpg',
 	track                 = 'bg/track.jpg',
 	culture_center        = 'bg/culture_center.jpg',
 	kitchen               = 'bg/kitchen.jpg',
