@@ -28,7 +28,7 @@ add({ n = 'ERIKA', d = {"Oh come on! It'll good on resume!"} })
 
 add({ n = 'CECILIA', d = {"Oh, look at the time--I need to get going."} })
 
-add({ n = 'ERIKA', d = {"Don't be like that, Cecilia! Just come check it out! It's in the Cafe on the second floor!"} })
+add({ n = 'ERIKA', d = {"Don't be like that, Cecilia! Just come check it out! It's in the Cafe on", "the second floor on Mondays and Wednesdays!"} })
 
 add({ n = 'CECILIA', d = {"I'll think about it."} })
 
