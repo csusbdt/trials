@@ -14,7 +14,7 @@ if gs.ruby_scene == 2 then
 
 else
 	add({ n = 'CECILIA', d = {"No, I wanted to ask something else."} })
-	add({ d = {"I want to get closer to the girl-- the marble girl. Remember anything?"} })
+	add({ d = {"I want to know more about the girl-- the marble girl. Remember anything?"} })
 end
 
 add({ n = 'KAIRA', d = {"The marble girl... Hm..."} })

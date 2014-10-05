@@ -24,7 +24,7 @@ add({ n = 'ERIKA', d = {"Who else did you tell me about...? Ohh, the abrasive on
 
 add({ d = {"I don't really know where you'd find him, he seems like the type to leave campus", "during his breaks..."} })
 
-add({ d = {"But, if he is still on campus, he's probably loitering around some where..."} })
+add({ d = {"But, if he is still on campus, he's probably loitering around some where."} })
 
 add({ d = {"And the last one, I know him... Everyone does."} })
 

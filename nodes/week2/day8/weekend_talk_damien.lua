@@ -34,7 +34,7 @@ add({ n = '', d = {"...Without saying another word, he was gone."} })
 
 add({ n = 'CECILIA', d = {"(A 'bar', huh? ...Jeez, now I'm curious!)"} })
 
-add({ d = {"(...And I forgot to ask him about the summer rock band camp thing. I'll just", "ask him later...)"} })
+add({ d = {"(...And I forgot to ask him about his past. Though, since he mentioned bands, I think", "it's safe to assume he's the summer rock band boy.)"} })
 
 add({ 
 	d = {"(I'll just have to ask him later...)"}, 
