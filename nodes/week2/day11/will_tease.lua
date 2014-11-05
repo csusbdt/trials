@@ -4,7 +4,7 @@ add({ n = 'CECILIA', d = {"Oh, yes. I'll date you if you take me to that restura
 
 add({ n = 'WILLIAM', d = {"That place? Hm... That's a pretty low standards place... I can take you to", "something much more fancier if you'd like."} })
 
-add({ n = 'CECILIA', d = {"Fancier? You mean, a palce that has meals that cost more than fourty dollars?"} })
+add({ n = 'CECILIA', d = {"Fancier? You mean, a place that has meals that cost more than fourty dollars?"} })
 
 add({ n = 'WILLIAM', d = {"Yes... Fourty dollars isn't much to me. Besides, I would like to show you a good time."} })
 

@@ -57,5 +57,5 @@ add({ n = 'RUBY', d = {"I hope... Mm, how about we talk about something less dep
 add({ 
 	n = '', 
 	d = {"You and Ruby talk for a bit before it was time for your next class."}, 
-	node = 'nodes/week2/day12/night12.lua',
+	node = 'nodes/week3/day15/night15.lua',
 })

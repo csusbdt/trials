@@ -46,5 +46,5 @@ add({ n = 'CECILIA', d = {"Yea, sure. I'll keep coming... Even if someone else d
 
 add({ 
 	d = {"Time passed and soon it was time for your next class..."}, 
-	node = 'nodes/week2/day12/night12.lua'
+	node = 'nodes/week3/day15/night15.lua'
 })

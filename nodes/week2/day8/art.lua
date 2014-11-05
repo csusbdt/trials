@@ -7,7 +7,10 @@ if gs.ruby_scene == 0 then
 		n = 'CECILIA', 
 		bg = bg.paint_studio, 
 		d = {"I don't really go there, but it should be a fine..."},
-		node = 'nodes/week2/day8/ruby0.lua'
+		node = 'nodes/week2/day8/ruby0.lua',
+		f = function() 
+			gs.ruby_scene = 1
+		end
 	})
 
 elseif gs.ruby_scene == 1 then
@@ -23,6 +26,9 @@ elseif gs.ruby_scene == 1 and gs.ruby >= 0
 		n = '', 
 		bg = bg.paint_studio, 
 		d = {"At the Art Studio..."},
-		node = 'nodes/week2/day8/ruby_rank_up.lua'
+		node = 'nodes/week2/day8/ruby_rank_up.lua',
+		f = function() 
+			gs.ruby_scene = 2 
+		end 
 	})
 end

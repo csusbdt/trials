@@ -92,7 +92,4 @@ add({
 	n = 'CECILIA', 
 	d = {"Mhm, bye!"}, 
 	node = 'node/week2/day10/after_art.lua', 
-	f = function() 
-		gs.ruby_scene = 1
-	end
 })

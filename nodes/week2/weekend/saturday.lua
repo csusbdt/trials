@@ -22,8 +22,8 @@ add({
 	n = 'CECILIA', 
 	d = {"Okay, so I thought we could go..."},
 	c = {
-		{t = "To a Resturant!"}, node = 'nodes/week2/weekend/resturant.lua'},
-		{t = "On a coffee run!"}, node = 'nodes/week2/weekend/coffee_shop,lua'},
+		{t = "To a Restaurant!"}, node = 'nodes/week2/weekend/restaurant.lua'},
+		{t = "On a coffee run!"}, node = 'nodes/week2/weekend/coffee_shop.lua'},
 		{t = "To the Movies!"}, node = 'nodes/week2/weekend/movies.lua'}
 	}
 })

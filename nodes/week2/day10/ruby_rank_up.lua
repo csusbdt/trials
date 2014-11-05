@@ -40,7 +40,7 @@ add({ n = 'CECILIA', d = {"Yea, that sounds like me..."} })
 
 add({ n = 'RUBY', d = {"Ahahaha... Hmhmhm... But still, it feels nice to talk about this. No one else lets", "me talk about those kinds of things..."} })
 
-add({ d = {"So... Thanks. I feel a little more free talking with you. Please... Let's talk again", "some more."}, f = function() gs.ruby_scene = 2 end })
+add({ d = {"So... Thanks. I feel a little more free talking with you. Please... Let's talk again", "some more."} })
 
 add({ n = 'CECILIA', d = {"Yea, sure. I'll keep coming... Even if someone else doesn't want me to..."} })
 

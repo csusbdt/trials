@@ -91,5 +91,5 @@ add({ n = 'RUBY', d = {"U-uh... okay. Bye, Cecilia, right?"} })
 add({ 
 	n = 'CECILIA', 
 	d = {"Mhm, bye!"}, 
-	node = 'node/week2/day8/after_art.lua', 
+	node = 'node/week3/day15/after_art.lua', 
 })
