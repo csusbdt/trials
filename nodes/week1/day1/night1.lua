@@ -97,7 +97,7 @@ add({ n = 'ERIKA', d = {"Or maybe her death was more recent. If so, tracking dow
 
 add({ n = 'CECILIA', sm = sm.mc_upset, d = {"Yea, but since she doesn't remember anything, we probably won't know..."} })
 
-add({ n = 'GHOST', d = {"I-I can think on it some more! Uh... I remember uh... 2 girls and 3 boys...", "I think that's right..."} })
+add({ n = 'GHOST', d = {"I-I can think on it some more! Uh... I remember uh... 3 girls and 2 boys...", "I think that's right..."} })
 
 add({ lg = lg.ghost, d = {"I'll try to remember more, I promise I will! Will you help me?"} })
 

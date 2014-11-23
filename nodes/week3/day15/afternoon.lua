@@ -1,4 +1,4 @@
---Freetime. Can rank ruby to max rank 4, can speak to Will. Damien's not in his usual place, yo.
+--Freetime. Can rank ruby to rank 4, can speak to Will. Damien's not in his usual place, yo.
 --No f = next_time.
 
 add({ n = '', lg = '', bg = bg.physics, d = {"Lunchtime."} })

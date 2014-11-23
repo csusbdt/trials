@@ -50,4 +50,4 @@ add({ n = 'DAMIEN', d = {"...I didn't even answer."} })
 
 add({ n = '', lg = '', d = {"At that time, the teacher came in and started class."} })
 
-add({ bg = '', d = {"..."}, node = 'nodes/week3/day15/afternoon.lua', f = next_time })
+add({ bg = '', d = {"..."}, node = 'nodes/week3/day17/afternoon.lua', f = next_time })

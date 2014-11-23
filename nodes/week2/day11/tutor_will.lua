@@ -32,9 +32,9 @@ add({ d = {"Oh! You wanted to know if I lived around here right?"} })
 
 add({ n = 'CECILIA', d = {"Well, yeah, but--"} })
 
-add({ n = 'WILLIAM', d = {"Well, I didn't. Not in this immediate area, at least. My house was in", "that wealthier part of town a few blocks down."} })
+add({ n = 'WILLIAM', d = {"Well, I didn't. Not in this immediate area, at least. My house was in", "the wealthier part of town a few blocks down."} })
 
-add({ d = {"But, about ten years ago, I moved. Only a few months did I come back... Call it,", "'nostalgia'."} })
+add({ d = {"But, about ten years ago, I moved. Only about a few months ago did I come back...", "Call it, 'nostalgia'."} })
 
 add({ n = 'CECILIA', d = {"Oh? So you never hung out around here?"} })
 
